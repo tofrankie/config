@@ -1,0 +1,80 @@
+{
+  "name": "@tofrankie/stylelint",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.28.0",
+  "description": "Shared Stylelint configuration for @tofrankie projects",
+  "author": "Frankie <1426203851@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/tofrankie/config#readme",
+  "repository": "github:tofrankie/config",
+  "bugs": "https://github.com/tofrankie/config/issues",
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "stylelint-order",
+    "lint",
+    "tofrankie"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./standard": {
+      "types": "./dist/standard.d.mts",
+      "import": "./dist/standard.mjs",
+      "require": "./dist/standard.cjs"
+    },
+    "./miniapp": {
+      "types": "./dist/miniapp.d.mts",
+      "import": "./dist/miniapp.mjs",
+      "require": "./dist/miniapp.cjs"
+    },
+    "./min-pixel": {
+      "types": "./dist/min-pixel.d.mts",
+      "import": "./dist/min-pixel.mjs",
+      "require": "./dist/min-pixel.cjs"
+    },
+    "./scss": {
+      "types": "./dist/scss.d.mts",
+      "import": "./dist/scss.mjs",
+      "require": "./dist/scss.cjs"
+    },
+    "./vue": {
+      "types": "./dist/vue.d.mts",
+      "import": "./dist/vue.mjs",
+      "require": "./dist/vue.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "files": [
+    "CHANGELOG.md",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "stylelint": "^17.1.1"
+  },
+  "dependencies": {
+    "stylelint-config-recess-order": "^7.6.1",
+    "stylelint-config-recommended-vue": "^1.6.1",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-order": "^7.0.1"
+  },
+  "devDependencies": {
+    "stylelint": "^17.1.1"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "@tofrankie/prettier",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.28.0",
+  "description": "Shared Prettier configuration for @tofrankie projects",
+  "author": "Frankie <1426203851@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/tofrankie/config#readme",
+  "repository": "github:tofrankie/config",
+  "bugs": "https://github.com/tofrankie/config/issues",
+  "keywords": [
+    "prettier",
+    "prettier-config",
+    "format",
+    "formatter",
+    "tofrankie"
+  ],
+  "exports": {
+    "types": "./dist/index.d.mts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "files": [
+    "CHANGELOG.md",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "prettier": ">=3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+}

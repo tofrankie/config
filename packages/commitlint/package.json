@@ -1,0 +1,50 @@
+{
+  "name": "@tofrankie/commitlint",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.28.0",
+  "description": "Shared commitlint configuration for @tofrankie projects",
+  "author": "Frankie <1426203851@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/tofrankie/config#readme",
+  "repository": "github:tofrankie/config",
+  "bugs": "https://github.com/tofrankie/config/issues",
+  "keywords": [
+    "commitlint",
+    "commitlint-config",
+    "commit",
+    "lint",
+    "tofrankie"
+  ],
+  "exports": {
+    "types": "./dist/index.d.mts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "files": [
+    "CHANGELOG.md",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "@commitlint/cli": ">=20.0.0"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^20.4.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/types": "^20.4.0"
+  }
+}
