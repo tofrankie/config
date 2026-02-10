@@ -3,7 +3,7 @@
 Based on [Stylelint](https://stylelint.io/user-guide/get-started).
 
 > [!IMPORTANT]
-> This project is still experimental and may undergo significant changes in the future.
+> Rule presets are not yet stable and may change.
 
 ## Quick Start
 

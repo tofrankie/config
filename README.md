@@ -2,6 +2,9 @@
 
 Shared configuration for @tofrankie projects.
 
+> [!IMPORTANT]
+> Rule presets in **@tofrankie/eslint** and **@tofrankie/stylelint** are not yet stable and may change.
+
 ## Packages
 
 - [@tofrankie/commitlint](packages/commitlint)

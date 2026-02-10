@@ -6,7 +6,7 @@
   "description": "Shared ESLint configuration for @tofrankie projects",
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
-  "homepage": "https://github.com/tofrankie/config#readme",
+  "homepage": "https://github.com/tofrankie/config/tree/main/packages/eslint",
   "repository": "github:tofrankie/config",
   "bugs": "https://github.com/tofrankie/config/issues",
   "keywords": [

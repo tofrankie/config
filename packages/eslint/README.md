@@ -2,6 +2,9 @@
 
 Based on [ESLint](https://eslint.org/docs/latest/) + [@antfu/eslint-config](https://github.com/antfu/eslint-config).
 
+> [!IMPORTANT]
+> Rule presets are not yet stable and may change.
+
 ## Quick Start
 
 ```bash
