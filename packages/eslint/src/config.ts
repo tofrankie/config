@@ -29,6 +29,10 @@ export function defineConfig(options: Options, userConfigs: UserConfigs): Config
         },
       ],
 
+      // eslint-plugin-antfu: https://github.com/antfu/eslint-plugin-antfu
+      'antfu/if-newline': 'off',
+      'antfu/consistent-list-newline': 'off',
+
       // eslint-plugin-n: https://github.com/eslint-community/eslint-plugin-n
       'node/prefer-global/process': 'off',
 
