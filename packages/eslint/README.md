@@ -1,6 +1,6 @@
 # @tofrankie/eslint
 
-Based on [ESLint](https://eslint.org/docs/latest/) + [@antfu/eslint-config](https://github.com/antfu/eslint-config).
+Based on [@antfu/eslint-config](https://github.com/antfu/eslint-config), with a few preset rules tailored to personal preferences.
 
 > [!IMPORTANT]
 > Rule presets are not yet stable and may change.

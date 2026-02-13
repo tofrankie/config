@@ -1,5 +1,17 @@
 # Changelog
 
+## eslint@0.0.4 (2026-02-13)
+
+### BREAKING CHANGE
+
+- **defineConfig(antfuOptions?, ...userFlatConfigs)** - New API signature
+  - First param: antfu options (formatters, typescript, rules, etc.), merge with user options
+  - Rest params: ESLint flat configs, appended after preset configs
+
+### Features
+
+- TypeScript support enabled by default
+
 ## eslint@0.0.3 (2026-02-11)
 
 - Add `antfu/if-newline` rule
