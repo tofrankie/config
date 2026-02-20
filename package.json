@@ -19,6 +19,7 @@
     "build": "pnpm -r --filter=@tofrankie/* build",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --fix --cache",
+    "lint:publish": "pnpm -r --filter=@tofrankie/* publint",
     "eslint:inspect": "eslint --inspect-config"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "lint-staged": "^16.2.7",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.8.1",
+    "publint": "^0.3.17",
     "stylelint": "^17.1.1",
     "tsdown": "^0.20.3",
     "typescript": "^5.9.3"

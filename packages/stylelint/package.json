@@ -1,6 +1,7 @@
 {
   "name": "@tofrankie/stylelint",
-  "version": "0.0.1",
+  "type": "module",
+  "version": "0.0.2",
   "packageManager": "pnpm@10.28.0",
   "description": "Shared Stylelint configuration for @tofrankie projects",
   "author": "Frankie <1426203851@qq.com>",
@@ -17,34 +18,64 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./standard": {
-      "types": "./dist/standard.d.mts",
-      "import": "./dist/standard.mjs",
-      "require": "./dist/standard.cjs"
+      "import": {
+        "types": "./dist/standard.d.mts",
+        "default": "./dist/standard.mjs"
+      },
+      "require": {
+        "types": "./dist/standard.d.cts",
+        "default": "./dist/standard.cjs"
+      }
     },
     "./miniapp": {
-      "types": "./dist/miniapp.d.mts",
-      "import": "./dist/miniapp.mjs",
-      "require": "./dist/miniapp.cjs"
+      "import": {
+        "types": "./dist/miniapp.d.mts",
+        "default": "./dist/miniapp.mjs"
+      },
+      "require": {
+        "types": "./dist/miniapp.d.cts",
+        "default": "./dist/miniapp.cjs"
+      }
     },
     "./min-pixel": {
-      "types": "./dist/min-pixel.d.mts",
-      "import": "./dist/min-pixel.mjs",
-      "require": "./dist/min-pixel.cjs"
+      "import": {
+        "types": "./dist/min-pixel.d.mts",
+        "default": "./dist/min-pixel.mjs"
+      },
+      "require": {
+        "types": "./dist/min-pixel.d.cts",
+        "default": "./dist/min-pixel.cjs"
+      }
     },
     "./scss": {
-      "types": "./dist/scss.d.mts",
-      "import": "./dist/scss.mjs",
-      "require": "./dist/scss.cjs"
+      "import": {
+        "types": "./dist/scss.d.mts",
+        "default": "./dist/scss.mjs"
+      },
+      "require": {
+        "types": "./dist/scss.d.cts",
+        "default": "./dist/scss.cjs"
+      }
     },
     "./vue": {
-      "types": "./dist/vue.d.mts",
-      "import": "./dist/vue.mjs",
-      "require": "./dist/vue.cjs"
+      "import": {
+        "types": "./dist/vue.d.mts",
+        "default": "./dist/vue.mjs"
+      },
+      "require": {
+        "types": "./dist/vue.d.cts",
+        "default": "./dist/vue.cjs"
+      }
     }
   },
   "main": "dist/index.cjs",
@@ -62,7 +93,8 @@
   },
   "scripts": {
     "build": "tsdown",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build",
+    "publint": "publint"
   },
   "peerDependencies": {
     "stylelint": "^17.1.1"
