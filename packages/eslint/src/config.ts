@@ -2,6 +2,7 @@ import type { TypedFlatConfigItem } from '@antfu/eslint-config'
 import type { OptionsConfig } from './types'
 import { antfu } from '@antfu/eslint-config'
 import merge from 'lodash.merge'
+import { JSDOC_PRESET_CONFIG } from './preset-configs/jsdoc'
 import { TYPESCRIPT_PRESET_CONFIG } from './preset-configs/typescript'
 import { buildPresetRules } from './preset-rules'
 
@@ -54,8 +55,14 @@ export function defineConfig(
   // 4. mergedOptions 与 rules 合并
   const resolvedOptions = merge({}, mergedOptions, { rules: mergedRules })
 
-  // 5. 根据 resolvedOptions.typescript 决定是否加载 typescript 预设配置
-  const presetConfigs = mergedOptions.typescript ? [TYPESCRIPT_PRESET_CONFIG] : []
+  // 5. 根据 resolvedOptions 决定是否加载相关预设
+  const presetConfigs = []
+  if (mergedOptions.typescript) {
+    presetConfigs.push(TYPESCRIPT_PRESET_CONFIG)
+  }
+  if (mergedOptions.jsdoc !== false) {
+    presetConfigs.push(...JSDOC_PRESET_CONFIG)
+  }
 
   return antfu(resolvedOptions, ...presetConfigs, ...userFlatConfigs)
 }

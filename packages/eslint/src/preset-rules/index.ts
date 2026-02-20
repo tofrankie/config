@@ -50,7 +50,7 @@ type OptionPredicate = (options: OptionsConfig) => boolean
  * 自动检测/默认开启的配置，若不为 false 则加载相关预设 rules
  * 如果默认关闭的配置，若为 true 才加载相关预设 rules
  * @param key - The key of the option to check.
- * @returns A predicate function that checks if the option is not false.
+ * @return A predicate function that checks if the option is not false.
  */
 function notFalse(key: keyof OptionsConfig): OptionPredicate {
   return options => (options as Record<string, unknown>)[key as string] !== false
