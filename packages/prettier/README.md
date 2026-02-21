@@ -16,7 +16,7 @@ export default '@tofrankie/prettier'
 
 ## Attribute Sorting
 
-To sort attributes in HTML, Vue, or Miniapp (WXML) files, use the options below:
+Attribute order follows [Code Guide by @mdo](https://codeguide.co/#attribute-order). To sort attributes in HTML, Vue, or Miniapp (WXML) files, use the options below:
 
 ### HTML
 
