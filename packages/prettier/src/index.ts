@@ -1,11 +1,4 @@
-import type { Config } from 'prettier'
+import baseOptions from './options/base'
 
 // https://prettier.io/docs/options
-export default {
-  printWidth: 100,
-  semi: false,
-  singleQuote: true,
-  arrowParens: 'avoid',
-  trailingComma: 'es5',
-  htmlWhitespaceSensitivity: 'css',
-} satisfies Config
+export default baseOptions

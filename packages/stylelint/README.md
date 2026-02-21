@@ -1,6 +1,6 @@
 # @tofrankie/stylelint
 
-Based on [Stylelint](https://stylelint.io/user-guide/get-started).
+A shared [Stylelint](https://stylelint.io/user-guide/get-started) configuration.
 
 > [!IMPORTANT]
 > Rule presets are not yet stable and may change.

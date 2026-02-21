@@ -1,6 +1,6 @@
 # @tofrankie/config
 
-Shared configuration for @tofrankie projects.
+Shared configuration for ESLint, Prettier, Stylelint, and commitlint.
 
 > [!IMPORTANT]
 > Rule presets in **@tofrankie/eslint** and **@tofrankie/stylelint** are not yet stable and may change.

@@ -1,6 +1,6 @@
 # @tofrankie/commitlint
 
-Based on [commitlint](https://commitlint.js.org/guides/getting-started.html).
+A shared [commitlint](https://commitlint.js.org/guides/getting-started.html) configuration.
 
 ## Quick Start
 
