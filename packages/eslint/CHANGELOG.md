@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.0.7 (2026-02-21)
+
+- Update `style/operator-linebreak` rule
+
 ## eslint@0.0.6 (2026-02-20)
 
 - Update `exports` field for CommonJS compatibility

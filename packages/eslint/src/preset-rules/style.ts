@@ -18,6 +18,8 @@ export const STYLE_PRESET_RULES: Linter.RulesRecord = {
     {
       overrides: {
         '&&': 'after',
+        '||': 'after',
+        '=': 'after',
       },
     },
   ],
