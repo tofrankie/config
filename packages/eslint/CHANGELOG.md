@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.0.8 (2026-02-21)
+
+- Update `style/quotes` rule
+
 ## eslint@0.0.7 (2026-02-21)
 
 - Update `style/operator-linebreak` rule

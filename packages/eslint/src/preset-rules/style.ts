@@ -9,7 +9,7 @@ import type { Linter } from 'eslint'
  */
 export const STYLE_PRESET_RULES: Linter.RulesRecord = {
   // ESLint Stylistic: https://eslint.style/rules/quotes#single
-  'style/quotes': ['error', 'single', { avoidEscape: false }],
+  'style/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: 'avoidEscape' }],
   'style/arrow-parens': ['error', 'as-needed'],
   'style/brace-style': ['error', '1tbs', { allowSingleLine: false }],
   'style/operator-linebreak': [
