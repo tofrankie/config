@@ -1,5 +1,9 @@
 # Changelog
 
+## prettier@0.0.5 (2026-02-22)
+
+- Fix parser option in sort-vue
+
 ## prettier@0.0.4 (2026-02-21)
 
 ### Features

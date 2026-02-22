@@ -1,3 +1,5 @@
 import { defineConfig } from '@tofrankie/eslint'
 
-export default defineConfig()
+export default defineConfig({
+  vue: true,
+})
