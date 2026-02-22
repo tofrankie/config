@@ -7,6 +7,7 @@ import { NODE_PRESET_RULES } from './node'
 import { PNPM_PRESET_RULES } from './pnpm'
 import { STYLE_PRESET_RULES } from './style'
 import { TEST_PRESET_RULES } from './test'
+import { VUE_PRESET_RULES } from './vue'
 
 export const ALL_PRESET_RULES = {
   ...ANTFU_PRESET_RULES,
@@ -33,6 +34,10 @@ const PRESET_PREDICATES: Array<{
   { rules: NODE_PRESET_RULES, predicate: notFalse('node') },
   { rules: TEST_PRESET_RULES, predicate: notFalse('test') },
   { rules: PNPM_PRESET_RULES, predicate: notFalse('pnpm') },
+  {
+    rules: VUE_PRESET_RULES,
+    predicate: options => (options as Record<string, unknown>).vue === true,
+  },
 ]
 
 export function buildPresetRules(resolvedOptions: OptionsConfig): Linter.RulesRecord {

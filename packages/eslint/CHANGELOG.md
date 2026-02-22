@@ -1,5 +1,11 @@
 # Changelog
 
+## eslint@0.0.9 (2026-02-22)
+
+- Disable `vue/singleline-html-element-content-newline`, `vue/html-closing-bracket-newline`, `vue/html-indent` to avoid conflicts with Prettier
+- Add `vue/html-self-closing` for consistency with Prettier
+- Add `style/quote-props` for consistency with Prettier
+
 ## eslint@0.0.8 (2026-02-21)
 
 - Update `style/quotes` rule

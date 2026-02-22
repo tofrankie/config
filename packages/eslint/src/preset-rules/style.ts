@@ -8,8 +8,10 @@ import type { Linter } from 'eslint'
  * @see https://eslint.style/rules
  */
 export const STYLE_PRESET_RULES: Linter.RulesRecord = {
-  // ESLint Stylistic: https://eslint.style/rules/quotes#single
+  // https://eslint.style/rules/quotes#single
   'style/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: 'avoidEscape' }],
+  // https://eslint.style/rules/quote-props#as-needed
+  'style/quote-props': ['error', 'as-needed'],
   'style/arrow-parens': ['error', 'as-needed'],
   'style/brace-style': ['error', '1tbs', { allowSingleLine: false }],
   'style/operator-linebreak': [

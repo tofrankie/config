@@ -18,7 +18,8 @@
     "prepare": "husky",
     "build": "pnpm -r --filter=@tofrankie/* build",
     "lint": "run-s lint:*",
-    "lint:eslint": "eslint . --fix --cache",
+    "lint:eslint": "eslint . --cache --fix",
+    "lint:prettier": "prettier . --cache --write --log-level silent",
     "lint:publish": "pnpm -r --filter=@tofrankie/* publint",
     "eslint:inspect": "eslint --inspect-config"
   },
