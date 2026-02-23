@@ -17,7 +17,7 @@ export default {
   plugins: ['@stylistic/stylelint-plugin'],
   rules: {
     'function-url-quotes': 'never',
-    // TODO: inline style 重新排序后，`;` 之后下一个属性之前无法添加空格。
+    // TODO: 对内联样式不起作用，如果在两个属性之间自动添加空格，得用 Prettier 处理
     // https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md
     '@stylistic/declaration-block-semicolon-space-after': 'always-single-line',
     // https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md#options
@@ -26,7 +26,6 @@ export default {
   overrides: [
     {
       files: ['**/*.html'],
-      // TODO: 需要额外添加 postcss-html 依赖
       customSyntax: 'postcss-html',
     },
   ],

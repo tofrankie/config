@@ -102,6 +102,7 @@
     "node": ">=18"
   },
   "scripts": {
+    "dev": "tsdown --watch",
     "build": "tsdown",
     "prepublishOnly": "pnpm build",
     "publint": "publint"

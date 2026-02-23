@@ -18,6 +18,7 @@ Create a `stylelint.config.js` in your project root:
 Uses `stylelint-config-standard` and `stylelint-config-recess-order`.
 
 ```js
+/** @type {import('stylelint').Config} */
 export default {
   extends: ['@tofrankie/stylelint'],
 }
@@ -26,6 +27,7 @@ export default {
 ### SCSS
 
 ```js
+/** @type {import('stylelint').Config} */
 export default {
   extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/scss'],
 }
@@ -34,6 +36,7 @@ export default {
 ### Vue
 
 ```js
+/** @type {import('stylelint').Config} */
 export default {
   extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/vue'],
 }
@@ -45,6 +48,7 @@ export default {
 - Supports `page` as a selector type.
 
 ```js
+/** @type {import('stylelint').Config} */
 export default {
   extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/miniapp'],
 }
@@ -55,6 +59,7 @@ export default {
 Suppresses formatting for `1Px` and `1PX` units. [Details](https://github.com/cuth/postcss-pxtorem/#a-message-about-ignoring-properties)
 
 ```js
+/** @type {import('stylelint').Config} */
 export default {
   extends: ['@tofrankie/stylelint/standard', '@tofrankie/stylelint/min-pixel'],
 }
@@ -63,6 +68,7 @@ export default {
 ### WeChat SVG
 
 ```js
+/** @type {import('stylelint').Config} */
 export default {
   extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/wechat-svg'],
 }
