@@ -60,6 +60,14 @@ export default {
 }
 ```
 
+### WeChat SVG
+
+```js
+export default {
+  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/wechat-svg'],
+}
+```
+
 ### Combining configs
 
 You can combine any of the configs above. Later entries in `extends` override earlier ones.

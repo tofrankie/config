@@ -1,5 +1,11 @@
 # Changelog
 
+## stylelint@0.0.4 (2026-02-24)
+
+- Add `wechat-svg` config
+- Add `@stylistic/declaration-block-semicolon-space-after`, `@stylistic/string-quotes` rules
+- Add `function-url-quotes` rule
+
 ## stylelint@0.0.3 (2026-02-23)
 
 - Add `declaration-property-value-no-unknown` rule for miniapp
