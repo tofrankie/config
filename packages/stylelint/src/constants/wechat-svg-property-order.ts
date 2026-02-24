@@ -1,5 +1,60 @@
 // stylelint-config-recess-order: https://github.com/stormwarning/stylelint-config-recess-order/blob/b4cd7db6ce868f91e9e1cb4d150cdb4140ecceab/groups.js
 export const WECHAT_SVG_PROPERTY_ORDER = [
+  {
+    properties: [
+      'opacity',
+      'visibility',
+      'pointer-events',
+
+      // Box sizing Group
+      'width',
+      'min-width',
+      'max-width',
+      'height',
+      'min-height',
+      'max-height',
+      'aspect-ratio',
+
+      // Box Model Group
+      'padding',
+      'padding-block',
+      'padding-block-start',
+      'padding-block-end',
+      'padding-inline',
+      'padding-inline-start',
+      'padding-inline-end',
+      'padding-top',
+      'padding-right',
+      'padding-bottom',
+      'padding-left',
+      'margin',
+      'margin-block',
+      'margin-block-start',
+      'margin-block-end',
+      'margin-inline',
+      'margin-inline-start',
+      'margin-inline-end',
+      'margin-top',
+      'margin-right',
+      'margin-bottom',
+      'margin-left',
+
+      'display',
+      'vertical-align',
+
+      // Transforms Group
+      'transform',
+      'transform-origin',
+      'transform-box',
+      'transform-style',
+      'rotate',
+      'scale',
+      'translate',
+      'perspective',
+      'perspective-origin',
+      'backface-visibility',
+    ],
+  },
   /**
    * Compose rules from other selectors in CSS Modules.
    * @see https://github.com/css-modules/css-modules#composition
@@ -45,7 +100,12 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display#reference
    */
   {
-    properties: ['box-sizing', 'display', 'visibility'],
+    properties: [
+      'box-sizing',
+      // original order
+      // 'display',
+      // 'visibility',
+    ],
   },
 
   /**
@@ -130,16 +190,18 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
       'inline-size',
       'min-inline-size',
       'max-inline-size',
-      'width',
-      'min-width',
-      'max-width',
+      // original order
+      // 'width',
+      // 'min-width',
+      // 'max-width',
       'block-size',
       'min-block-size',
       'max-block-size',
-      'height',
-      'min-height',
-      'max-height',
-      'aspect-ratio',
+      // original order
+      // 'height',
+      // 'min-height',
+      // 'max-height',
+      // 'aspect-ratio',
       'contain-intrinsic-inline-size',
       'contain-intrinsic-block-size',
       'contain-intrinsic-size', // Shorthand for `-width` & `-height`.
@@ -154,28 +216,29 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
    */
   {
     properties: [
-      'padding',
-      'padding-block',
-      'padding-block-start',
-      'padding-block-end',
-      'padding-inline',
-      'padding-inline-start',
-      'padding-inline-end',
-      'padding-top',
-      'padding-right',
-      'padding-bottom',
-      'padding-left',
-      'margin',
-      'margin-block',
-      'margin-block-start',
-      'margin-block-end',
-      'margin-inline',
-      'margin-inline-start',
-      'margin-inline-end',
-      'margin-top',
-      'margin-right',
-      'margin-bottom',
-      'margin-left',
+      // original order
+      // 'padding',
+      // 'padding-block',
+      // 'padding-block-start',
+      // 'padding-block-end',
+      // 'padding-inline',
+      // 'padding-inline-start',
+      // 'padding-inline-end',
+      // 'padding-top',
+      // 'padding-right',
+      // 'padding-bottom',
+      // 'padding-left',
+      // 'margin',
+      // 'margin-block',
+      // 'margin-block-start',
+      // 'margin-block-end',
+      // 'margin-inline',
+      // 'margin-inline-start',
+      // 'margin-inline-end',
+      // 'margin-top',
+      // 'margin-right',
+      // 'margin-bottom',
+      // 'margin-left',
     ],
   },
 
@@ -285,7 +348,8 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
   {
     properties: [
       'line-height',
-      'vertical-align',
+      // original order
+      // 'vertical-align',
       'alignment-baseline',
       'baseline-shift',
       'dominant-baseline',
@@ -394,7 +458,8 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
     properties: [
       'appearance',
       'accent-color',
-      'pointer-events',
+      // original order
+      // 'pointer-events',
       '-ms-touch-action',
       'touch-action',
       'cursor',
@@ -526,19 +591,19 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
   {
     properties: [
       'background',
-      'background-color',
-      'background-image',
+      'background-size',
+      'background-position',
+      'background-position-x',
+      'background-position-y',
       String.raw`-ms-filter:\'progid:DXImageTransform.Microsoft.gradient`,
       'filter:progid:DXImageTransform.Microsoft.gradient',
       'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader',
       'background-repeat',
       'background-attachment',
-      'background-position',
-      'background-position-x',
-      'background-position-y',
       'background-clip',
       'background-origin',
-      'background-size',
+      'background-color',
+      'background-image',
       'border',
       'border-color',
       'border-style',
@@ -646,7 +711,7 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
       'mix-blend-mode',
       'filter:progid:DXImageTransform.Microsoft.Alpha(Opacity',
       String.raw`-ms-filter:\'progid:DXImageTransform.Microsoft.Alpha`,
-      'opacity',
+      // 'opacity', // original order
     ],
   },
 
@@ -756,16 +821,17 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
    */
   {
     properties: [
-      'transform',
-      'transform-origin',
-      'transform-box',
-      'transform-style',
-      'rotate',
-      'scale',
-      'translate',
-      'perspective',
-      'perspective-origin',
-      'backface-visibility',
+      // original order
+      // 'transform',
+      // 'transform-origin',
+      // 'transform-box',
+      // 'transform-style',
+      // 'rotate',
+      // 'scale',
+      // 'translate',
+      // 'perspective',
+      // 'perspective-origin',
+      // 'backface-visibility',
     ],
   },
 

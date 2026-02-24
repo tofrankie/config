@@ -14,5 +14,10 @@ export default {
     ],
     // https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md
     'order/properties-order': WECHAT_SVG_PROPERTY_ORDER,
+    // https://stylelint.io/user-guide/rules/value-keyword-case/#ignorekeywords
+    'value-keyword-case': [
+      'lower',
+      { ignoreKeywords: ['visiblePainted', 'visibleFill', 'visibleStroke'] },
+    ],
   },
 } satisfies Config

@@ -1,5 +1,10 @@
 # Changelog
 
+## stylelint@0.0.5 (2026-02-24)
+
+- Add `value-keyword-case` rule
+- Update `order/properties-order` rule
+
 ## stylelint@0.0.4 (2026-02-24)
 
 - Add `wechat-svg` config

@@ -17,7 +17,7 @@ export default {
   plugins: ['@stylistic/stylelint-plugin'],
   rules: {
     'function-url-quotes': 'never',
-    // TODO: 对内联样式不起作用，如果在两个属性之间自动添加空格，得用 Prettier 处理
+    // TODO: 对内联样式不起作用，如果要在两个属性之间自动添加空格，得用 Prettier 处理，临时解决方案是先 stylelint 再 prettier
     // https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md
     '@stylistic/declaration-block-semicolon-space-after': 'always-single-line',
     // https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md#options
