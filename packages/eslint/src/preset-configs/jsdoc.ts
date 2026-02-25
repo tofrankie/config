@@ -11,6 +11,7 @@ const SHARED_RULES = {
   'jsdoc/require-returns-type': 'off',
   'jsdoc/require-returns-description': 'off',
   'jsdoc/newline-after-description': 'off',
+  'jsdoc/reject-any-type': 'off',
 } as const
 
 const SHARED_SETTINGS = {
