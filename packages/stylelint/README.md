@@ -51,6 +51,15 @@ export default {
 /** @type {import('stylelint').Config} */
 export default {
   extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/miniapp'],
+  overrides: [
+    {
+      files: ['**/*.wxss'],
+      rules: {
+        // wxss files can be empty
+        'no-empty-source': null,
+      },
+    },
+  ],
 }
 ```
 
