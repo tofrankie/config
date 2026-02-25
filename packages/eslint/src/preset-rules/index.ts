@@ -5,6 +5,7 @@ import { BASE_PRESET_RULES } from './base'
 import { ESLINT_COMMENTS_PRESET_RULES } from './eslint-comments'
 import { NODE_PRESET_RULES } from './node'
 import { PNPM_PRESET_RULES } from './pnpm'
+import { REACT_PRESET_RULES } from './react'
 import { STYLE_PRESET_RULES } from './style'
 import { TEST_PRESET_RULES } from './test'
 import { VUE_PRESET_RULES } from './vue'
@@ -37,6 +38,10 @@ const PRESET_PREDICATES: Array<{
   {
     rules: VUE_PRESET_RULES,
     predicate: options => (options as Record<string, unknown>).vue === true,
+  },
+  {
+    rules: REACT_PRESET_RULES,
+    predicate: options => (options as Record<string, unknown>).react === true,
   },
 ]
 
