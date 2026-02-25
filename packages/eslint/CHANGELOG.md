@@ -1,5 +1,11 @@
 # Changelog
 
+## eslint@0.0.10 (2026-02-26)
+
+- Update `@antfu/eslint-config` to v7.6.1 and its related dependencies
+- Disable `react-hooks-extra/no-direct-set-state-in-use-effect` rule
+- Disable `jsdoc/reject-any-type` rule
+
 ## eslint@0.0.9 (2026-02-22)
 
 - Disable `vue/singleline-html-element-content-newline`, `vue/html-closing-bracket-newline`, `vue/html-indent` to avoid conflicts with Prettier
