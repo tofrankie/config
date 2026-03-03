@@ -1,5 +1,7 @@
 # @tofrankie/prettier
 
+![npm version](https://img.shields.io/npm/v/@tofrankie/prettier) ![node version](https://img.shields.io/node/v/@tofrankie/prettier) ![npm package license](https://img.shields.io/npm/l/@tofrankie/prettier) ![npm last update](https://img.shields.io/npm/last-update/@tofrankie/prettier)
+
 A shared [Prettier](https://prettier.io/docs/configuration) configuration.
 
 ## Quick Start

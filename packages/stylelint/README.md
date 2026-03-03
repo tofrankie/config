@@ -1,5 +1,7 @@
 # @tofrankie/stylelint
 
+![npm version](https://img.shields.io/npm/v/@tofrankie/stylelint) ![node version](https://img.shields.io/node/v/@tofrankie/stylelint) ![npm package license](https://img.shields.io/npm/l/@tofrankie/stylelint) ![npm last update](https://img.shields.io/npm/last-update/@tofrankie/stylelint)
+
 A shared [Stylelint](https://stylelint.io/user-guide/get-started) configuration.
 
 > [!IMPORTANT]

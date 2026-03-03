@@ -1,5 +1,7 @@
 # @tofrankie/eslint
 
+![npm version](https://img.shields.io/npm/v/@tofrankie/eslint) ![node version](https://img.shields.io/node/v/@tofrankie/eslint) ![npm package license](https://img.shields.io/npm/l/@tofrankie/eslint) ![npm last update](https://img.shields.io/npm/last-update/@tofrankie/eslint)
+
 A shared ESLint configuration based on [@antfu/eslint-config](https://github.com/antfu/eslint-config), with preset rules tailored to personal preferences.
 
 > [!IMPORTANT]

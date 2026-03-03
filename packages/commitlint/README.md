@@ -1,5 +1,7 @@
 # @tofrankie/commitlint
 
+![npm version](https://img.shields.io/npm/v/@tofrankie/commitlint) ![node version](https://img.shields.io/node/v/@tofrankie/commitlint) ![npm package license](https://img.shields.io/npm/l/@tofrankie/commitlint) ![npm last update](https://img.shields.io/npm/last-update/@tofrankie/commitlint)
+
 A shared [commitlint](https://commitlint.js.org/guides/getting-started.html) configuration.
 
 ## Quick Start
