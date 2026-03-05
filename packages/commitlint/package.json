@@ -50,10 +50,10 @@
     "@commitlint/cli": ">=20.0.0"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^20.4.1"
+    "@commitlint/config-conventional": "catalog:prod"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.1",
-    "@commitlint/types": "^20.4.0"
+    "@commitlint/cli": "catalog:peer",
+    "@commitlint/types": "catalog:types"
   }
 }

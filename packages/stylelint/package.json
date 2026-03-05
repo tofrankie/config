@@ -111,16 +111,16 @@
     "stylelint": "^17.3.0"
   },
   "dependencies": {
-    "@stylistic/stylelint-plugin": "^5.0.1",
-    "postcss": "^8.5.6",
-    "postcss-html": "^1.8.1",
-    "stylelint-config-recess-order": "^7.6.1",
-    "stylelint-config-recommended-vue": "^1.6.1",
-    "stylelint-config-standard": "^40.0.0",
-    "stylelint-config-standard-scss": "^17.0.0",
-    "stylelint-order": "^7.0.1"
+    "@stylistic/stylelint-plugin": "catalog:prod",
+    "postcss": "catalog:prod",
+    "postcss-html": "catalog:prod",
+    "stylelint-config-recess-order": "catalog:prod",
+    "stylelint-config-recommended-vue": "catalog:prod",
+    "stylelint-config-standard": "catalog:prod",
+    "stylelint-config-standard-scss": "catalog:prod",
+    "stylelint-order": "catalog:prod"
   },
   "devDependencies": {
-    "stylelint": "^17.3.0"
+    "stylelint": "catalog:peer"
   }
 }

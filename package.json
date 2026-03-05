@@ -6,6 +6,7 @@
   "packageManager": "pnpm@10.28.0",
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
+  "homepage": "https://github.com/tofrankie/config",
   "keywords": [
     "eslint",
     "prettier",
@@ -27,15 +28,14 @@
     "@tofrankie/commitlint": "workspace:*",
     "@tofrankie/eslint": "workspace:*",
     "@tofrankie/prettier": "workspace:*",
-    "@types/node": "^25.2.2",
-    "eslint": "^9.39.2",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
-    "npm-run-all2": "^8.0.4",
-    "prettier": "^3.8.1",
-    "publint": "^0.3.17",
-    "stylelint": "^17.1.1",
-    "tsdown": "^0.20.3",
-    "typescript": "^5.9.3"
+    "@types/node": "catalog:types",
+    "eslint": "catalog:peer",
+    "husky": "catalog:dev",
+    "lint-staged": "catalog:dev",
+    "npm-run-all2": "catalog:dev",
+    "prettier": "catalog:peer",
+    "publint": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "typescript": "catalog:dev"
   }
 }

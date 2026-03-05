@@ -1,9 +1,6 @@
 # @tofrankie/config
 
-Shared configuration for ESLint, Prettier, Stylelint, and commitlint.
-
-> [!IMPORTANT]
-> Rule presets in **@tofrankie/eslint** and **@tofrankie/stylelint** are not yet stable and may change.
+Shared configuration for ESLint, Prettier, Stylelint, and Commitlint.
 
 ## Packages
 
@@ -14,9 +11,14 @@ Shared configuration for ESLint, Prettier, Stylelint, and commitlint.
 | [@tofrankie/stylelint](packages/stylelint)   | <a href="https://www.npmjs.com/package/@tofrankie/stylelint"><img src="https://img.shields.io/npm/v/@tofrankie/stylelint?label=%20" alt="NPM Version"></a>   | <a href="https://www.npmjs.com/package/@tofrankie/stylelint"><img src="https://img.shields.io/npm/last-update/@tofrankie/stylelint?label=%20" alt="NPM Last Update"></a>   |
 | [@tofrankie/commitlint](packages/commitlint) | <a href="https://www.npmjs.com/package/@tofrankie/commitlint"><img src="https://img.shields.io/npm/v/@tofrankie/commitlint?label=%20" alt="NPM Version"></a> | <a href="https://www.npmjs.com/package/@tofrankie/commitlint"><img src="https://img.shields.io/npm/last-update/@tofrankie/commitlint?label=%20" alt="NPM Last Update"></a> |
 
+> [!IMPORTANT]
+> Rule presets in **@tofrankie/eslint** and **@tofrankie/stylelint** are not yet stable and may change.
+
 ## Usage
 
 ### ESLint
+
+[More](packages/eslint/README.md)
 
 ```bash
 $ pnpm add eslint @tofrankie/eslint -D
@@ -32,6 +34,8 @@ export default defineConfig()
 
 ### Prettier
 
+[More](packages/prettier/README.md)
+
 ```bash
 $ pnpm add prettier @tofrankie/prettier -D
 ```
@@ -43,6 +47,8 @@ export default '@tofrankie/prettier'
 ```
 
 ### Stylelint
+
+[More](packages/stylelint/README.md)
 
 ```bash
 $ pnpm add stylelint @tofrankie/stylelint -D
@@ -58,6 +64,8 @@ export default {
 
 ### Commitlint
 
+[More](packages/commitlint/README.md)
+
 ```bash
 $ pnpm add commitlint @tofrankie/commitlint -D
 ```
@@ -69,3 +77,7 @@ export default {
   extends: ['@tofrankie/commitlint'],
 }
 ```
+
+## Others
+
+Use [@antfu/nip](https://github.com/antfu/nip) to manage dependencies and keep [pnpm catalogs](https://antfu.me/posts/categorize-deps) in sync.
