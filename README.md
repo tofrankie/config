@@ -1,6 +1,6 @@
 # @tofrankie/config
 
-Shared configuration for ESLint, Prettier, Stylelint, and Commitlint.
+Shared configuration for ESLint, Prettier, Stylelint and Commitlint.
 
 ## Packages
 

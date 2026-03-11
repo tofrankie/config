@@ -6,6 +6,6 @@ dist/
 .env
 **local.*
 
-.hghusky/_/
+.husky/_/
 .eslintcache
 .stylelintcache
