@@ -9,20 +9,18 @@ catalogs:
     publint: ^0.3.17
     tsdown: ^0.20.3
     typescript: ^5.9.3
-
   peer:
-    '@antfu/eslint-config': ^7.6.1
+    '@antfu/eslint-config': ^7.7.2
     '@commitlint/cli': ^20.4.1
-    eslint: ^9.39.2
+    eslint: ^9.39.4
     prettier: ^3.8.1
     stylelint: ^17.3.0
-
   prod:
     '@commitlint/config-conventional': ^20.4.1
     '@eslint-react/eslint-plugin': ^2.13.0
     '@stylistic/stylelint-plugin': ^5.0.1
     eslint-plugin-format: ^2.0.1
-    eslint-plugin-jsdoc: ^62.7.1
+    eslint-plugin-jsdoc: ^62.8.0
     eslint-plugin-react-hooks: ^7.0.1
     eslint-plugin-react-refresh: ^0.5.2
     lodash.merge: ^4.6.2
@@ -34,7 +32,6 @@ catalogs:
     stylelint-config-standard: ^40.0.0
     stylelint-config-standard-scss: ^17.0.0
     stylelint-order: ^7.0.1
-
   types:
     '@commitlint/types': ^20.4.0
     '@types/lodash.merge': ^4.6.9

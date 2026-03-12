@@ -18,12 +18,39 @@ export const STYLE_PRESET_RULES: Linter.RulesRecord = {
     'error',
     'before',
     {
+      // 与 Prettier 保持一致
       overrides: {
         '&&': 'after',
         '||': 'after',
+        '??': 'after',
         '=': 'after',
+        '+': 'after',
+        '-': 'after',
       },
     },
   ],
   'style/comma-dangle': 'off', // 交由 prettier 处理
+  'style/indent-binary-ops': 'off', // 交由 prettier 处理
+  'style/member-delimiter-style': [
+    'error',
+    {
+      multiline: {
+        delimiter: 'none',
+        requireLast: false,
+      },
+      singleline: {
+        delimiter: 'semi', // 与 Prettier 保持一致
+        requireLast: false,
+      },
+      multilineDetection: 'brackets',
+      overrides: {
+        interface: {
+          multiline: {
+            delimiter: 'none',
+            requireLast: false,
+          },
+        },
+      },
+    },
+  ],
 }
