@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.0.13 (2026-03-14)
+
+- Disable `style/multiline-ternary`, `style/jsx-wrap-multilines`, `style/jsx-curly-newline`, `style/jsx-one-expression-per-line` rules to avoid conflicts with Prettier
+
 ## eslint@0.0.12 (2026-03-13)
 
 - Update `style/operator-linebreak` rule

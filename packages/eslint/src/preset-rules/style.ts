@@ -30,9 +30,6 @@ export const STYLE_PRESET_RULES: Linter.RulesRecord = {
       },
     },
   ],
-  'style/comma-dangle': 'off', // 交由 prettier 处理
-  'style/indent': 'off', // 交由 prettier 处理
-  'style/indent-binary-ops': 'off', // 交由 prettier 处理
   'style/member-delimiter-style': [
     'error',
     {
@@ -55,4 +52,12 @@ export const STYLE_PRESET_RULES: Linter.RulesRecord = {
       },
     },
   ],
+  // 关闭以下样式相关的规则，交由 prettier 处理
+  'style/comma-dangle': 'off',
+  'style/indent': 'off',
+  'style/indent-binary-ops': 'off',
+  'style/multiline-ternary': 'off',
+  'style/jsx-wrap-multilines': 'off',
+  'style/jsx-curly-newline': 'off',
+  'style/jsx-one-expression-per-line': 'off',
 }
