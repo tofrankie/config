@@ -1,5 +1,10 @@
 # Changelog
 
+## eslint@0.0.12 (2026-03-13)
+
+- Update `style/operator-linebreak` rule
+- Disable `style/indent` rule to avoid conflicts with Prettier
+
 ## eslint@0.0.11 (2026-03-13)
 
 - Add `style/member-delimiter-style` rule

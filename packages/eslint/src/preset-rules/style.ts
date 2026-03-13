@@ -26,10 +26,12 @@ export const STYLE_PRESET_RULES: Linter.RulesRecord = {
         '=': 'after',
         '+': 'after',
         '-': 'after',
+        '&': 'after',
       },
     },
   ],
   'style/comma-dangle': 'off', // 交由 prettier 处理
+  'style/indent': 'off', // 交由 prettier 处理
   'style/indent-binary-ops': 'off', // 交由 prettier 处理
   'style/member-delimiter-style': [
     'error',
