@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/stylelint",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "packageManager": "pnpm@10.28.0",
   "description": "Shared Stylelint configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -45,6 +45,16 @@
       "require": {
         "types": "./dist/miniapp.d.cts",
         "default": "./dist/miniapp.cjs"
+      }
+    },
+    "./uniapp": {
+      "import": {
+        "types": "./dist/uniapp.d.mts",
+        "default": "./dist/uniapp.mjs"
+      },
+      "require": {
+        "types": "./dist/uniapp.d.cts",
+        "default": "./dist/uniapp.cjs"
       }
     },
     "./min-pixel": {
@@ -114,6 +124,7 @@
     "@stylistic/stylelint-plugin": "catalog:prod",
     "postcss": "catalog:prod",
     "postcss-html": "catalog:prod",
+    "postcss-scss": "catalog:prod",
     "stylelint-config-recess-order": "catalog:prod",
     "stylelint-config-recommended-vue": "catalog:prod",
     "stylelint-config-standard": "catalog:prod",

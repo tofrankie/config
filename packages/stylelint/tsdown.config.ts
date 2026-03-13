@@ -5,6 +5,7 @@ export default defineConfig({
     index: 'src/index.ts',
     standard: 'src/standard.ts',
     miniapp: 'src/miniapp.ts',
+    uniapp: 'src/uniapp.ts',
     'min-pixel': 'src/min-pixel.ts',
     scss: 'src/scss.ts',
     vue: 'src/vue.ts',

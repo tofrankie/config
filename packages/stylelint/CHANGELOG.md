@@ -1,5 +1,11 @@
 # Changelog
 
+## stylelint@0.0.6 (2026-03-14)
+
+- Add `uniapp` config
+- Update `@tofrankie/stylelint/vue` customSyntax to `postcss-html`
+- Update `stylelint`, `stylelint-order` dependencies
+
 ## stylelint@0.0.5 (2026-02-24)
 
 - Add `value-keyword-case` rule

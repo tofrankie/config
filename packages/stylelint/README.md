@@ -44,6 +44,17 @@ export default {
 }
 ```
 
+Using SCSS in Vue:
+
+> `@tofrankie/stylelint/scss` must come before `@tofrankie/stylelint/vue`.
+
+```js
+/** @type {import('stylelint').Config} */
+export default {
+  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/scss', '@tofrankie/stylelint/vue'],
+}
+```
+
 ### Miniprogram
 
 - Supports `rpx` as a unit.
@@ -65,9 +76,34 @@ export default {
 }
 ```
 
+### Uniapp
+
+```js
+/** @type {import('stylelint').Config} */
+export default {
+  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/vue', '@tofrankie/stylelint/uniapp'],
+}
+```
+
+Using SCSS in Uniapp:
+
+> `@tofrankie/stylelint/scss` must come before `@tofrankie/stylelint/uniapp`.
+
+```js
+/** @type {import('stylelint').Config} */
+export default {
+  extends: [
+    '@tofrankie/stylelint',
+    '@tofrankie/stylelint/scss',
+    '@tofrankie/stylelint/vue',
+    '@tofrankie/stylelint/uniapp',
+  ],
+}
+```
+
 ### Ignore min-pixel formatting
 
-Suppresses formatting for `1Px` and `1PX` units. [Details](https://github.com/cuth/postcss-pxtorem/#a-message-about-ignoring-properties)
+Suppresses formatting for `1Px` and `1PX` units. [More](https://github.com/cuth/postcss-pxtorem/#a-message-about-ignoring-properties)
 
 ```js
 /** @type {import('stylelint').Config} */
