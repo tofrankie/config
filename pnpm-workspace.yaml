@@ -10,12 +10,12 @@ catalogs:
     tsdown: ^0.20.3
     typescript: ^5.9.3
   peer:
-    '@antfu/eslint-config': ^7.7.2
     '@commitlint/cli': ^20.4.1
     eslint: ^9.39.4
     prettier: ^3.8.1
     stylelint: ^17.4.0
   prod:
+    '@antfu/eslint-config': ^7.7.2
     '@commitlint/config-conventional': ^20.4.1
     '@eslint-react/eslint-plugin': ^2.13.0
     '@stylistic/stylelint-plugin': ^5.0.1

@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/eslint",
   "type": "module",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "packageManager": "pnpm@10.28.0",
   "description": "Shared ESLint configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -47,10 +47,10 @@
     "publint": "publint"
   },
   "peerDependencies": {
-    "@antfu/eslint-config": "^7.6.1",
     "eslint": "^9.10.0 || ^10.0.0"
   },
   "dependencies": {
+    "@antfu/eslint-config": "catalog:prod",
     "@eslint-react/eslint-plugin": "catalog:prod",
     "eslint-plugin-format": "catalog:prod",
     "eslint-plugin-jsdoc": "catalog:prod",
@@ -59,7 +59,6 @@
     "lodash.merge": "catalog:prod"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "catalog:peer",
     "@types/lodash.merge": "catalog:types",
     "eslint": "catalog:peer"
   }

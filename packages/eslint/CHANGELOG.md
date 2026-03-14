@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.0.14 (2026-03-14)
+
+- Move `@antfu/eslint-config` from `peerDependencies` to `dependencies`
+
 ## eslint@0.0.13 (2026-03-14)
 
 - Disable `style/multiline-ternary`, `style/jsx-wrap-multilines`, `style/jsx-curly-newline`, `style/jsx-one-expression-per-line` rules to avoid conflicts with Prettier
