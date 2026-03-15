@@ -14,7 +14,29 @@ export const MINIAPP_SHARED_CONFIG = {
   rules: {
     // https://stylelint.io/user-guide/rules/unit-no-unknown/#ignoreunits
     'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
-    'selector-type-no-unknown': [true, { ignoreTypes: ['page'] }],
+    'selector-type-no-unknown': [
+      true,
+      {
+        ignoreTypes: [
+          'page',
+          'radio',
+          'radio-group',
+          'checkbox',
+          'checkbox-group',
+          'switch',
+          'picker',
+          'picker-view',
+          'picker-view-column',
+          'swiper',
+          'slider',
+          'wx-slider',
+          'navigator',
+          'scroll-view',
+          'cover-view',
+          'cover-image',
+        ],
+      },
+    ],
     // https://stylelint.io/user-guide/rules/declaration-property-value-no-unknown/
     // https://github.com/stylelint/stylelint/issues/9037#issuecomment-3891721635
     'declaration-property-value-no-unknown': [

@@ -1,5 +1,9 @@
 # Changelog
 
+## stylelint@0.0.7 (2026-03-15)
+
+- Update `selector-type-no-unknown` rule for miniapp
+
 ## stylelint@0.0.6 (2026-03-14)
 
 - Add `uniapp` config
