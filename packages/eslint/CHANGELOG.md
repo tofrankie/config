@@ -1,5 +1,10 @@
 # Changelog
 
+## eslint@0.0.15 (2026-03-17)
+
+- Require Node.js 20.x (`engines: ^20.0.0 || ^22.0.0 || ^24.0.0`)
+- Update `@antfu/eslint-config` to `v7.7.3`
+
 ## eslint@0.0.14 (2026-03-14)
 
 - Move `@antfu/eslint-config` from `peerDependencies` to `dependencies`

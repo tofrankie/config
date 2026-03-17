@@ -21,6 +21,26 @@ import { defineConfig } from '@tofrankie/eslint'
 export default defineConfig()
 ```
 
+```js
+import { defineConfig } from '@tofrankie/eslint'
+
+export default defineConfig(
+  {
+    // antfu options...
+    ignores: ['node_modules', 'dist'],
+    typescript: true,
+    react: true,
+    rules: {
+      // user's custom rules...
+      'no-console': 'off',
+    },
+  },
+  {
+    // user's eslint flat configs...
+  }
+)
+```
+
 ## Configuration Examples
 
 ### Miniapp
