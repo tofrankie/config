@@ -1,5 +1,10 @@
 # Changelog
 
+## stylelint@0.0.8 (2026-03-18)
+
+- Update `stylelint-config-recess-order` to `v7.7.0`
+- Update `stylelint-order` to `v8.1.1`
+
 ## stylelint@0.0.7 (2026-03-15)
 
 - Update `selector-type-no-unknown` rule for miniapp
