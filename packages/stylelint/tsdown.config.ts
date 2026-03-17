@@ -9,6 +9,7 @@ export default defineConfig({
     'min-pixel': 'src/min-pixel.ts',
     scss: 'src/scss.ts',
     vue: 'src/vue.ts',
+    'vue-scss': 'src/vue-scss.ts',
     'wechat-svg': 'src/wechat-svg.ts',
   },
   format: ['esm', 'cjs'],

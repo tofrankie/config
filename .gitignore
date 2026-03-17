@@ -9,3 +9,4 @@ dist/
 .husky/_/
 .eslintcache
 .stylelintcache
+**/docs/**

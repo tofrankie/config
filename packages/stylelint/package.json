@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/stylelint",
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "packageManager": "pnpm@10.32.0",
   "description": "Shared Stylelint configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -87,6 +87,16 @@
         "default": "./dist/vue.cjs"
       }
     },
+    "./vue-scss": {
+      "import": {
+        "types": "./dist/vue-scss.d.mts",
+        "default": "./dist/vue-scss.mjs"
+      },
+      "require": {
+        "types": "./dist/vue-scss.d.cts",
+        "default": "./dist/vue-scss.cjs"
+      }
+    },
     "./wechat-svg": {
       "import": {
         "types": "./dist/wechat-svg.d.mts",
@@ -125,10 +135,11 @@
     "postcss": "catalog:prod",
     "postcss-html": "catalog:prod",
     "postcss-scss": "catalog:prod",
+    "stylelint-config-html": "catalog:prod",
     "stylelint-config-recess-order": "catalog:prod",
-    "stylelint-config-recommended-vue": "catalog:prod",
     "stylelint-config-standard": "catalog:prod",
     "stylelint-config-standard-scss": "catalog:prod",
+    "stylelint-config-standard-vue": "catalog:prod",
     "stylelint-order": "catalog:prod"
   },
   "devDependencies": {

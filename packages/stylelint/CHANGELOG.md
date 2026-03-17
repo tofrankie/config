@@ -1,5 +1,11 @@
 # Changelog
 
+## stylelint@0.0.9 (2026-03-19)
+
+- Integrate stylelint-config-html: default preset uses `stylelint-config-html/html` for HTML parsing
+- Refactor `@tofrankie/stylelint/vue` and `@tofrankie/stylelint/vue-scss`: add dedicated `vue-scss` preset (extends `stylelint-config-standard-vue/scss`)
+- Miniprogram: add `.wxml` support
+
 ## stylelint@0.0.8 (2026-03-18)
 
 - Update `stylelint-config-recess-order` to `v7.7.0`

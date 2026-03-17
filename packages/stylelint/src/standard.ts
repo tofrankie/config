@@ -9,6 +9,8 @@ export default {
     'stylelint-config-standard',
     // https://github.com/stormwarning/stylelint-config-recess-order
     'stylelint-config-recess-order',
+    // https://github.com/ota-meshi/stylelint-config-html — HTML only (no Vue/Svelte/etc.)
+    'stylelint-config-html/html',
   ],
   // https://github.com/stylelint-stylistic/stylelint-stylistic
   // https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/docs/user-guide/rules.md
@@ -24,10 +26,4 @@ export default {
     // https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md#options
     '@stylistic/string-quotes': ['single', { avoidEscape: true }],
   },
-  overrides: [
-    {
-      files: ['**/*.html'],
-      customSyntax: 'postcss-html',
-    },
-  ],
 } satisfies Config

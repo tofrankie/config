@@ -13,11 +13,11 @@ A shared [Stylelint](https://stylelint.io/user-guide/get-started) configuration.
 $ pnpm add stylelint @tofrankie/stylelint -D
 ```
 
-Create a `stylelint.config.js` in your project root:
+Create a `stylelint.config.js` in your project root, then extend one or more presets below.
 
-### Default (standard + recess order)
+### Standard
 
-Uses `stylelint-config-standard` and `stylelint-config-recess-order`.
+Standard Stylelint rules, CSS property order, and support for HTML.
 
 ```js
 /** @type {import('stylelint').Config} */
@@ -25,6 +25,19 @@ export default {
   extends: ['@tofrankie/stylelint'],
 }
 ```
+
+<details>
+<summary>Visual Studio Code: enable lint for <code>.html</code> (<a href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">stylelint.vscode-stylelint</a>)</summary>
+
+Add to your `settings.json` (merge into existing `stylelint.validate` if present):
+
+```json
+{
+  "stylelint.validate": ["html"]
+}
+```
+
+</details>
 
 ### SCSS
 
@@ -44,21 +57,33 @@ export default {
 }
 ```
 
-Using SCSS in Vue:
+<details>
+<summary>Visual Studio Code: enable lint for <code>.vue</code> (<a href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">stylelint.vscode-stylelint</a>)</summary>
 
-> `@tofrankie/stylelint/scss` must come before `@tofrankie/stylelint/vue`.
+Add to your `settings.json` (merge into existing `stylelint.validate` if present):
+
+```json
+{
+  "stylelint.validate": ["vue"]
+}
+```
+
+</details>
+
+### Vue + SCSS
 
 ```js
 /** @type {import('stylelint').Config} */
 export default {
-  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/scss', '@tofrankie/stylelint/vue'],
+  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/vue-scss'],
 }
 ```
 
-### Miniprogram
+### Native Miniprogram
 
 - Supports `rpx` as a unit.
 - Supports `page` as a selector type.
+- Parses `.wxss` (PostCSS) and `.wxml` (postcss-html) for miniprogram styles.
 
 ```js
 /** @type {import('stylelint').Config} */
@@ -76,7 +101,22 @@ export default {
 }
 ```
 
+<details>
+<summary>Visual Studio Code: enable lint for <code>.wxss</code> and <code>.wxml</code> (<a href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">stylelint.vscode-stylelint</a>)</summary>
+
+Add to your `settings.json` (merge into existing `stylelint.validate` if present):
+
+```json
+{
+  "stylelint.validate": ["wxss", "wxml"]
+}
+```
+
+</details>
+
 ### Uniapp
+
+Vue-based; adds miniprogram-specific rules (e.g. `rpx`, `page` selector).
 
 ```js
 /** @type {import('stylelint').Config} */
@@ -85,19 +125,12 @@ export default {
 }
 ```
 
-Using SCSS in Uniapp:
-
-> `@tofrankie/stylelint/scss` must come before `@tofrankie/stylelint/uniapp`.
+With SCSS, use `vue-scss` then `uniapp`:
 
 ```js
 /** @type {import('stylelint').Config} */
 export default {
-  extends: [
-    '@tofrankie/stylelint',
-    '@tofrankie/stylelint/scss',
-    '@tofrankie/stylelint/vue',
-    '@tofrankie/stylelint/uniapp',
-  ],
+  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/vue-scss', '@tofrankie/stylelint/uniapp'],
 }
 ```
 
@@ -123,4 +156,4 @@ export default {
 
 ### Combining configs
 
-You can combine any of the configs above. Later entries in `extends` override earlier ones.
+Combine presets as needed; later entries in `extends` override earlier ones. Use either `vue` or `vue-scss` (not both)—`vue-scss` already includes Vue.
