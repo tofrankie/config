@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '.changeset/**'
+      - '.changeset/*.md'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -24,14 +24,14 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: pnpm
-
-      - name: Install Dependencies
-        run: pnpm install
 
       - name: Automatic Versioning and Publishing
         id: release
@@ -39,6 +39,8 @@ jobs:
           # Check whether there are any unconsumed changesets
           if [ -d ".changeset" ] && [ "$(ls -A .changeset/*.md 2>/dev/null)" ]; then
             echo "Changesets found. Performing automatic versioning..."
+
+            pnpm install --frozen-lockfile
 
             # 1. Run versioning (including your custom changelog formatting)
             pnpm release:version
