@@ -44,6 +44,11 @@ jobs:
 
             pnpm install --frozen-lockfile
 
+            # changeset version may load root prettier.config.js during formatting.
+            # Root prettier config imports @tofrankie/prettier from workspace dist outputs.
+            # Build it first in CI to avoid ERR_MODULE_NOT_FOUND on missing dist/index.mjs.
+            pnpm --filter @tofrankie/prettier build
+
             # 1. Run versioning (including your custom changelog formatting)
             pnpm release:version
 
