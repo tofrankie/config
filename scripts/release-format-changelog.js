@@ -7,6 +7,8 @@ const rootDir = path.resolve(__dirname, '..')
 
 const date = new Date().toISOString().slice(0, 10) // YYYY-MM-DD
 
+formatChangelog()
+
 /**
  * Release changelog formatting script
  * After version updates, it replaces `## 0.0.1` with `## pkg@0.0.1 (YYYY-MM-DD)`.
@@ -36,5 +38,3 @@ function formatChangelog() {
     }
   }
 }
-
-formatChangelog()
