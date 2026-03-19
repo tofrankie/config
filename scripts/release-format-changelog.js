@@ -24,11 +24,13 @@ function formatChangelog() {
 
     if (fs.existsSync(changelogPath) && fs.existsSync(packageJsonPath)) {
       const pkgName = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8')).name
+      // Strip npm scope for changelog titles: "@scope/name" -> "name"
+      const pkgDisplayName = pkgName.includes('/') ? pkgName.split('/').pop() : pkgName
       const content = fs.readFileSync(changelogPath, 'utf8')
 
       const newContent = content.replace(/^## (\d+\.\d+\.\d+)/gm, (match, version) => {
         if (match.includes('@') && match.includes('(')) return match
-        return `## ${pkgName}@${version} (${date})`
+        return `## ${pkgDisplayName}@${version} (${date})`
       })
 
       if (content !== newContent) {
