@@ -22,9 +22,14 @@
     "lint:eslint": "eslint . --cache --fix",
     "lint:prettier": "prettier . --cache --write --log-level silent",
     "lint:publish": "pnpm -r --filter=@tofrankie/* publint",
-    "eslint:inspect": "eslint --inspect-config"
+    "eslint:inspect": "eslint --inspect-config",
+    "changeset": "changeset",
+    "release:version": "changeset version",
+    "postrelease:version": "node scripts/release-format-changelog.js",
+    "release:publish": "changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "catalog:dev",
     "@tofrankie/commitlint": "workspace:*",
     "@tofrankie/eslint": "workspace:*",
     "@tofrankie/prettier": "workspace:*",
