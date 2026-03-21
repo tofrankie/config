@@ -4,6 +4,7 @@ packages:
 catalogs:
   dev:
     '@changesets/cli': ^2.30.0
+    '@tofrankie/action': ^0.0.3
     husky: ^9.1.7
     lint-staged: ^16.4.0
     npm-run-all2: ^8.0.4

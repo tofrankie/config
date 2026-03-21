@@ -26,10 +26,12 @@
     "changeset": "changeset",
     "release:version": "changeset version",
     "postrelease:version": "node scripts/release-format-changelog.js",
-    "release:publish": "changeset publish"
+    "release:publish": "changeset publish",
+    "github:release": "tfr"
   },
   "devDependencies": {
     "@changesets/cli": "catalog:dev",
+    "@tofrankie/action": "catalog:dev",
     "@tofrankie/commitlint": "workspace:*",
     "@tofrankie/eslint": "workspace:*",
     "@tofrankie/prettier": "workspace:*",
