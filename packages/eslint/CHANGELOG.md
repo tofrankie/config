@@ -1,5 +1,11 @@
 # Changelog
 
+## eslint@0.0.16 (2026-03-24)
+
+- Add `unicorn/number-literal-case` rule
+- Update `style/operator-linebreak` rule
+- Disable `e18e/ban-dependencies`、`e18e/prefer-array-to-sorted`、`e18e/prefer-static-regex` rules
+
 ## eslint@0.0.15 (2026-03-17)
 
 - Require Node.js 20.x (`engines: ^20.0.0 || ^22.0.0 || ^24.0.0`)

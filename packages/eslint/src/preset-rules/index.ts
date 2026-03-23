@@ -2,22 +2,28 @@ import type { Linter } from 'eslint'
 import type { OptionsConfig } from '../types'
 import { ANTFU_PRESET_RULES } from './antfu'
 import { BASE_PRESET_RULES } from './base'
+import { E8E_PRESET_RULES } from './e8e'
 import { ESLINT_COMMENTS_PRESET_RULES } from './eslint-comments'
 import { NODE_PRESET_RULES } from './node'
 import { PNPM_PRESET_RULES } from './pnpm'
 import { REACT_PRESET_RULES } from './react'
 import { STYLE_PRESET_RULES } from './style'
 import { TEST_PRESET_RULES } from './test'
+import { UNICORN_PRESET_RULES } from './unicorn'
 import { VUE_PRESET_RULES } from './vue'
 
 export const ALL_PRESET_RULES = {
   ...ANTFU_PRESET_RULES,
   ...BASE_PRESET_RULES,
+  ...E8E_PRESET_RULES,
   ...ESLINT_COMMENTS_PRESET_RULES,
   ...NODE_PRESET_RULES,
   ...PNPM_PRESET_RULES,
+  ...REACT_PRESET_RULES,
   ...STYLE_PRESET_RULES,
   ...TEST_PRESET_RULES,
+  ...UNICORN_PRESET_RULES,
+  ...VUE_PRESET_RULES,
 }
 
 // 如果关闭 antfu 对应选项，则不加载相关预设 rules，以避免 lint 时找不到规则而报错
@@ -43,6 +49,8 @@ const PRESET_PREDICATES: Array<{
     rules: REACT_PRESET_RULES,
     predicate: options => (options as Record<string, unknown>).react === true,
   },
+  { rules: E8E_PRESET_RULES },
+  { rules: UNICORN_PRESET_RULES },
 ]
 
 export function buildPresetRules(resolvedOptions: OptionsConfig): Linter.RulesRecord {
