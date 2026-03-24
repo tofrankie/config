@@ -8,6 +8,7 @@ export default defineConfig({
     'src/options/sort-vue.ts',
     'src/options/sort-miniapp.ts',
     'src/options/sort-wechat-svg.ts',
+    'src/options/wxml.ts',
   ],
   format: ['esm', 'cjs'],
   dts: true,

@@ -1,5 +1,9 @@
 # Changelog
 
+## prettier@0.0.6 (2026-03-25)
+
+- Add `wxml` option for WXML files
+
 ## prettier@0.0.5 (2026-02-22)
 
 - Fix parser option in sort-vue
