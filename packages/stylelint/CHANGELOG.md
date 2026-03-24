@@ -1,5 +1,9 @@
 # Changelog
 
+## stylelint@0.0.10 (2026-03-25)
+
+- Update `stylelint` to `v17.5.0`
+
 ## stylelint@0.0.9 (2026-03-19)
 
 - Integrate stylelint-config-html: default preset uses `stylelint-config-html/html` for HTML parsing
