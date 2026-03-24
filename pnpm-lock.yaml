@@ -57,8 +57,8 @@ catalogs:
       specifier: ^5.0.1
       version: 5.0.1
     '@tofrankie/prettier-plugin-wxml':
-      specifier: 0.0.4
-      version: 0.0.4
+      specifier: 0.0.5
+      version: 0.0.5
     eslint-plugin-format:
       specifier: ^2.0.1
       version: 2.0.1
@@ -210,7 +210,7 @@ importers:
     dependencies:
       '@tofrankie/prettier-plugin-wxml':
         specifier: catalog:prod
-        version: 0.0.4(prettier@3.8.1)
+        version: 0.0.5(prettier@3.8.1)
       prettier-plugin-organize-attributes:
         specifier: catalog:prod
         version: 1.0.0(prettier@3.8.1)
@@ -1273,8 +1273,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  '@tofrankie/prettier-plugin-wxml@0.0.4':
-    resolution: {integrity: sha512-QQ3hE/JG+vWQ0bm5Ol/d+Iuk0laDV1SpzxgYa+z+KZ0GDAxsscH9yzlAlKdxwGvZWnRqi7QVlG9Y/bo4Tp1N/w==}
+  '@tofrankie/prettier-plugin-wxml@0.0.5':
+    resolution: {integrity: sha512-BO00nG/cbNsAIziNByTCaqsxq674nRzhGKHPbyYAtrNTuvpvZLaSzwLRNbHblYOem42RTw8jJ85Xs55ZkoYElQ==}
     engines: {node: '>=18'}
     peerDependencies:
       prettier: '>=3.0.0'
@@ -3434,6 +3434,12 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4'
 
+  ts-api-utils@2.5.0:
+    resolution: {integrity: sha512-OJ/ibxhPlqrMM0UiNHJ/0CKQkoKF243/AEmplt3qpRgkW8VG7IfOS41h7V8TjITqdByHzrjcS/2si+y4lIh8NA==}
+    engines: {node: '>=18.12'}
+    peerDependencies:
+      typescript: '>=4.8.4'
+
   ts-declaration-location@1.0.7:
     resolution: {integrity: sha512-EDyGAwH1gO0Ausm9gV6T2nUvBgXT5kGoCMJPllOaooZ+4VvJiKBdZE7wK18N1deEowhcUptS+5GXZK8U/fvpwA==}
     peerDependencies:
@@ -4767,7 +4773,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@tofrankie/prettier-plugin-wxml@0.0.4(prettier@3.8.1)':
+  '@tofrankie/prettier-plugin-wxml@0.0.5(prettier@3.8.1)':
     dependencies:
       '@babel/parser': 7.29.2
       angular-html-parser: 10.4.0
@@ -4853,8 +4859,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.57.1(typescript@5.9.3)
-      '@typescript-eslint/types': 8.57.1
+      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@5.9.3)
+      '@typescript-eslint/types': 8.56.1
       debug: 4.4.3
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -4927,7 +4933,7 @@ snapshots:
       minimatch: 10.2.4
       semver: 7.7.4
       tinyglobby: 0.2.15
-      ts-api-utils: 2.4.0(typescript@5.9.3)
+      ts-api-utils: 2.5.0(typescript@5.9.3)
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
@@ -7204,6 +7210,10 @@ snapshots:
   tree-kill@1.2.2: {}
 
   ts-api-utils@2.4.0(typescript@5.9.3):
+    dependencies:
+      typescript: 5.9.3
+
+  ts-api-utils@2.5.0(typescript@5.9.3):
     dependencies:
       typescript: 5.9.3
 
