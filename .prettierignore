@@ -3,3 +3,5 @@ dist/
 .husky/
 
 pnpm-lock.yaml
+
+packages/stylelint/tests/fixtures

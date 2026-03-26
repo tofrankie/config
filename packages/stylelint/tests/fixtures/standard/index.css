@@ -1,0 +1,18 @@
+@import url('./other.css');
+
+.example {
+  width: 10px;
+  height: 20px;
+  font-size: 14px;
+  content: 'x';
+  background-image: url('https://placehold.co/600x400/png');
+}
+
+/* 验证支持 constant() 函数 */
+.footer {
+  padding-bottom: 10px;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  margin-bottom: var(constant(safe-area-inset-bottom) + 10px);
+  margin-bottom: var(env(safe-area-inset-bottom) + 10px);
+}

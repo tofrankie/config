@@ -21,7 +21,9 @@
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --cache --fix",
     "lint:prettier": "prettier . --cache --write --log-level silent",
-    "lint:publint": "pnpm -r --filter=@tofrankie/* publint",
+    "publint": "pnpm -r --filter=@tofrankie/* publint",
+    "test": "pnpm -r --if-present test",
+    "test:watch": "pnpm -r --parallel --if-present test:watch",
     "eslint:inspect": "eslint --inspect-config",
     "changeset": "changeset",
     "release:version": "changeset version",
@@ -43,6 +45,7 @@
     "prettier": "catalog:peer",
     "publint": "catalog:dev",
     "tsdown": "catalog:dev",
-    "typescript": "catalog:dev"
+    "typescript": "catalog:dev",
+    "vitest": "catalog:dev"
   }
 }

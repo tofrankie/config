@@ -1,5 +1,23 @@
 # Changelog
 
+## stylelint@0.0.11 (2026-03-27)
+
+## Changed
+
+- Bump `stylelint` peer dependency to `v17.6.0`
+- Change `function-url-quotes`:
+  - non-HTML / non-WXML files: `'never'` → `'always'`
+  - HTML and WXML files: remain `'never'`
+
+## Added
+
+- Support the `rpx` length unit in miniapp styles
+- Export `mergeLanguageOptions`, `STANDARD_LANGUAGE_OPTIONS`, and `MINIAPP_LANGUAGE_OPTIONS`
+
+## Fixed
+
+- Fix `languageOptions` merge behavior when extending presets
+
 ## stylelint@0.0.10 (2026-03-25)
 
 - Update `stylelint` to `v17.5.0`

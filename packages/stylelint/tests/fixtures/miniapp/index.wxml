@@ -1,0 +1,11 @@
+<view style="width: 20rpx; padding-bottom: constant(safe-area-inset-bottom)" />
+<view style="width: 20rpx; height: 10px" />
+<view
+  style="
+    width: 10px;
+    height: 20px;
+    font-size: 14px;
+    content: 'x';
+    background-image: url(https://placehold.co/600x400/png);
+  "
+/>

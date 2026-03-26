@@ -1,0 +1,11 @@
+page {
+  width: 20rpx;
+  height: 10px;
+  padding-bottom: constant(safe-area-inset-bottom);
+  background-image: url('https://placehold.co/600x400/png');
+}
+
+.cover-view,
+.cover-image {
+  box-sizing: border-box;
+}

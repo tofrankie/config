@@ -26,8 +26,7 @@ export default {
 }
 ```
 
-<details>
-<summary>Visual Studio Code: enable lint for <code>.html</code> (<a href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">stylelint.vscode-stylelint</a>)</summary>
+Visual Studio Code: enable lint for `.html` ([stylelint.vscode-stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint))
 
 Add to your `settings.json` (merge into existing `stylelint.validate` if present):
 
@@ -36,8 +35,6 @@ Add to your `settings.json` (merge into existing `stylelint.validate` if present
   "stylelint.validate": ["html"]
 }
 ```
-
-</details>
 
 ### SCSS
 
@@ -57,8 +54,7 @@ export default {
 }
 ```
 
-<details>
-<summary>Visual Studio Code: enable lint for <code>.vue</code> (<a href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">stylelint.vscode-stylelint</a>)</summary>
+Visual Studio Code: enable lint for `.vue` ([stylelint.vscode-stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint))
 
 Add to your `settings.json` (merge into existing `stylelint.validate` if present):
 
@@ -67,8 +63,6 @@ Add to your `settings.json` (merge into existing `stylelint.validate` if present
   "stylelint.validate": ["vue"]
 }
 ```
-
-</details>
 
 ### Vue + SCSS
 
@@ -101,8 +95,7 @@ export default {
 }
 ```
 
-<details>
-<summary>Visual Studio Code: enable lint for <code>.wxss</code> and <code>.wxml</code> (<a href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">stylelint.vscode-stylelint</a>)</summary>
+Visual Studio Code: enable lint for `.wxss` and `.wxml` ([stylelint.vscode-stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint))
 
 Add to your `settings.json` (merge into existing `stylelint.validate` if present):
 
@@ -111,8 +104,6 @@ Add to your `settings.json` (merge into existing `stylelint.validate` if present
   "stylelint.validate": ["wxss", "wxml"]
 }
 ```
-
-</details>
 
 ### Uniapp
 
@@ -157,3 +148,35 @@ export default {
 ### Combining configs
 
 Combine presets as needed; later entries in `extends` override earlier ones. Use either `vue` or `vue-scss` (not both)—`vue-scss` already includes Vue.
+
+### LanguageOptions Merging
+
+When multiple presets are extended, `languageOptions` from later entries usually override earlier ones instead of being deep-merged, which can cause some syntax options to be lost.
+
+To cover specific scenarios, this package includes built-in preset `languageOptions`. For further customization, it also exports preset language options and the `mergeLanguageOptions` helper. Presets are adjusted to their corresponding file types.
+
+Provided preset language options:
+
+- `[STANDARD_LANGUAGE_OPTIONS](./src/language-options/standard.ts)`
+- `[MINIAPP_LANGUAGE_OPTIONS](./src/language-options/miniapp.ts)`
+
+Example:
+
+```js
+import { mergeLanguageOptions, STANDARD_LANGUAGE_OPTIONS } from '@tofrankie/stylelint'
+
+const languageOptions = mergeLanguageOptions(
+  STANDARD_LANGUAGE_OPTIONS,
+  // your overrides...
+  {
+    syntax: {
+      // ...
+    },
+  }
+)
+
+export default {
+  extends: ['@tofrankie/stylelint'],
+  languageOptions,
+}
+```
