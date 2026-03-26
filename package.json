@@ -21,7 +21,7 @@
     "lint": "run-s lint:*",
     "lint:eslint": "eslint . --cache --fix",
     "lint:prettier": "prettier . --cache --write --log-level silent",
-    "lint:publish": "pnpm -r --filter=@tofrankie/* publint",
+    "lint:publint": "pnpm -r --filter=@tofrankie/* publint",
     "eslint:inspect": "eslint --inspect-config",
     "changeset": "changeset",
     "release:version": "changeset version",

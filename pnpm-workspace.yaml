@@ -9,13 +9,13 @@ catalogs:
     lint-staged: ^16.4.0
     npm-run-all2: ^8.0.4
     publint: ^0.3.18
-    tsdown: ^0.21.4
+    tsdown: ^0.21.5
     typescript: ^5.9.3
   peer:
     '@commitlint/cli': ^20.4.1
     eslint: ^9.39.4
     prettier: ^3.8.1
-    stylelint: ^17.5.0
+    stylelint: ^17.6.0
   prod:
     '@antfu/eslint-config': ^7.7.3
     '@commitlint/config-conventional': ^20.4.1

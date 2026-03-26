@@ -132,7 +132,7 @@
     "publint": "publint"
   },
   "peerDependencies": {
-    "stylelint": "^17.3.0"
+    "stylelint": "^17.6.0"
   },
   "dependencies": {
     "@stylistic/stylelint-plugin": "catalog:prod",
