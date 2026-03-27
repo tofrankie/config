@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/prettier",
   "type": "module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "packageManager": "pnpm@10.32.0",
   "description": "Shared Prettier configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -61,14 +61,14 @@
         "default": "./dist/options/sort-vue.cjs"
       }
     },
-    "./options/sort-miniapp": {
+    "./options/sort-miniprogram": {
       "import": {
-        "types": "./dist/options/sort-miniapp.d.mts",
-        "default": "./dist/options/sort-miniapp.mjs"
+        "types": "./dist/options/sort-miniprogram.d.mts",
+        "default": "./dist/options/sort-miniprogram.mjs"
       },
       "require": {
-        "types": "./dist/options/sort-miniapp.d.cts",
-        "default": "./dist/options/sort-miniapp.cjs"
+        "types": "./dist/options/sort-miniprogram.d.cts",
+        "default": "./dist/options/sort-miniprogram.cjs"
       }
     },
     "./options/sort-wechat-svg": {

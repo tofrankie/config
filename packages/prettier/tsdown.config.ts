@@ -6,7 +6,7 @@ export default defineConfig({
     'src/options/base.ts',
     'src/options/sort-html.ts',
     'src/options/sort-vue.ts',
-    'src/options/sort-miniapp.ts',
+    'src/options/sort-miniprogram.ts',
     'src/options/sort-wechat-svg.ts',
     'src/options/wxml.ts',
   ],

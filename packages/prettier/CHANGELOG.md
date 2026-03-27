@@ -1,5 +1,11 @@
 # Changelog
 
+## prettier@0.0.8 (2026-03-27)
+
+### Changed
+
+- Re-export `@tofrankie/prettier/options/sort-miniapp` as `@tofrankie/prettier/options/sort-miniprogram`.
+
 ## prettier@0.0.7 (2026-03-25)
 
 - Update `@tofrankie/prettier-plugin-wxml` to `v0.0.5`

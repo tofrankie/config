@@ -1,6 +1,6 @@
 import baseOptions from '@tofrankie/prettier'
 import htmlOptions from '@tofrankie/prettier/options/sort-html'
-import miniappOptions from '@tofrankie/prettier/options/sort-miniapp'
+import miniprogramOptions from '@tofrankie/prettier/options/sort-miniprogram'
 import vueOptions from '@tofrankie/prettier/options/sort-vue'
 import wxmlOptions from '@tofrankie/prettier/options/wxml'
 
@@ -17,7 +17,7 @@ export default {
     },
     {
       files: ['*.wxml'],
-      options: miniappOptions,
+      options: miniprogramOptions,
     },
     {
       files: ['*.wxml'],

@@ -18,7 +18,7 @@ export default '@tofrankie/prettier'
 
 ## Attribute Sorting
 
-Attribute order follows [Code Guide by @mdo](https://codeguide.co/#attribute-order). To sort attributes in HTML, Vue, or Miniapp (WXML) files, use the options below:
+Attribute order follows [Code Guide by @mdo](https://codeguide.co/#attribute-order). To sort attributes in HTML, Vue, or Miniprogram (WXML) files, use the options below:
 
 ### HTML
 
@@ -54,11 +54,11 @@ export default {
 }
 ```
 
-### Miniapp
+### Native Miniprogram
 
 ```js
 import baseOptions from '@tofrankie/prettier'
-import miniappOptions from '@tofrankie/prettier/options/sort-miniapp'
+import miniprogramOptions from '@tofrankie/prettier/options/sort-miniprogram'
 import wxmlOptions from '@tofrankie/prettier/options/wxml'
 
 export default {
@@ -66,7 +66,7 @@ export default {
   overrides: [
     {
       files: ['*.wxml'],
-      options: miniappOptions, // 支持属性排序
+      options: miniprogramOptions, // 支持属性排序
     },
     {
       files: ['*.wxml'],
