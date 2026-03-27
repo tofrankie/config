@@ -9,7 +9,7 @@ const cases = [
   { name: 'scss', fixture: 'scss', files: ['index.scss'] },
   { name: 'vue', fixture: 'vue', files: ['index.vue'] },
   { name: 'vue-scss', fixture: 'vue-scss', files: ['index.vue'] },
-  { name: 'miniapp', fixture: 'miniapp', files: ['index.wxss', 'index.wxml'] },
+  { name: 'miniprogram', fixture: 'miniprogram', files: ['index.wxss', 'index.wxml'] },
   { name: 'uniapp', fixture: 'uniapp', files: ['vue3.vue', 'global.vue'] },
   { name: 'uniapp-scss', fixture: 'uniapp-scss', files: ['index.vue'] },
   { name: 'min-pixel', fixture: 'min-pixel', files: ['index.css'] },

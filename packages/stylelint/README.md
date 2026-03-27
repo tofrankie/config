@@ -82,7 +82,7 @@ export default {
 ```js
 /** @type {import('stylelint').Config} */
 export default {
-  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/miniapp'],
+  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/miniprogram'],
   overrides: [
     {
       files: ['**/*.wxss'],
@@ -158,7 +158,7 @@ To cover specific scenarios, this package includes built-in preset `languageOpti
 Provided preset language options:
 
 - `[STANDARD_LANGUAGE_OPTIONS](./src/language-options/standard.ts)`
-- `[MINIAPP_LANGUAGE_OPTIONS](./src/language-options/miniapp.ts)`
+- `[MINIPROGRAM_LANGUAGE_OPTIONS](./src/language-options/miniprogram.ts)`
 
 Example:
 

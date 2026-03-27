@@ -1,8 +1,8 @@
 import type { Config } from 'stylelint'
 
-// native miniapp & uni-app shared config
+// native miniprogram & uni-app shared config
 
-export const MINIAPP_SHARED_RULES = {
+export const MINIPROGRAM_SHARED_RULES = {
   'selector-type-no-unknown': [
     true,
     {

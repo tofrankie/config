@@ -4,7 +4,7 @@ export default defineConfig({
   entry: {
     index: 'src/index.ts',
     standard: 'src/standard.ts',
-    miniapp: 'src/miniapp.ts',
+    miniprogram: 'src/miniprogram.ts',
     uniapp: 'src/uniapp.ts',
     'min-pixel': 'src/min-pixel.ts',
     scss: 'src/scss.ts',

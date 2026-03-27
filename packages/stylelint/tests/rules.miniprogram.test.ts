@@ -2,23 +2,23 @@ import type { RuleAllowCase } from './helpers/lint'
 import { describe, it } from 'vitest'
 import { expectRuleNotTriggered, expectRuleTriggered } from './helpers/lint'
 
-const MINIAPP_EXTENDS = ['@tofrankie/stylelint', '@tofrankie/stylelint/miniapp']
+const MINIPROGRAM_EXTENDS = ['@tofrankie/stylelint', '@tofrankie/stylelint/miniprogram']
 
-interface MiniappRuleGroup {
+interface MiniprogramRuleGroup {
   title: string
   rule: string
   codeFilename: string
   cases: RuleAllowCase[]
 }
 
-interface MiniappDenyGroup {
+interface MiniprogramDenyGroup {
   title: string
   rule: string
   codeFilename: string
   cases: RuleAllowCase[]
 }
 
-const groups: MiniappRuleGroup[] = [
+const groups: MiniprogramRuleGroup[] = [
   {
     title: 'selector-type-no-unknown allows page selector',
     rule: 'selector-type-no-unknown',
@@ -33,16 +33,16 @@ const groups: MiniappRuleGroup[] = [
   },
 ]
 
-const denyGroups: MiniappDenyGroup[] = [
+const denyGroups: MiniprogramDenyGroup[] = [
   {
-    title: 'declaration-property-value-no-unknown rejects non-miniapp unit',
+    title: 'declaration-property-value-no-unknown rejects non-miniprogram unit',
     rule: 'declaration-property-value-no-unknown',
     codeFilename: 'test.wxss',
     cases: [{ input: 'page { width: 20apx; }' }],
   },
 ]
 
-describe('@tofrankie/stylelint miniapp rules', () => {
+describe('@tofrankie/stylelint miniprogram rules', () => {
   for (const group of groups) {
     describe(group.title, () => {
       for (const [index, testCase] of group.cases.entries()) {
@@ -50,7 +50,7 @@ describe('@tofrankie/stylelint miniapp rules', () => {
           await expectRuleNotTriggered({
             rule: group.rule,
             codeFilename: group.codeFilename,
-            extendsConfigs: MINIAPP_EXTENDS,
+            extendsConfigs: MINIPROGRAM_EXTENDS,
             testCase,
           })
         })
@@ -65,7 +65,7 @@ describe('@tofrankie/stylelint miniapp rules', () => {
           await expectRuleTriggered({
             rule: group.rule,
             codeFilename: group.codeFilename,
-            extendsConfigs: MINIAPP_EXTENDS,
+            extendsConfigs: MINIPROGRAM_EXTENDS,
             testCase,
           })
         })

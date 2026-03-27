@@ -1,2 +1,2 @@
-export * from './miniapp'
+export * from './miniprogram'
 export * from './standard'

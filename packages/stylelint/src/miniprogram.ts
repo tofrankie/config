@@ -11,9 +11,19 @@ const miniprogramLanguageOptions = mergeLanguageOptions(
 export default {
   overrides: [
     {
-      files: ['**/*.vue'],
+      files: ['**/*.wxss'],
+      customSyntax: 'postcss',
       languageOptions: miniprogramLanguageOptions,
       rules: { ...MINIPROGRAM_SHARED_RULES },
+    },
+    {
+      files: ['**/*.wxml'],
+      customSyntax: 'postcss-html',
+      languageOptions: miniprogramLanguageOptions,
+      rules: {
+        ...MINIPROGRAM_SHARED_RULES,
+        'function-url-quotes': 'never',
+      },
     },
   ],
 } satisfies Config

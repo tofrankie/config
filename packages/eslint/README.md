@@ -43,7 +43,7 @@ export default defineConfig(
 
 ## Configuration Examples
 
-### Miniapp
+### Native Miniprogram
 
 ```js
 import { defineConfig } from '@tofrankie/eslint'

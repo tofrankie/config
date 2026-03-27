@@ -1,5 +1,13 @@
 # Changelog
 
+## stylelint@0.0.12 (2026-03-27)
+
+### Changed
+
+- Re-export `@tofrankie/stylelint/miniapp` as `@tofrankie/stylelint/miniprogram`.
+- Re-export `MINIAPP_LANGUAGE_OPTIONS` as `MINIPROGRAM_LANGUAGE_OPTIONS`.
+- Re-export `miniappConfig` as `miniprogramConfig`.
+
 ## stylelint@0.0.11 (2026-03-27)
 
 ### Changed
@@ -11,8 +19,8 @@
 
 ### Added
 
-- Support the `rpx` length unit in miniapp styles
-- Export `mergeLanguageOptions`, `STANDARD_LANGUAGE_OPTIONS`, and `MINIAPP_LANGUAGE_OPTIONS`
+- Support the `rpx` length unit in miniprogram styles
+- Export `mergeLanguageOptions`, `STANDARD_LANGUAGE_OPTIONS`, and `MINIPROGRAM_LANGUAGE_OPTIONS`
 
 ### Fixed
 
@@ -26,7 +34,7 @@
 
 - Integrate stylelint-config-html: default preset uses `stylelint-config-html/html` for HTML parsing
 - Refactor `@tofrankie/stylelint/vue` and `@tofrankie/stylelint/vue-scss`: add dedicated `vue-scss` preset (extends `stylelint-config-standard-vue/scss`)
-- Miniprogram: add `.wxml` support
+- Native Miniprogram: add `.wxml` support
 
 ## stylelint@0.0.8 (2026-03-18)
 
@@ -35,7 +43,7 @@
 
 ## stylelint@0.0.7 (2026-03-15)
 
-- Update `selector-type-no-unknown` rule for miniapp
+- Update `selector-type-no-unknown` rule for miniprogram
 
 ## stylelint@0.0.6 (2026-03-14)
 
@@ -56,7 +64,7 @@
 
 ## stylelint@0.0.3 (2026-02-23)
 
-- Add `declaration-property-value-no-unknown` rule for miniapp
+- Add `declaration-property-value-no-unknown` rule for miniprogram
 
 ## stylelint@0.0.2 (2026-02-20)
 

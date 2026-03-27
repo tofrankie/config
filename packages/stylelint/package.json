@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/stylelint",
   "type": "module",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "packageManager": "pnpm@10.32.0",
   "description": "Shared Stylelint configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -41,14 +41,14 @@
         "default": "./dist/standard.cjs"
       }
     },
-    "./miniapp": {
+    "./miniprogram": {
       "import": {
-        "types": "./dist/miniapp.d.mts",
-        "default": "./dist/miniapp.mjs"
+        "types": "./dist/miniprogram.d.mts",
+        "default": "./dist/miniprogram.mjs"
       },
       "require": {
-        "types": "./dist/miniapp.d.cts",
-        "default": "./dist/miniapp.cjs"
+        "types": "./dist/miniprogram.d.cts",
+        "default": "./dist/miniprogram.cjs"
       }
     },
     "./uniapp": {
