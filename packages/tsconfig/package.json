@@ -1,0 +1,69 @@
+{
+  "name": "@tofrankie/tsconfig",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.32.0",
+  "description": "Shared tsconfig configuration",
+  "author": "Frankie <1426203851@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/tofrankie/config/tree/main/packages/tsconfig",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tofrankie/config.git",
+    "directory": "packages/tsconfig"
+  },
+  "bugs": "https://github.com/tofrankie/config/issues",
+  "keywords": [
+    "tsconfig",
+    "tofrankie"
+  ],
+  "files": [
+    "CHANGELOG.md",
+    "base",
+    "dom.json",
+    "lib.json",
+    "node.json",
+    "node.lib.json",
+    "react.json",
+    "react.lib.json",
+    "react.lib.vite.json",
+    "react.vite.json",
+    "strict.json",
+    "vitest.json",
+    "vue.json",
+    "vue.lib.json",
+    "vue.lib.vite.json",
+    "vue.vite.json"
+  ],
+  "engines": {
+    "node": "^20.0.0 || ^22.0.0 || ^24.0.0"
+  },
+  "scripts": {
+    "build": "tsx ./scripts/build.ts",
+    "prepublishOnly": "pnpm build",
+    "test": "pnpm build && vitest run",
+    "publint": "publint"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "catalog:prod",
+    "@tsconfig/strictest": "catalog:prod",
+    "@tsconfig/vite-react": "catalog:prod",
+    "@vue/tsconfig": "catalog:prod",
+    "jsonc-parser": "catalog:dev",
+    "publint": "catalog:dev",
+    "tsx": "catalog:dev",
+    "typescript": "catalog:dev",
+    "vitest": "catalog:dev"
+  }
+}

@@ -1,0 +1,3 @@
+{
+  "extends": ["./dom.json", "./lib.json", "./base/vue/tsconfig/tsconfig.lib.json"]
+}

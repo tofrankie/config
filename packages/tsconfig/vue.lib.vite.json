@@ -1,0 +1,8 @@
+{
+  "extends": "./vue.lib.json",
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  }
+}

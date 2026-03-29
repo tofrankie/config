@@ -1,4 +1,7 @@
 {
   "stylelint.enable": false,
-  "csscomb.formatOnSave": false
+  "csscomb.formatOnSave": false,
+  "files.associations": {
+    "packages/tsconfig/base/**/*.json": "jsonc"
+  }
 }

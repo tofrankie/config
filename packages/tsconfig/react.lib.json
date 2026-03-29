@@ -1,0 +1,6 @@
+{
+  "extends": ["./dom.json", "./lib.json"],
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  }
+}

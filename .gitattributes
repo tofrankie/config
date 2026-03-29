@@ -1,0 +1,2 @@
+packages/tsconfig/**/*.json linguist-language=jsonc
+packages/tsconfig/package.json linguist-language=json
