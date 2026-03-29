@@ -4,6 +4,9 @@
 
 Shared [tsconfig](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) configuration.
 
+> [!IMPORTANT]
+> Presets are not yet stable and may change.
+
 ## Usage
 
 ```bash

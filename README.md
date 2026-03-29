@@ -1,6 +1,6 @@
 # @tofrankie/config
 
-Shared configuration for ESLint, Prettier, Stylelint and Commitlint.
+Shared configuration for ESLint, Prettier, Stylelint, Commitlint and tsconfig.
 
 ## Packages
 
@@ -10,9 +10,10 @@ Shared configuration for ESLint, Prettier, Stylelint and Commitlint.
 | [@tofrankie/prettier](packages/prettier)     | <a href="https://www.npmjs.com/package/@tofrankie/prettier"><img src="https://img.shields.io/npm/v/@tofrankie/prettier?label=%20" alt="NPM Version"></a>     | <a href="https://www.npmjs.com/package/@tofrankie/prettier"><img src="https://img.shields.io/npm/last-update/@tofrankie/prettier?label=%20" alt="NPM Last Update"></a>     |
 | [@tofrankie/stylelint](packages/stylelint)   | <a href="https://www.npmjs.com/package/@tofrankie/stylelint"><img src="https://img.shields.io/npm/v/@tofrankie/stylelint?label=%20" alt="NPM Version"></a>   | <a href="https://www.npmjs.com/package/@tofrankie/stylelint"><img src="https://img.shields.io/npm/last-update/@tofrankie/stylelint?label=%20" alt="NPM Last Update"></a>   |
 | [@tofrankie/commitlint](packages/commitlint) | <a href="https://www.npmjs.com/package/@tofrankie/commitlint"><img src="https://img.shields.io/npm/v/@tofrankie/commitlint?label=%20" alt="NPM Version"></a> | <a href="https://www.npmjs.com/package/@tofrankie/commitlint"><img src="https://img.shields.io/npm/last-update/@tofrankie/commitlint?label=%20" alt="NPM Last Update"></a> |
+| [@tofrankie/tsconfig](packages/tsconfig)     | <a href="https://www.npmjs.com/package/@tofrankie/tsconfig"><img src="https://img.shields.io/npm/v/@tofrankie/tsconfig?label=%20" alt="NPM Version"></a>     | <a href="https://www.npmjs.com/package/@tofrankie/tsconfig"><img src="https://img.shields.io/npm/last-update/@tofrankie/tsconfig?label=%20" alt="NPM Last Update"></a>     |
 
 > [!IMPORTANT]
-> Rule presets in **@tofrankie/eslint** and **@tofrankie/stylelint** are not yet stable and may change.
+> **@tofrankie/eslint**, **@tofrankie/stylelint** and **@tofrankie/tsconfig** are not yet stable and may change.
 
 ## Usage
 
@@ -75,6 +76,22 @@ Create a `commitlint.config.js` in your project root:
 ```js
 export default {
   extends: ['@tofrankie/commitlint'],
+}
+```
+
+### tsconfig
+
+[More](packages/tsconfig/README.md)
+
+```bash
+$ pnpm add typescript @tofrankie/tsconfig -D
+```
+
+Create a `tsconfig.json` in your project root:
+
+```json
+{
+  "extends": "@tofrankie/tsconfig/react.vite.json"
 }
 ```
 
