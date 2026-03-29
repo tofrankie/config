@@ -1,5 +1,9 @@
 # Changelog
 
+## stylelint@0.0.13 (2026-03-29)
+
+- Add `@tofrankie/tsconfig` to `devDependencies`
+
 ## stylelint@0.0.12 (2026-03-27)
 
 ### Changed

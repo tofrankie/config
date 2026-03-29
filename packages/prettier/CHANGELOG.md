@@ -1,5 +1,9 @@
 # Changelog
 
+## prettier@0.0.9 (2026-03-29)
+
+- Add `@tofrankie/tsconfig` to `devDependencies`
+
 ## prettier@0.0.8 (2026-03-27)
 
 ### Changed

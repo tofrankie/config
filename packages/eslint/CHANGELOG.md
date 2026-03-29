@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.0.17 (2026-03-29)
+
+- Add `@tofrankie/tsconfig` to `devDependencies`
+
 ## eslint@0.0.16 (2026-03-24)
 
 - Add `unicorn/number-literal-case` rule
