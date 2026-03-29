@@ -26,22 +26,23 @@ Create a `tsconfig.json` in your project root:
 
 Use `@tofrankie/tsconfig/<filename>` in `extends`. If the last column of the table is not `—`, also add those packages to this project's devDependencies.
 
-| Preset                | Purpose (how to choose)                            | Extra dependencies      |
-| --------------------- | -------------------------------------------------- | ----------------------- |
-| `strict.json`         | Stricter rules                                     | —                       |
-| `dom.json`            | Web App / DOM API                                  | —                       |
-| `node.json`           | Node scripts / services / CLI (`@tsconfig/node20`) | —                       |
-| `lib.json`            | npm packages to publish (independent of runtime)   | —                       |
-| `node.lib.json`       | Node packages to publish                           | —                       |
-| `react.json`          | React App (bundler-agnostic)                       | —                       |
-| `react.vite.json`     | React + Vite                                       | `vite`                  |
-| `react.lib.json`      | React component libraries to publish               | —                       |
-| `react.lib.vite.json` | React component libraries developed with Vite      | `vite`                  |
-| `vue.json`            | Vue 3 App (bundler-agnostic)                       | —                       |
-| `vue.vite.json`       | Vue 3 + Vite                                       | `vite`                  |
-| `vue.lib.json`        | Vue 3 component libraries to publish               | —                       |
-| `vue.lib.vite.json`   | Vue 3 component libraries developed with Vite      | `vite`                  |
-| `vitest.json`         | Testing with Vitest                                | `@types/node`, `vitest` |
+| Preset                 | Purpose (how to choose)                                  | Extra dependencies      |
+| ---------------------- | -------------------------------------------------------- | ----------------------- |
+| `strict.json`          | Stricter rules                                           | —                       |
+| `dom.json`             | Web App / DOM API                                        | —                       |
+| `node.json`            | Node scripts / services / CLI (`@tsconfig/node20`)       | —                       |
+| `lib.json`             | npm packages to publish (independent of runtime)         | —                       |
+| `node.lib.json`        | Node packages to publish                                 | —                       |
+| `node.lib.tsdown.json` | Node libraries for tsdown (bundler resolution, `noEmit`) | —                       |
+| `react.json`           | React App (bundler-agnostic)                             | —                       |
+| `react.vite.json`      | React + Vite                                             | `vite`                  |
+| `react.lib.json`       | React component libraries to publish                     | —                       |
+| `react.lib.vite.json`  | React component libraries developed with Vite            | `vite`                  |
+| `vue.json`             | Vue 3 App (bundler-agnostic)                             | —                       |
+| `vue.vite.json`        | Vue 3 + Vite                                             | `vite`                  |
+| `vue.lib.json`         | Vue 3 component libraries to publish                     | —                       |
+| `vue.lib.vite.json`    | Vue 3 component libraries developed with Vite            | `vite`                  |
+| `vitest.json`          | Testing with Vitest                                      | `@types/node`, `vitest` |
 
 Dependency relationships between them: **[DEPENDENCY_GRAPH](./DEPENDENCY_GRAPH.md)**.
 

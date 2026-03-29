@@ -39,6 +39,7 @@ flowchart TB
 
   subgraph nodePkg [Node Library]
     nodeLib[node.lib.json]
+    nodeLibTsdown[node.lib.tsdown.json]
   end
 
   subgraph testing [Testing]
@@ -57,6 +58,8 @@ flowchart TB
   lib --> vueLib
   lib --> nodeLib
   node --> nodeLib
+  lib --> nodeLibTsdown
+  node --> nodeLibTsdown
 
   reactApp --> reactVite
   vueApp --> vueVite
