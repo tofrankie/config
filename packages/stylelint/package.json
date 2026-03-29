@@ -150,6 +150,7 @@
     "stylelint-order": "catalog:prod"
   },
   "devDependencies": {
+    "@tofrankie/tsconfig": "workspace:*",
     "stylelint": "catalog:peer"
   }
 }

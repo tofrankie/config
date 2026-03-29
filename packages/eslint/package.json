@@ -64,6 +64,7 @@
     "lodash.merge": "catalog:prod"
   },
   "devDependencies": {
+    "@tofrankie/tsconfig": "workspace:*",
     "@types/lodash.merge": "catalog:types",
     "eslint": "catalog:peer"
   }

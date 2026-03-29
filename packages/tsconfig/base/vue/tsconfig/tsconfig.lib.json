@@ -16,6 +16,6 @@
     // So they are not suitable for existing codebases, but are recommended for new codebases,
     // as well as libraries that need to be more strict about their types.
     // See also <https://github.com/vuejs/tsconfig/issues/38#issuecomment-3524621112> for more discussion.
-    "noUncheckedIndexedAccess": true,
+    "noUncheckedIndexedAccess": true
   }
 }

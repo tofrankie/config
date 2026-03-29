@@ -60,6 +60,6 @@
     "forceConsistentCasingInFileNames": true,
     "libReplacement": false,
     // See <https://github.com/vuejs/vue-cli/pull/5688>
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }

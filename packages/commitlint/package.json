@@ -59,6 +59,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "catalog:peer",
-    "@commitlint/types": "catalog:types"
+    "@commitlint/types": "catalog:types",
+    "@tofrankie/tsconfig": "workspace:*"
   }
 }

@@ -158,6 +158,9 @@ importers:
       '@tofrankie/prettier':
         specifier: workspace:*
         version: link:packages/prettier
+      '@tofrankie/tsconfig':
+        specifier: workspace:*
+        version: link:packages/tsconfig
       '@types/node':
         specifier: catalog:types
         version: 25.5.0
@@ -201,6 +204,9 @@ importers:
       '@commitlint/types':
         specifier: catalog:types
         version: 20.5.0
+      '@tofrankie/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
 
   packages/eslint:
     dependencies:
@@ -226,6 +232,9 @@ importers:
         specifier: catalog:prod
         version: 4.6.2
     devDependencies:
+      '@tofrankie/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@types/lodash.merge':
         specifier: catalog:types
         version: 4.6.9
@@ -242,6 +251,9 @@ importers:
         specifier: catalog:prod
         version: 1.0.0(prettier@3.8.1)
     devDependencies:
+      '@tofrankie/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       prettier:
         specifier: catalog:peer
         version: 3.8.1
@@ -282,6 +294,9 @@ importers:
         specifier: catalog:prod
         version: 8.1.1(stylelint@17.6.0(typescript@5.9.3))
     devDependencies:
+      '@tofrankie/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       stylelint:
         specifier: catalog:peer
         version: 17.6.0(typescript@5.9.3)

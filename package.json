@@ -37,6 +37,7 @@
     "@tofrankie/commitlint": "workspace:*",
     "@tofrankie/eslint": "workspace:*",
     "@tofrankie/prettier": "workspace:*",
+    "@tofrankie/tsconfig": "workspace:*",
     "@types/node": "catalog:types",
     "eslint": "catalog:peer",
     "husky": "catalog:dev",

@@ -119,6 +119,7 @@
     "prettier-plugin-organize-attributes": "catalog:prod"
   },
   "devDependencies": {
+    "@tofrankie/tsconfig": "workspace:*",
     "prettier": "catalog:peer"
   }
 }
