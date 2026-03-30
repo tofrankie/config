@@ -1,5 +1,10 @@
 # Changelog
 
+## tsconfig@0.0.4 (2026-03-31)
+
+- Update `node.lib.tsdown.json` preset: disable `declarationMap`
+  - Because tsdown `sourcemap` option will always be `true` if you have [`declarationMap`](https://www.typescriptlang.org/tsconfig/#declarationMap) option enabled in your `tsconfig.json`.
+
 ## tsconfig@0.0.3 (2026-03-30)
 
 - Add `strictest.json` preset (formerly the `strict.json` preset)
