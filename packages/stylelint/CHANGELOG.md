@@ -1,5 +1,9 @@
 # Changelog
 
+## stylelint@0.0.14 (2026-03-30)
+
+- Disable `no-empty-source` rule in `miniprogram` preset
+
 ## stylelint@0.0.13 (2026-03-29)
 
 - Add `@tofrankie/tsconfig` to `devDependencies`

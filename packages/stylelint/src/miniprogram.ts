@@ -14,7 +14,10 @@ export default {
       files: ['**/*.wxss'],
       customSyntax: 'postcss',
       languageOptions: miniprogramLanguageOptions,
-      rules: { ...MINIPROGRAM_SHARED_RULES },
+      rules: {
+        ...MINIPROGRAM_SHARED_RULES,
+        'no-empty-source': null,
+      },
     },
     {
       files: ['**/*.wxml'],
