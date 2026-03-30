@@ -4,7 +4,7 @@ Dependency relationships between the presets of `@tofrankie/tsconfig`.
 
 ```mermaid
 flowchart TB
-  subgraph strictEntry [strict]
+  subgraph strictEntry [Strict]
     strict[strict.json]
   end
 

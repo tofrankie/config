@@ -147,7 +147,7 @@ export default {
 
 ### Combining configs
 
-Combine presets as needed; later entries in `extends` override earlier ones. Use either `vue` or `vue-scss` (not both)—`vue-scss` already includes Vue.
+Combine presets as needed; later entries in `extends` override earlier ones. Use either `vue` or `vue-scss` (not both) - `vue-scss` already includes Vue.
 
 ### LanguageOptions Merging
 

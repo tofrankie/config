@@ -1,3 +1,19 @@
 {
-  "extends": "@tsconfig/strictest/tsconfig.json"
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "compilerOptions": {
+    // This option is part of the recommended tsconfig as of TS 5.9.
+    // Commented out for now. It's hard to land in the current ecosystem.
+    // Needs more consensus before moving forward.
+    "exactOptionalPropertyTypes": false,
+
+    // See <https://www.semver-ts.org/formal-spec/5-compiler-considerations.html#strictness>
+    // Part of the recommended tsconfig as of TS 5.9.
+    // Flags starting with `no` are likely to have false positives,
+    // So they are not suitable for existing codebases, but are recommended for new codebases,
+    // as well as libraries that need to be more strict about their types.
+    // See also <https://github.com/vuejs/tsconfig/issues/38#issuecomment-3524621112> for more discussion.
+    "noUncheckedIndexedAccess": false,
+
+    "noPropertyAccessFromIndexSignature": false
+  }
 }
