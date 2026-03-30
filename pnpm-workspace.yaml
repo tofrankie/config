@@ -10,7 +10,7 @@ catalogs:
     lint-staged: ^16.4.0
     npm-run-all2: ^8.0.4
     publint: ^0.3.18
-    tsdown: ^0.21.5
+    tsdown: ^0.21.7
     tsx: ^4.21.0
     typescript: ^5.9.3
     vitest: ^4.1.2
@@ -24,7 +24,7 @@ catalogs:
     '@commitlint/config-conventional': ^20.4.1
     '@eslint-react/eslint-plugin': ^2.13.0
     '@stylistic/stylelint-plugin': ^5.0.1
-    '@tofrankie/prettier-plugin-wxml': 0.0.5
+    '@tofrankie/prettier-plugin-wxml': 0.0.6
     '@tsconfig/node20': ^20.1.9
     '@tsconfig/strictest': ^2.0.8
     '@tsconfig/vite-react': ^7.0.2

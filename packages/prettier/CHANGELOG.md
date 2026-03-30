@@ -1,5 +1,9 @@
 # Changelog
 
+## prettier@0.0.10 (2026-03-31)
+
+- Update `@tofrankie/prettier-plugin-wxml` to `v0.0.6`
+
 ## prettier@0.0.9 (2026-03-29)
 
 - Add `@tofrankie/tsconfig` to `devDependencies`
