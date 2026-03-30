@@ -1,24 +1,33 @@
 import type { Options } from 'prettier'
-import organizeAttributes from '../plugin-organize-attributes'
+import wxmlOptions from './wxml'
 
 // https://prettier.io/docs/options
 // https://github.com/NiklasPor/prettier-plugin-organize-attributes
 export default {
-  plugins: [organizeAttributes],
-  parser: 'html',
+  ...wxmlOptions,
+
+  // @tofrankie/prettier-plugin-wxml options
+  wxmlOrganizeAttributes: true,
+
+  // prettier-plugin-organize-attributes options
   attributeSort: 'ASC',
   attributeIgnoreCase: true,
   attributeGroups: [
     '^for$',
     '^(if|elif|else)$',
     '^key$',
+    '^for-item$',
+    '^for-index$',
     '^slot$',
-    '^class$',
     '^id$',
+    '^class$',
+    '^hover-class$',
+    '^hover-',
     '$DEFAULT',
     '^tap$',
     '^bind',
     '^catch',
     '^on',
+    '^worklet',
   ],
 } satisfies Options

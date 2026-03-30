@@ -59,18 +59,13 @@ export default {
 ```js
 import baseOptions from '@tofrankie/prettier'
 import miniprogramOptions from '@tofrankie/prettier/options/sort-miniprogram'
-import wxmlOptions from '@tofrankie/prettier/options/wxml'
 
 export default {
   ...baseOptions,
   overrides: [
     {
       files: ['*.wxml'],
-      options: miniprogramOptions, // 支持属性排序
-    },
-    {
-      files: ['*.wxml'],
-      options: wxmlOptions, // 专门针对 WXML 缩进换行 self-closing 等格式化处理
+      options: miniprogramOptions, // 支持格式化以及属性排序
     },
   ],
 }

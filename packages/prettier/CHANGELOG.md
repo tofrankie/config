@@ -1,5 +1,11 @@
 # Changelog
 
+## prettier@0.0.11
+
+- Update `@tofrankie/prettier-plugin-wxml` to `v0.0.7`
+- Update `sort-miniprogram@tofrankie/prettier/options/sort-miniprogram` options
+- Full support for WXML attributes sorting
+
 ## prettier@0.0.10 (2026-03-31)
 
 - Update `@tofrankie/prettier-plugin-wxml` to `v0.0.6`
