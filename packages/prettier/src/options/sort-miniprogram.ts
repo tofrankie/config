@@ -2,14 +2,16 @@ import type { Options } from 'prettier'
 import wxmlOptions from './wxml'
 
 // https://prettier.io/docs/options
-// https://github.com/NiklasPor/prettier-plugin-organize-attributes
 export default {
   ...wxmlOptions,
 
-  // @tofrankie/prettier-plugin-wxml options
+  // https://github.com/tofrankie/prettier-plugin-wxml
+  wxmlStrict: true,
+  wxmlFormat: true,
+  wxmlSelfClose: true,
   wxmlOrganizeAttributes: true,
 
-  // prettier-plugin-organize-attributes options
+  // https://github.com/NiklasPor/prettier-plugin-organize-attributes
   attributeSort: 'ASC',
   attributeIgnoreCase: true,
   attributeGroups: [

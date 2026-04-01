@@ -1,5 +1,9 @@
 # Changelog
 
+## prettier@0.0.12 (2026-04-02)
+
+- Update `@tofrankie/prettier-plugin-wxml` to `v0.0.8`
+
 ## prettier@0.0.11
 
 - Update `@tofrankie/prettier-plugin-wxml` to `v0.0.7`
