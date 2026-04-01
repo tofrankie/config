@@ -43,4 +43,22 @@ describe('@tofrankie/stylelint fixture projects', () => {
       ).toEqual([])
     })
   }
+
+  it('miniprogram WXML without a style attribute does not report no-empty-source', async () => {
+    const cwd = path.join(FIXTURE_ROOT, 'miniprogram-without-style')
+    const result = await stylelint.lint({
+      cwd,
+      files: [path.join(cwd, 'index.wxml')],
+      configFile: path.join(cwd, 'stylelint.config.js'),
+    })
+
+    const noEmptySourceWarnings = result.results.flatMap(item =>
+      item.warnings.filter(w => w.rule === 'no-empty-source')
+    )
+
+    expect(
+      noEmptySourceWarnings,
+      'no-empty-source should not apply to WXML that has no inline style to extract'
+    ).toEqual([])
+  })
 })

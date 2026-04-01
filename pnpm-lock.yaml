@@ -10,8 +10,8 @@ catalogs:
       specifier: ^2.30.0
       version: 2.30.0
     '@tofrankie/action':
-      specifier: ^0.0.4
-      version: 0.0.4
+      specifier: ^0.0.5
+      version: 0.0.5
     husky:
       specifier: ^9.1.7
       version: 9.1.7
@@ -65,6 +65,9 @@ catalogs:
     '@stylistic/stylelint-plugin':
       specifier: ^5.0.1
       version: 5.0.1
+    '@tofrankie/postcss-wxml':
+      specifier: ^0.0.3
+      version: 0.0.3
     '@tofrankie/prettier-plugin-wxml':
       specifier: 0.0.7
       version: 0.0.7
@@ -148,7 +151,7 @@ importers:
         version: 2.30.0(@types/node@25.5.0)
       '@tofrankie/action':
         specifier: catalog:dev
-        version: 0.0.4(@types/node@25.5.0)
+        version: 0.0.5(@types/node@25.5.0)
       '@tofrankie/commitlint':
         specifier: workspace:*
         version: link:packages/commitlint
@@ -263,6 +266,9 @@ importers:
       '@stylistic/stylelint-plugin':
         specifier: catalog:prod
         version: 5.0.1(stylelint@17.6.0(typescript@5.9.3))
+      '@tofrankie/postcss-wxml':
+        specifier: catalog:prod
+        version: 0.0.3
       deepmerge:
         specifier: catalog:prod
         version: 4.3.1
@@ -1525,10 +1531,13 @@ packages:
     peerDependencies:
       stylelint: ^17.0.0
 
-  '@tofrankie/action@0.0.4':
-    resolution: {integrity: sha512-isgedfNrQxfHv9jQeJYWjlVwfFJMRQX4yRBKpqzfmezoZAk/qzhce6joCXp39SiFeSVX1nHUi0NQWqByUwLvgA==}
+  '@tofrankie/action@0.0.5':
+    resolution: {integrity: sha512-UMy7Y1S4M3N8y/+s/11Ebcx+rjgSXolZTyJ9WwcT8VFHK6lWXYLzvIj41sS1lP6mifAMEphxDRarMYlDS0kq7w==}
     engines: {node: '>=20'}
     hasBin: true
+
+  '@tofrankie/postcss-wxml@0.0.3':
+    resolution: {integrity: sha512-eadOGyACmPgYWSPT4plRB11j7Krk6r4uNEwVSTRCXq5KQaBXrFsuCcGaWE3lLQ2pnCoYQw6uMmlCc0ggzBt6Ag==}
 
   '@tofrankie/prettier-plugin-wxml@0.0.7':
     resolution: {integrity: sha512-iqndJo6RO9AVH2/5XkR6uurDOfU7JXFW1C/iPtsqFmD6rh0UNMBL7RJUIMRmSFUA3a42ZqIQZ4u35X28MwlyfA==}
@@ -2094,15 +2103,31 @@ packages:
   dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
 
+  dom-serializer@3.0.0:
+    resolution: {integrity: sha512-x+9D6nkC8tdXOQUS32egtZpZFLP90+HBZmWjuT920srbJvD/zPgFB9t4k3pEhlw5BQrXStQtRc1Y1zuriXk+Nw==}
+    engines: {node: '>=20.19.0'}
+
   domelementtype@2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
+
+  domelementtype@3.0.0:
+    resolution: {integrity: sha512-umCQid3jKbDmVjx8jGaW7uUykm4DEUeyV21hPxNMo2nV955DhUThwqyOIDtreepP31hl84X7G5U9ZfsWvIB3Pg==}
+    engines: {node: '>=20.19.0'}
 
   domhandler@5.0.3:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
 
+  domhandler@6.0.1:
+    resolution: {integrity: sha512-gYzvtM72ZtxQO0T048kd6HWSbbGCNOUwcnfQ01cqIJ4X2IYKFFHZ5mKvrQETcFXxsRObZulDaKmy//R7TPtsBg==}
+    engines: {node: '>=20.19.0'}
+
   domutils@3.2.2:
     resolution: {integrity: sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==}
+
+  domutils@4.0.2:
+    resolution: {integrity: sha512-qI4JLRKnSzqFqr7hAlS5xQDusBCjKSEG4t4+7aNrIQMHBcsC2TGEhuyABJdYkgSewL57PNLYEiibY2iPKhKpaA==}
+    engines: {node: '>=20.19.0'}
 
   dot-prop@5.3.0:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
@@ -2145,6 +2170,10 @@ packages:
   entities@7.0.1:
     resolution: {integrity: sha512-TWrgLOFUQTH994YUyl1yT4uyavY5nNB5muff+RtWaqNVCAK408b5ZnnbNAUEWLTCpum9w6arT70i1XdQ4UeOPA==}
     engines: {node: '>=0.12'}
+
+  entities@8.0.0:
+    resolution: {integrity: sha512-zwfzJecQ/Uej6tusMqwAqU/6KL2XaB2VZ2Jg54Je6ahNBGNH6Ek6g3jjNCF0fG9EWQKGZNddNjU5F1ZQn/sBnA==}
+    engines: {node: '>=20.19.0'}
 
   env-paths@2.2.1:
     resolution: {integrity: sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==}
@@ -2695,6 +2724,10 @@ packages:
   html-tags@5.1.0:
     resolution: {integrity: sha512-n6l5uca7/y5joxZ3LUePhzmBFUJ+U2YWzhMa8XUTecSeSlQiZdF5XAd/Q3/WUl0VsXgUwWi8I7CNIwdI5WN1SQ==}
     engines: {node: '>=20.10'}
+
+  htmlparser2@12.0.0:
+    resolution: {integrity: sha512-Tz7u1i95/g2x2jz81+x0FBVhBhY5aRTvD3tXXdFaljuNdzDLJ8UGNRrTcj2cgQvAg3iW/h77Fz15nLW0L0CrZw==}
+    engines: {node: '>=20.19.0'}
 
   htmlparser2@8.0.2:
     resolution: {integrity: sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==}
@@ -5375,7 +5408,7 @@ snapshots:
       style-search: 0.1.0
       stylelint: 17.6.0(typescript@5.9.3)
 
-  '@tofrankie/action@0.0.4(@types/node@25.5.0)':
+  '@tofrankie/action@0.0.5(@types/node@25.5.0)':
     dependencies:
       '@actions/core': 3.0.0
       '@actions/github': 9.0.0
@@ -5387,6 +5420,11 @@ snapshots:
       yaml: 2.8.3
     transitivePeerDependencies:
       - '@types/node'
+
+  '@tofrankie/postcss-wxml@0.0.3':
+    dependencies:
+      htmlparser2: 12.0.0
+      postcss: 8.5.8
 
   '@tofrankie/prettier-plugin-wxml@0.0.7(prettier@3.8.1)':
     dependencies:
@@ -5488,8 +5526,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.57.2(typescript@5.9.3)
-      '@typescript-eslint/types': 8.57.2
+      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@5.9.3)
+      '@typescript-eslint/types': 8.56.1
       debug: 4.4.3
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -5976,17 +6014,35 @@ snapshots:
       domhandler: 5.0.3
       entities: 4.5.0
 
+  dom-serializer@3.0.0:
+    dependencies:
+      domelementtype: 3.0.0
+      domhandler: 6.0.1
+      entities: 8.0.0
+
   domelementtype@2.3.0: {}
+
+  domelementtype@3.0.0: {}
 
   domhandler@5.0.3:
     dependencies:
       domelementtype: 2.3.0
+
+  domhandler@6.0.1:
+    dependencies:
+      domelementtype: 3.0.0
 
   domutils@3.2.2:
     dependencies:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+
+  domutils@4.0.2:
+    dependencies:
+      dom-serializer: 3.0.0
+      domelementtype: 3.0.0
+      domhandler: 6.0.1
 
   dot-prop@5.3.0:
     dependencies:
@@ -6015,6 +6071,8 @@ snapshots:
   entities@4.5.0: {}
 
   entities@7.0.1: {}
+
+  entities@8.0.0: {}
 
   env-paths@2.2.1: {}
 
@@ -6729,6 +6787,13 @@ snapshots:
   html-entities@2.6.0: {}
 
   html-tags@5.1.0: {}
+
+  htmlparser2@12.0.0:
+    dependencies:
+      domelementtype: 3.0.0
+      domhandler: 6.0.1
+      domutils: 4.0.2
+      entities: 8.0.0
 
   htmlparser2@8.0.2:
     dependencies:

@@ -21,11 +21,11 @@ export default {
     },
     {
       files: ['**/*.wxml'],
-      customSyntax: 'postcss-html',
+      customSyntax: '@tofrankie/postcss-wxml',
       languageOptions: miniprogramLanguageOptions,
       rules: {
         ...MINIPROGRAM_SHARED_RULES,
-        'function-url-quotes': 'never',
+        'no-empty-source': null,
       },
     },
   ],
