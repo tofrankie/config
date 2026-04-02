@@ -1,5 +1,9 @@
 # Changelog
 
+## stylelint@0.0.16 (2026-04-02)
+
+- Update `@tofrankie/postcss-wxml` to `v0.0.4`
+
 ## stylelint@0.0.15 (2026-04-01)
 
 - Use `@tofrankie/postcss-wxml` to parse WXML files
