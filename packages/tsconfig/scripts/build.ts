@@ -60,9 +60,7 @@ function main(): void {
       if (from.startsWith('.')) {
         const depSrc = resolve(dirname(absSrc), from)
         if (!existsSync(depSrc)) {
-          console.warn(
-            `[tsconfig build] cannot resolve nested relative extends "${from}" from "${absSrc}"`
-          )
+          console.warn(`[tsconfig build] cannot resolve nested relative extends "${from}" from "${absSrc}"`)
           return from
         }
         const depDest = resolve(dirname(absDest), from)
@@ -86,9 +84,7 @@ function main(): void {
     writeFileSync(join(pkgRoot, name), out.endsWith('\n') ? out : `${out}\n`)
   }
 
-  console.log(
-    `[tsconfig build] wrote ${srcFiles.length} presets and mirrored ${seenDest.size} upstream files.`
-  )
+  console.log(`[tsconfig build] wrote ${srcFiles.length} presets and mirrored ${seenDest.size} upstream files.`)
 }
 
 function collectNpmExtends(text: string): Set<string> {

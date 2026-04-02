@@ -1,10 +1,6 @@
 import type { RuleAllowCase, RuleFixCase } from './helpers/lint'
 import { describe, it } from 'vitest'
-import {
-  expectRuleNotTriggered,
-  expectRuleTriggered,
-  expectRuleTriggeredAndFixed,
-} from './helpers/lint'
+import { expectRuleNotTriggered, expectRuleTriggered, expectRuleTriggeredAndFixed } from './helpers/lint'
 
 const STANDARD_EXTENDS = ['@tofrankie/stylelint']
 

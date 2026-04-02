@@ -14,10 +14,7 @@ type Config = ReturnType<typeof antfu>
  * @param antfuOptions Configures for antfu's config.
  * @param userFlatConfigs From the second arguments they are ESLint Flat Configs, you can have multiple configs.
  */
-export function defineConfig(
-  antfuOptions?: AntfuOptions,
-  ...userFlatConfigs: UserFlatConfig[]
-): Config {
+export function defineConfig(antfuOptions?: AntfuOptions, ...userFlatConfigs: UserFlatConfig[]): Config {
   const userOptions = antfuOptions ?? {}
   const { rules: userRules, ...userOptionsWithoutRules } = userOptions
 

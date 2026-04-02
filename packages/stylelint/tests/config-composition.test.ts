@@ -37,10 +37,7 @@ describe('@tofrankie/stylelint fixture projects', () => {
         })
       )
 
-      expect(
-        warningMessages,
-        `fixture "${testCase.name}" lint failed:\n${warningMessages.join('\n')}`
-      ).toEqual([])
+      expect(warningMessages, `fixture "${testCase.name}" lint failed:\n${warningMessages.join('\n')}`).toEqual([])
     })
   }
 
