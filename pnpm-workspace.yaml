@@ -24,8 +24,8 @@ catalogs:
     '@commitlint/config-conventional': ^20.4.1
     '@eslint-react/eslint-plugin': ^2.13.0
     '@stylistic/stylelint-plugin': ^5.0.1
-    '@tofrankie/postcss-wxml': ^0.0.3
-    '@tofrankie/prettier-plugin-wxml': 0.0.8
+    '@tofrankie/postcss-wxml': ^0.0.4
+    '@tofrankie/prettier-plugin-wxml': 0.0.9
     '@tsconfig/node20': ^20.1.9
     '@tsconfig/strictest': ^2.0.8
     '@tsconfig/vite-react': ^7.0.2

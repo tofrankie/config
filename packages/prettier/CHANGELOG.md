@@ -1,5 +1,11 @@
 # Changelog
 
+## eslint@0.0.13 (2026-04-02)
+
+- Change `printWidth` from `100` to `120`
+- Update vue `attributeGroups`
+- Update `@tofrankie/prettier-plugin-wxml` to `v0.0.9`
+
 ## prettier@0.0.12 (2026-04-02)
 
 - Update `@tofrankie/prettier-plugin-wxml` to `v0.0.8`

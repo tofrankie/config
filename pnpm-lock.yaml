@@ -66,11 +66,11 @@ catalogs:
       specifier: ^5.0.1
       version: 5.0.1
     '@tofrankie/postcss-wxml':
-      specifier: ^0.0.3
-      version: 0.0.3
+      specifier: ^0.0.4
+      version: 0.0.4
     '@tofrankie/prettier-plugin-wxml':
-      specifier: 0.0.8
-      version: 0.0.8
+      specifier: 0.0.9
+      version: 0.0.9
     '@tsconfig/node20':
       specifier: ^20.1.9
       version: 20.1.9
@@ -249,7 +249,7 @@ importers:
     dependencies:
       '@tofrankie/prettier-plugin-wxml':
         specifier: catalog:prod
-        version: 0.0.8(prettier@3.8.1)
+        version: 0.0.9(prettier@3.8.1)
       prettier-plugin-organize-attributes:
         specifier: catalog:prod
         version: 1.0.0(prettier@3.8.1)
@@ -268,7 +268,7 @@ importers:
         version: 5.0.1(stylelint@17.6.0(typescript@5.9.3))
       '@tofrankie/postcss-wxml':
         specifier: catalog:prod
-        version: 0.0.3
+        version: 0.0.4
       deepmerge:
         specifier: catalog:prod
         version: 4.3.1
@@ -1536,11 +1536,11 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  '@tofrankie/postcss-wxml@0.0.3':
-    resolution: {integrity: sha512-eadOGyACmPgYWSPT4plRB11j7Krk6r4uNEwVSTRCXq5KQaBXrFsuCcGaWE3lLQ2pnCoYQw6uMmlCc0ggzBt6Ag==}
+  '@tofrankie/postcss-wxml@0.0.4':
+    resolution: {integrity: sha512-5D7aM0zw+ooE8Bdpmj6Oz1mbnCxKzFGm31WeIscp41Fj8SZ9wvdyJaogdmRX16m27y+O9vQ8kB8ske1mUxnD0Q==}
 
-  '@tofrankie/prettier-plugin-wxml@0.0.8':
-    resolution: {integrity: sha512-Lx027vBzqVBZzORHfMM0R9EdHy1Iv7x0pBwXwBxTRUJBShw5koqeCgQNNeEgSgUOrw4NpoPRNXeO6jFBRV2+KA==}
+  '@tofrankie/prettier-plugin-wxml@0.0.9':
+    resolution: {integrity: sha512-QlYDD2zpsbt5LjxdxBFitXhgrF/nxAWptzxl0Zffkj3vaKKLAJQp51dCNLC9Uiv8pYuTckXEIhjL8vTZbRnpsA==}
     engines: {node: '>=18'}
     peerDependencies:
       prettier: '>=3.0.0'
@@ -5421,12 +5421,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@tofrankie/postcss-wxml@0.0.3':
+  '@tofrankie/postcss-wxml@0.0.4':
     dependencies:
       htmlparser2: 12.0.0
       postcss: 8.5.8
 
-  '@tofrankie/prettier-plugin-wxml@0.0.8(prettier@3.8.1)':
+  '@tofrankie/prettier-plugin-wxml@0.0.9(prettier@3.8.1)':
     dependencies:
       '@babel/parser': 7.29.2
       angular-html-parser: 10.4.0

@@ -65,7 +65,7 @@ export default {
   overrides: [
     {
       files: ['*.wxml'],
-      options: miniprogramOptions, // 支持格式化以及属性排序
+      options: miniprogramOptions, // Supports formatting and attribute sorting
     },
   ],
 }
