@@ -1,5 +1,9 @@
 # Changelog
 
+## prettier@0.0.14 (2026-04-02)
+
+- Update `@tofrankie/prettier-plugin-wxml` to `v0.0.10`
+
 ## eslint@0.0.13 (2026-04-02)
 
 - Change `printWidth` from `100` to `120`
