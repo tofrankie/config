@@ -2,12 +2,12 @@
 
 ![npm version](https://img.shields.io/npm/v/@tofrankie/tsconfig) ![node version](https://img.shields.io/node/v/@tofrankie/tsconfig) ![npm package license](https://img.shields.io/npm/l/@tofrankie/tsconfig) ![npm last update](https://img.shields.io/npm/last-update/@tofrankie/tsconfig)
 
-Shared [tsconfig](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) configuration.
+A shared [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) `tsconfig.json` presets.
 
 > [!IMPORTANT]
-> Presets are not yet stable and may change.
+> Before 1.0.0, releases may include breaking changes. Read the [CHANGELOG](CHANGELOG.md) before upgrading.
 
-## Usage
+## Quick Start
 
 ```bash
 $ pnpm add typescript @tofrankie/tsconfig -D
@@ -15,16 +15,16 @@ $ pnpm add typescript @tofrankie/tsconfig -D
 
 Create a `tsconfig.json` in your project root:
 
-```json
+```jsonc
 {
-  "extends": "@tofrankie/tsconfig/react.vite.json"
-  // other options...
+  "extends": "@tofrankie/tsconfig/react.vite.json",
+  // add compilerOptions, include, etc. as needed
 }
 ```
 
 ## Presets
 
-Use `@tofrankie/tsconfig/<filename>` in `extends`. If the last column of the table is not `-`, also add those packages to this project's devDependencies.
+Use `@tofrankie/tsconfig/<filename>` in `extends`. When **Extra dependencies** is not `-`, add those packages to your project's `devDependencies`.
 
 | Preset                 | Purpose (how to choose)                                  | Extra dependencies      |
 | ---------------------- | -------------------------------------------------------- | ----------------------- |

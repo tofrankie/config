@@ -1,6 +1,6 @@
 # @tofrankie/config
 
-Shared configuration for ESLint, Prettier, Stylelint, Commitlint and tsconfig.
+Shared configuration for ESLint, Prettier, Stylelint, Commitlint, and TypeScript.
 
 ## Packages
 
@@ -13,13 +13,13 @@ Shared configuration for ESLint, Prettier, Stylelint, Commitlint and tsconfig.
 | [@tofrankie/tsconfig](packages/tsconfig)     | <a href="https://www.npmjs.com/package/@tofrankie/tsconfig"><img src="https://img.shields.io/npm/v/@tofrankie/tsconfig?label=%20" alt="NPM Version"></a>     | <a href="https://www.npmjs.com/package/@tofrankie/tsconfig"><img src="https://img.shields.io/npm/last-update/@tofrankie/tsconfig?label=%20" alt="NPM Last Update"></a>     |
 
 > [!IMPORTANT]
-> **@tofrankie/eslint**, **@tofrankie/stylelint** and **@tofrankie/tsconfig** are not yet stable and may change.
+> Before 1.0.0, releases may include breaking changes. Read each package's **CHANGELOG** before upgrading.
 
 ## Usage
 
 ### ESLint
 
-[More](packages/eslint/README.md)
+[Documentation](packages/eslint/README.md)
 
 ```bash
 $ pnpm add eslint @tofrankie/eslint -D
@@ -35,7 +35,7 @@ export default defineConfig()
 
 ### Prettier
 
-[More](packages/prettier/README.md)
+[Documentation](packages/prettier/README.md)
 
 ```bash
 $ pnpm add prettier @tofrankie/prettier -D
@@ -49,7 +49,7 @@ export default '@tofrankie/prettier'
 
 ### Stylelint
 
-[More](packages/stylelint/README.md)
+[Documentation](packages/stylelint/README.md)
 
 ```bash
 $ pnpm add stylelint @tofrankie/stylelint -D
@@ -65,7 +65,7 @@ export default {
 
 ### Commitlint
 
-[More](packages/commitlint/README.md)
+[Documentation](packages/commitlint/README.md)
 
 ```bash
 $ pnpm add commitlint @tofrankie/commitlint -D
@@ -79,9 +79,9 @@ export default {
 }
 ```
 
-### tsconfig
+### TypeScript
 
-[More](packages/tsconfig/README.md)
+[Documentation](packages/tsconfig/README.md)
 
 ```bash
 $ pnpm add typescript @tofrankie/tsconfig -D
@@ -95,6 +95,6 @@ Create a `tsconfig.json` in your project root:
 }
 ```
 
-## Others
+## See also
 
 Use [@antfu/nip](https://github.com/antfu/nip) to manage dependencies and keep [pnpm catalogs](https://antfu.me/posts/categorize-deps) in sync.

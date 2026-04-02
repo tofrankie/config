@@ -4,7 +4,12 @@
 
 A shared [Prettier](https://prettier.io/docs/configuration) configuration.
 
+> [!IMPORTANT]
+> Before 1.0.0, releases may include breaking changes. Read the [CHANGELOG](CHANGELOG.md) before upgrading.
+
 ## Quick Start
+
+Install dependencies:
 
 ```bash
 $ pnpm add prettier @tofrankie/prettier -D
@@ -18,9 +23,11 @@ export default '@tofrankie/prettier'
 
 ## Attribute Sorting
 
-Attribute order follows [Code Guide by @mdo](https://codeguide.co/#attribute-order). To sort attributes in HTML, Vue, or Miniprogram (WXML) files, use the options below:
+For HTML, Vue, or WeChat Miniprogram (WXML) files, use the overrides below:
 
 ### HTML
+
+> Attribute order follows the [Code Guide by @mdo](https://codeguide.co/#attribute-order). [Details](./src/options/sort-html.ts)
 
 ```js
 import baseOptions from '@tofrankie/prettier'
@@ -39,6 +46,8 @@ export default {
 
 ### Vue
 
+> Attribute order follows the [Vue.js Style Guide](https://vuejs.org/style-guide/rules-recommended.html#element-attribute-order). [Details](./src/options/sort-vue.ts)
+
 ```js
 import baseOptions from '@tofrankie/prettier'
 import vueOptions from '@tofrankie/prettier/options/sort-vue'
@@ -55,6 +64,10 @@ export default {
 ```
 
 ### Native Miniprogram
+
+> `.wxml` parsing uses [@tofrankie/prettier-plugin-wxml](https://github.com/tofrankie/prettier-plugin-wxml) internally.
+
+> Attribute order is customized (inspired by Vue.js). [Details](./src/options/sort-miniprogram.ts)
 
 ```js
 import baseOptions from '@tofrankie/prettier'
@@ -73,7 +86,7 @@ export default {
 
 ### WeChat SVG
 
-For HTML files in WeChat SVG format:
+> Attribute order is customized. [Details](./src/options/sort-wechat-svg.ts)
 
 ```js
 import baseOptions from '@tofrankie/prettier'
@@ -89,3 +102,10 @@ export default {
   ],
 }
 ```
+
+## Acknowledgements
+
+Thanks to these referenced packages:
+
+- `prettier-plugin-organize-attributes`
+- `@tofrankie/prettier-plugin-wxml`

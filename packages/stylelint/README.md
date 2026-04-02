@@ -5,15 +5,17 @@
 A shared [Stylelint](https://stylelint.io/user-guide/get-started) configuration.
 
 > [!IMPORTANT]
-> Rule presets are not yet stable and may change.
+> Before 1.0.0, releases may include breaking changes. Read the [CHANGELOG](CHANGELOG.md) before upgrading.
 
 ## Quick Start
+
+Install dependencies:
 
 ```bash
 $ pnpm add stylelint @tofrankie/stylelint -D
 ```
 
-Create a `stylelint.config.js` in your project root, then extend one or more presets below.
+Create a `stylelint.config.js` in your project root and extend one or more of the presets below.
 
 ### Standard
 
@@ -96,9 +98,9 @@ Add to your `settings.json` (merge into existing `stylelint.validate` if present
 }
 ```
 
-### Uniapp
+### uni-app
 
-Vue-based; adds miniprogram-specific rules (e.g. `rpx`, `page` selector).
+Vue-based; adds miniprogram-specific rules (for example `rpx` and the `page` selector).
 
 ```js
 /** @type {import('stylelint').Config} */
@@ -138,13 +140,13 @@ export default {
 
 ### Combining configs
 
-Combine presets as needed; later entries in `extends` override earlier ones. Use either `vue` or `vue-scss` (not both) - `vue-scss` already includes Vue.
+Combine presets as needed; later entries in `extends` override earlier ones. Do not use both `vue` and `vue-scss`, `vue-scss` already includes the Vue preset.
 
-### LanguageOptions Merging
+### Merging `languageOptions`
 
-When multiple presets are extended, `languageOptions` from later entries usually override earlier ones instead of being deep-merged, which can cause some syntax options to be lost.
+When you extend multiple presets, later entries usually **replace** earlier `languageOptions` instead of deep-merging them, so some syntax settings can be dropped.
 
-To cover specific scenarios, this package includes built-in preset `languageOptions`. For further customization, it also exports preset language options and the `mergeLanguageOptions` helper. Presets are adjusted to their corresponding file types.
+This package ships preset `languageOptions` for common cases, and exports `mergeLanguageOptions` plus preset objects so you can combine or override them safely.
 
 Provided preset language options:
 

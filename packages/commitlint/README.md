@@ -4,7 +4,12 @@
 
 A shared [commitlint](https://commitlint.js.org/guides/getting-started.html) configuration.
 
+> [!IMPORTANT]
+> Before 1.0.0, releases may include breaking changes. Read the [CHANGELOG](CHANGELOG.md) before upgrading.
+
 ## Quick Start
+
+Install dependencies:
 
 ```bash
 $ pnpm add commitlint @tofrankie/commitlint -D
@@ -18,9 +23,9 @@ export default {
 }
 ```
 
-See the [rules reference](https://commitlint.js.org/reference/rules.html) for more options.
+See the [Commitlint rules reference](https://commitlint.js.org/reference/rules.html) for all rule options.
 
-Example: custom scope enum:
+**Example:** custom `scope-enum`:
 
 ```js
 export default {

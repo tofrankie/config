@@ -9,5 +9,6 @@ export default {
   attributeSort: 'ASC',
   attributeIgnoreCase: true,
   // TODO: 考虑 width、height、style 顺序
+  // https://codeguide.co/#attribute-order
   attributeGroups: ['$CODE_GUIDE'],
 } satisfies Options
