@@ -1,5 +1,9 @@
 # Changelog
 
+## commitlint@0.0.5 (2026-04-04)
+
+- Update documentation
+
 ## commitlint@0.0.4 (2026-03-29)
 
 - Add `@tofrankie/tsconfig` to `devDependencies`

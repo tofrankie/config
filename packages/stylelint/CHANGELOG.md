@@ -1,5 +1,9 @@
 # Changelog
 
+## stylelint@0.0.17 (2026-04-04)
+
+- Update documentation
+
 ## stylelint@0.0.16 (2026-04-02)
 
 - Update `@tofrankie/postcss-wxml` to `v0.0.4`

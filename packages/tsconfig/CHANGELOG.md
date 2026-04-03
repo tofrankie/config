@@ -1,5 +1,9 @@
 # Changelog
 
+## tsconfig@0.0.5 (2026-04-04)
+
+- Update documentation
+
 ## tsconfig@0.0.4 (2026-03-31)
 
 - Update `node.lib.tsdown.json` preset: disable `declarationMap`

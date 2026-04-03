@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.0.18 (2026-04-04)
+
+- Update documentation
+
 ## eslint@0.0.17 (2026-03-29)
 
 - Add `@tofrankie/tsconfig` to `devDependencies`

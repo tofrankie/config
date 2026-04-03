@@ -1,5 +1,9 @@
 # Changelog
 
+## prettier@0.0.16 (2026-04-04)
+
+- Update documentation
+
 ## prettier@0.0.15 (2026-04-02)
 
 - Update `@tofrankie/prettier-plugin-wxml` to `v0.0.11`
