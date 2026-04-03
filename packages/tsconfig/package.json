@@ -15,6 +15,14 @@
   "bugs": "https://github.com/tofrankie/config/issues",
   "keywords": [
     "tsconfig",
+    "typescript",
+    "typescript-config",
+    "node",
+    "react",
+    "tsdown",
+    "vite",
+    "vitest",
+    "vue",
     "tofrankie"
   ],
   "files": [

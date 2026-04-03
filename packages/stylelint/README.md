@@ -118,9 +118,9 @@ export default {
 }
 ```
 
-### Ignore min-pixel formatting
+### Ignore min-pixel (1Px / 1PX)
 
-Suppresses formatting for `1Px` and `1PX` units. [More](https://github.com/cuth/postcss-pxtorem/#a-message-about-ignoring-properties)
+When you use [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem/), you may need `1Px` or `1PX` to survive conversion. These rules relax linting for those spellings. [More](https://github.com/cuth/postcss-pxtorem/#a-message-about-ignoring-properties)
 
 ```js
 /** @type {import('stylelint').Config} */

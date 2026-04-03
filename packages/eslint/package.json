@@ -15,9 +15,13 @@
   "bugs": "https://github.com/tofrankie/config/issues",
   "keywords": [
     "eslint",
-    "eslintconfig",
     "eslint-config",
+    "eslint-flat-config",
+    "eslintconfig",
     "lint",
+    "react",
+    "typescript",
+    "vue",
     "tofrankie"
   ],
   "exports": {

@@ -21,9 +21,11 @@ Create a `prettier.config.js` in your project root:
 export default '@tofrankie/prettier'
 ```
 
-## Attribute Sorting
+## Attribute order
 
-For HTML, Vue, or WeChat Miniprogram (WXML) files, use the overrides below:
+Sorting is handled by [`prettier-plugin-organize-attributes`](https://www.npmjs.com/package/prettier-plugin-organize-attributes), which organizes attributes (reorders them on each element). The presets below map each file type to a chosen attribute order.
+
+Use the overrides for HTML, Vue, or WeChat Miniprogram (WXML) files:
 
 ### HTML
 
@@ -65,9 +67,9 @@ export default {
 
 ### Native Miniprogram
 
-> `.wxml` parsing uses [@tofrankie/prettier-plugin-wxml](https://github.com/tofrankie/prettier-plugin-wxml) internally.
-
 > Attribute order is customized (inspired by Vue.js). [Details](./src/options/sort-miniprogram.ts)
+
+> `.wxml` parsing uses [@tofrankie/prettier-plugin-wxml](https://github.com/tofrankie/prettier-plugin-wxml) internally.
 
 ```js
 import baseOptions from '@tofrankie/prettier'
@@ -78,7 +80,7 @@ export default {
   overrides: [
     {
       files: ['*.wxml'],
-      options: miniprogramOptions, // Supports formatting and attribute sorting
+      options: miniprogramOptions, // Formatting and organized attributes
     },
   ],
 }

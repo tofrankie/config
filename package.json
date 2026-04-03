@@ -8,12 +8,14 @@
   "license": "MIT",
   "homepage": "https://github.com/tofrankie/config",
   "keywords": [
+    "commitlint",
     "eslint",
     "prettier",
     "stylelint",
-    "commitlint",
-    "lint",
     "tsconfig",
+    "format",
+    "lint",
+    "typescript",
     "tofrankie"
   ],
   "scripts": {

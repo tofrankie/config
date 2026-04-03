@@ -16,8 +16,13 @@
   "keywords": [
     "prettier",
     "prettier-config",
+    "prettier-plugin-organize-attributes",
     "format",
-    "formatter",
+    "html",
+    "miniprogram",
+    "vue",
+    "wechat",
+    "wxml",
     "tofrankie"
   ],
   "exports": {

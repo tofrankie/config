@@ -18,6 +18,12 @@
     "stylelint-config",
     "stylelint-order",
     "lint",
+    "html",
+    "miniprogram",
+    "scss",
+    "uniapp",
+    "vue",
+    "wxss",
     "tofrankie"
   ],
   "exports": {

@@ -16,7 +16,7 @@
   "keywords": [
     "commitlint",
     "commitlint-config",
-    "commit",
+    "conventional-commits",
     "lint",
     "tofrankie"
   ],
