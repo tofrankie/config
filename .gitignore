@@ -6,7 +6,12 @@ dist/
 .env
 **local.*
 
-.agents/
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/tofrankie-config-release/
+!.agents/skills/tofrankie-config-release/**
+
 .husky/_/
 .eslintcache
 .stylelintcache
