@@ -2,7 +2,7 @@
 
 ![npm version](https://img.shields.io/npm/v/@tofrankie/prettier) ![node version](https://img.shields.io/node/v/@tofrankie/prettier) ![npm package license](https://img.shields.io/npm/l/@tofrankie/prettier) ![npm last update](https://img.shields.io/npm/last-update/@tofrankie/prettier)
 
-A shared [Prettier](https://prettier.io/docs/configuration) configuration.
+Shared [Prettier](https://prettier.io/docs/configuration) configuration.
 
 > [!IMPORTANT]
 > Before 1.0.0, releases may include breaking changes. Read the [CHANGELOG](CHANGELOG.md) before upgrading.
@@ -21,11 +21,24 @@ Create a `prettier.config.js` in your project root:
 export default '@tofrankie/prettier'
 ```
 
+Base options:
+
+```json
+{
+  "printWidth": 120,
+  "semi": false,
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "trailingComma": "es5",
+  "htmlWhitespaceSensitivity": "css"
+}
+```
+
 ## Attribute order
 
-Sorting is handled by [`prettier-plugin-organize-attributes`](https://www.npmjs.com/package/prettier-plugin-organize-attributes), which organizes attributes (reorders them on each element). The presets below map each file type to a chosen attribute order.
+Sorting is handled by [`prettier-plugin-organize-attributes`](https://www.npmjs.com/package/prettier-plugin-organize-attributes).
 
-Use the overrides for HTML, Vue, or WeChat Miniprogram (WXML) files:
+Use overrides for HTML, Vue, or WeChat Miniprogram (WXML) files:
 
 ### HTML
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## stylelint@0.0.18 (2026-04-04)
+
+- Update `@tofrankie/postcss-wxml` to `v0.0.5`
+- Update `@stylistic/stylelint-plugin` to `v5.1.0`
+
 ## stylelint@0.0.17 (2026-04-04)
 
 - Update documentation

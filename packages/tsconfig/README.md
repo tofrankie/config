@@ -2,7 +2,7 @@
 
 ![npm version](https://img.shields.io/npm/v/@tofrankie/tsconfig) ![node version](https://img.shields.io/node/v/@tofrankie/tsconfig) ![npm package license](https://img.shields.io/npm/l/@tofrankie/tsconfig) ![npm last update](https://img.shields.io/npm/last-update/@tofrankie/tsconfig)
 
-A shared [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) `tsconfig.json` presets.
+Shared [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) `tsconfig.json` presets.
 
 > [!IMPORTANT]
 > Before 1.0.0, releases may include breaking changes. Read the [CHANGELOG](CHANGELOG.md) before upgrading.
@@ -24,7 +24,7 @@ Create a `tsconfig.json` in your project root:
 
 ## Presets
 
-Use `@tofrankie/tsconfig/<filename>` in `extends`. When **Extra dependencies** is not `-`, add those packages to your project's `devDependencies`.
+Use `@tofrankie/tsconfig/<filename>` in `extends`. When the **Extra dependencies** column is not `-`, add the listed packages to your project's `devDependencies`.
 
 | Preset                 | Purpose (how to choose)                                  | Extra dependencies      |
 | ---------------------- | -------------------------------------------------------- | ----------------------- |

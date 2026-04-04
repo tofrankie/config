@@ -1,9 +1,9 @@
 {
   "name": "@tofrankie/stylelint",
   "type": "module",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "packageManager": "pnpm@10.32.0",
-  "description": "A shared Stylelint configuration",
+  "description": "Shared Stylelint configuration",
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
   "homepage": "https://github.com/tofrankie/config/tree/main/packages/stylelint",
