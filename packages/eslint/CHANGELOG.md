@@ -1,5 +1,12 @@
 # Changelog
 
+## eslint@0.0.19 (2026-04-04)
+
+- Update `@antfu/eslint-config` to `v8.0.0`
+- Remove `eslint-plugin-react-hooks` from `dependencies`
+- Update `@eslint-react/eslint-plugin` to `v4.2.3`
+- Update ``
+
 ## eslint@0.0.18 (2026-04-04)
 
 - Update documentation
