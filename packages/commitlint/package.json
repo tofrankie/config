@@ -48,7 +48,7 @@
   "scripts": {
     "dev": "tsdown --watch",
     "build": "tsdown",
-    "prepublishOnly": "pnpm build",
+    "prepublishOnly": "pnpm typecheck && pnpm build",
     "publint": "publint",
     "typecheck": "tsc --noEmit"
   },
