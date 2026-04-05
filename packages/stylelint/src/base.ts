@@ -1,12 +1,12 @@
 import type { Config } from 'stylelint'
 import { IGNORE_FILES } from './constants'
-import { STANDARD_LANGUAGE_OPTIONS } from './language-options'
+import { BASE_LANGUAGE_OPTIONS } from './language-options'
 import { mergeLanguageOptions } from './utils/merge-language-options'
 
 // https://stylelint.io/user-guide/options/
 export default {
   ignoreFiles: IGNORE_FILES,
-  languageOptions: mergeLanguageOptions(STANDARD_LANGUAGE_OPTIONS),
+  languageOptions: mergeLanguageOptions(BASE_LANGUAGE_OPTIONS),
   extends: [
     // https://github.com/stylelint/stylelint-config-standard
     'stylelint-config-standard',
@@ -22,8 +22,8 @@ export default {
   plugins: ['@stylistic/stylelint-plugin'],
   rules: {
     'function-url-quotes': 'always',
-    'function-no-unknown': [true, { ignoreFunctions: ['constant'] }], // 需与 languageOptions 配合使用
-    // TODO: 对内联样式不起作用，如果要在两个属性之间自动添加空格，得用 Prettier 处理，临时解决方案是先 stylelint 再 prettier
+    'function-no-unknown': [true, { ignoreFunctions: ['constant'] }], // Requires `languageOptions` to be combined
+    // TODO: Does not work for inline styles. To automatically add spaces between two properties, use Prettier after Stylelint. The temporary solution is to run Stylelint first, then Prettier.
     // https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md
     // https://github.com/stylelint-stylistic/stylelint-stylistic/issues/49
     '@stylistic/declaration-block-semicolon-space-after': 'always-single-line',

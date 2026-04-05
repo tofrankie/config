@@ -124,7 +124,8 @@
     "dev": "tsdown --watch",
     "build": "tsdown",
     "prepublishOnly": "pnpm build",
-    "publint": "publint"
+    "publint": "publint",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "prettier": ">=3.0.0"

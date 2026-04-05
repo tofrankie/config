@@ -1,8 +1,9 @@
 import type { RuleAllowCase } from './helpers/lint'
 import { describe, it } from 'vitest'
+import { base, wechatSvg } from '../src'
 import { expectRuleNotTriggered } from './helpers/lint'
 
-const WECHAT_SVG_EXTENDS = ['@tofrankie/stylelint', '@tofrankie/stylelint/wechat-svg']
+const WECHAT_SVG_EXTENDS = [base, wechatSvg]
 
 interface WechatSvgRuleGroup {
   title: string

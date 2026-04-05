@@ -86,7 +86,7 @@ export default {
 
 > WXML preset with attribute ordering. [Details](./src/wxml.ts)
 
-> WXML parsing is powered by [@tofrankie/prettier-plugin-wxml](https://github.com/tofrankie/prettier-plugin-wxml).
+> WXML parsing is powered by [`@tofrankie/prettier-plugin-wxml`](https://github.com/tofrankie/prettier-plugin-wxml).
 
 ```js
 import { base, wxml } from '@tofrankie/prettier'
@@ -140,5 +140,5 @@ export default {
 
 Thanks to these referenced packages:
 
-- `prettier-plugin-organize-attributes`
-- `@tofrankie/prettier-plugin-wxml`
+- [`@tofrankie/prettier-plugin-wxml`](https://github.com/tofrankie/prettier-plugin-wxml)
+- [`prettier-plugin-organize-attributes`](https://github.com/NiklasPor/prettier-plugin-organize-attributes)

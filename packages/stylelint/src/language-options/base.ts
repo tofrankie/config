@@ -1,6 +1,6 @@
 import type { LanguageOptions } from 'stylelint'
 
-export const STANDARD_LANGUAGE_OPTIONS: LanguageOptions = {
+export const BASE_LANGUAGE_OPTIONS: LanguageOptions = {
   // https://stylelint.io/user-guide/configure/#syntax
   syntax: {
     types: {

@@ -41,7 +41,7 @@ export default {
 $ pnpm add eslint @tofrankie/eslint -D
 ```
 
-Create an `eslint.config.js` in your project root:
+Create an `eslint.config.mjs` in your project root:
 
 ```js
 import { defineConfig } from '@tofrankie/eslint'
@@ -57,7 +57,7 @@ export default defineConfig()
 $ pnpm add prettier @tofrankie/prettier -D
 ```
 
-Create a `prettier.config.js` in your project root:
+Create a `prettier.config.mjs` in your project root:
 
 ```js
 export default '@tofrankie/prettier'
@@ -71,7 +71,7 @@ export default '@tofrankie/prettier'
 $ pnpm add stylelint @tofrankie/stylelint -D
 ```
 
-Create a `stylelint.config.js` in your project root:
+Create a `stylelint.config.mjs` in your project root:
 
 ```js
 export default {

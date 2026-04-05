@@ -1,10 +1,11 @@
+import type { Config } from 'stylelint'
 import stylelint from 'stylelint'
 import { expect } from 'vitest'
 
 export async function lintCode(options: {
   code: string
   codeFilename: string
-  extendsConfigs: string[]
+  extendsConfigs: readonly Config[]
   fix?: boolean
 }) {
   return stylelint.lint({
@@ -12,7 +13,7 @@ export async function lintCode(options: {
     codeFilename: options.codeFilename,
     fix: options.fix ?? false,
     config: {
-      extends: options.extendsConfigs,
+      extends: toRuntimeExtends(options.extendsConfigs),
     },
   })
 }
@@ -33,7 +34,7 @@ export interface RuleAllowCase {
 export async function expectRuleTriggeredAndFixed(options: {
   rule: string
   codeFilename: string
-  extendsConfigs: string[]
+  extendsConfigs: readonly Config[]
   testCase: RuleFixCase
 }) {
   const lintResult = await lintCode({
@@ -57,7 +58,7 @@ export async function expectRuleTriggeredAndFixed(options: {
 export async function expectRuleNotTriggered(options: {
   rule: string
   codeFilename: string
-  extendsConfigs: string[]
+  extendsConfigs: readonly Config[]
   testCase: RuleAllowCase
 }) {
   const lintResult = await lintCode({
@@ -72,7 +73,7 @@ export async function expectRuleNotTriggered(options: {
 export async function expectRuleTriggered(options: {
   rule: string
   codeFilename: string
-  extendsConfigs: string[]
+  extendsConfigs: readonly Config[]
   testCase: RuleAllowCase
 }) {
   const lintResult = await lintCode({
@@ -82,4 +83,10 @@ export async function expectRuleTriggered(options: {
   })
 
   expect(warningRules(lintResult)).toContain(options.rule)
+}
+
+export function toRuntimeExtends(configs: readonly Config[]): NonNullable<Config['extends']> {
+  // Stylelint runtime accepts config objects in `extends`, but the current
+  // type definition only models string-based shareable configs/paths.
+  return configs as unknown as NonNullable<Config['extends']>
 }

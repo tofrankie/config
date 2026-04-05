@@ -1,3 +1,3 @@
 export default {
-  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/vue', '@tofrankie/stylelint/uniapp'],
+  extends: ['../../../dist/index.mjs', '../../../dist/vue.mjs', '../../../dist/uniapp.mjs'],
 }

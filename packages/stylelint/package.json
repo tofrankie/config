@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/stylelint",
   "type": "module",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "packageManager": "pnpm@10.32.0",
   "description": "Shared Stylelint configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -37,14 +37,14 @@
         "default": "./dist/index.cjs"
       }
     },
-    "./standard": {
+    "./base": {
       "import": {
-        "types": "./dist/standard.d.mts",
-        "default": "./dist/standard.mjs"
+        "types": "./dist/base.d.mts",
+        "default": "./dist/base.mjs"
       },
       "require": {
-        "types": "./dist/standard.d.cts",
-        "default": "./dist/standard.cjs"
+        "types": "./dist/base.d.cts",
+        "default": "./dist/base.cjs"
       }
     },
     "./miniprogram": {
@@ -67,14 +67,14 @@
         "default": "./dist/uniapp.cjs"
       }
     },
-    "./min-pixel": {
+    "./pxtorem": {
       "import": {
-        "types": "./dist/min-pixel.d.mts",
-        "default": "./dist/min-pixel.mjs"
+        "types": "./dist/pxtorem.d.mts",
+        "default": "./dist/pxtorem.mjs"
       },
       "require": {
-        "types": "./dist/min-pixel.d.cts",
-        "default": "./dist/min-pixel.cjs"
+        "types": "./dist/pxtorem.d.cts",
+        "default": "./dist/pxtorem.cjs"
       }
     },
     "./scss": {
@@ -136,6 +136,7 @@
     "build": "tsdown",
     "prepublishOnly": "pnpm build",
     "publint": "publint",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest"
   },

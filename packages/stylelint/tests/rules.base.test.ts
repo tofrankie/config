@@ -1,31 +1,32 @@
 import type { RuleAllowCase, RuleFixCase } from './helpers/lint'
 import { describe, it } from 'vitest'
+import { base } from '../src'
 import { expectRuleNotTriggered, expectRuleTriggered, expectRuleTriggeredAndFixed } from './helpers/lint'
 
-const STANDARD_EXTENDS = ['@tofrankie/stylelint']
+const BASE_EXTENDS = [base]
 
-interface StandardRuleGroup {
+interface BaseRuleGroup {
   title: string
   rule: string
   codeFilename?: string
   cases: RuleFixCase[]
 }
 
-interface StandardAllowGroup {
+interface BaseAllowGroup {
   title: string
   rule: string
   codeFilename?: string
   cases: RuleAllowCase[]
 }
 
-interface StandardDenyGroup {
+interface BaseDenyGroup {
   title: string
   rule: string
   codeFilename?: string
   cases: RuleAllowCase[]
 }
 
-const groups: StandardRuleGroup[] = [
+const groups: BaseRuleGroup[] = [
   {
     title: 'string-quotes enforces single quote and can auto-fix',
     rule: '@stylistic/string-quotes',
@@ -52,7 +53,7 @@ const groups: StandardRuleGroup[] = [
   },
 ]
 
-const allowGroups: StandardAllowGroup[] = [
+const allowGroups: BaseAllowGroup[] = [
   {
     title: 'constant syntax allows declared safe-area values',
     rule: 'declaration-property-value-no-unknown',
@@ -76,7 +77,7 @@ const allowGroups: StandardAllowGroup[] = [
   },
 ]
 
-const denyGroups: StandardDenyGroup[] = [
+const denyGroups: BaseDenyGroup[] = [
   {
     title: 'constant syntax rejects unsupported values',
     rule: 'declaration-property-value-no-unknown',
@@ -98,12 +99,12 @@ const denyGroups: StandardDenyGroup[] = [
   },
 ]
 
-describe('@tofrankie/stylelint standard rules', () => {
+describe('@tofrankie/stylelint base rules', () => {
   for (const group of groups) {
     describe(group.title, () => {
       for (const [index, testCase] of group.cases.entries()) {
         it(`case #${index + 1}`, async () => {
-          await runStandardRuleCase(group.rule, testCase, group.codeFilename)
+          await runBaseRuleCase(group.rule, testCase, group.codeFilename)
         })
       }
     })
@@ -116,7 +117,7 @@ describe('@tofrankie/stylelint standard rules', () => {
           await expectRuleNotTriggered({
             rule: group.rule,
             codeFilename: group.codeFilename ?? 'test.css',
-            extendsConfigs: STANDARD_EXTENDS,
+            extendsConfigs: BASE_EXTENDS,
             testCase,
           })
         })
@@ -131,7 +132,7 @@ describe('@tofrankie/stylelint standard rules', () => {
           await expectRuleTriggered({
             rule: group.rule,
             codeFilename: group.codeFilename ?? 'test.css',
-            extendsConfigs: STANDARD_EXTENDS,
+            extendsConfigs: BASE_EXTENDS,
             testCase,
           })
         })
@@ -140,11 +141,11 @@ describe('@tofrankie/stylelint standard rules', () => {
   }
 })
 
-async function runStandardRuleCase(rule: string, testCase: RuleFixCase, codeFilename?: string) {
+async function runBaseRuleCase(rule: string, testCase: RuleFixCase, codeFilename?: string) {
   await expectRuleTriggeredAndFixed({
     rule,
     codeFilename: codeFilename ?? 'test.css',
-    extendsConfigs: STANDARD_EXTENDS,
+    extendsConfigs: BASE_EXTENDS,
     testCase,
   })
 }

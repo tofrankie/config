@@ -15,11 +15,7 @@ Install dependencies:
 $ pnpm add stylelint @tofrankie/stylelint -D
 ```
 
-Create a `stylelint.config.js` in your project root and extend one or more of the presets below.
-
-### Standard
-
-Standard Stylelint rules, CSS property order, and support for HTML.
+ESM (`stylelint.config.mjs`):
 
 ```js
 export default {
@@ -27,7 +23,31 @@ export default {
 }
 ```
 
-Visual Studio Code: use [stylelint.vscode-stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) and merge the snippet below into `settings.json` to enable lint for `.html`:
+CJS (`stylelint.config.cjs`):
+
+```js
+module.exports = {
+  extends: ['@tofrankie/stylelint'],
+}
+```
+
+`@tofrankie/stylelint` exports the [base preset](./src/base.ts) by default.
+
+## Presets
+
+Use one or more presets in `extends`. Later entries in `extends` override earlier ones.
+
+### Base
+
+> Base preset with HTML support and CSS property ordering.
+
+```js
+export default {
+  extends: ['@tofrankie/stylelint'],
+}
+```
+
+Visual Studio Code: use [stylelint.vscode-stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) and merge the snippet below into `settings.json` to enable linting for `.html`:
 
 ```json
 {
@@ -37,6 +57,8 @@ Visual Studio Code: use [stylelint.vscode-stylelint](https://marketplace.visuals
 
 ### SCSS
 
+> SCSS preset.
+
 ```js
 export default {
   extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/scss'],
@@ -45,13 +67,15 @@ export default {
 
 ### Vue
 
+> Vue preset.
+
 ```js
 export default {
   extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/vue'],
 }
 ```
 
-Visual Studio Code: merge the snippet below into `settings.json` to enable lint for `.vue`:
+Visual Studio Code: merge the snippet below into `settings.json` to enable linting for `.vue`:
 
 ```json
 {
@@ -61,16 +85,21 @@ Visual Studio Code: merge the snippet below into `settings.json` to enable lint 
 
 ### Vue + SCSS
 
+> Vue + SCSS preset.
+
 ```js
 export default {
   extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/vue-scss'],
 }
 ```
 
-### Native Miniprogram
+Do not use both `vue` and `vue-scss`; `vue-scss` already includes the Vue preset.
 
-- Supports `rpx` and miniprogram-specific tag selectors.
-- Parses `.wxss` with PostCSS and `.wxml` with [@tofrankie/postcss-wxml](https://github.com/tofrankie/postcss-wxml).
+### Miniprogram
+
+> Miniprogram preset with WXSS and WXML support.
+
+> WXSS parsing is powered by PostCSS, and WXML parsing is powered by [@tofrankie/postcss-wxml](https://github.com/tofrankie/postcss-wxml).
 
 ```js
 export default {
@@ -78,7 +107,7 @@ export default {
 }
 ```
 
-Visual Studio Code: merge the snippet below into `settings.json` to enable lint for `.wxss` and `.wxml`:
+Visual Studio Code: merge the snippet below into `settings.json` to enable linting for `.wxss` and `.wxml`:
 
 ```json
 {
@@ -88,8 +117,7 @@ Visual Studio Code: merge the snippet below into `settings.json` to enable lint 
 
 ### uni-app
 
-- Vue-based.
-- Supports `rpx` and miniprogram-specific tag selectors.
+> uni-app preset.
 
 ```js
 export default {
@@ -97,7 +125,7 @@ export default {
 }
 ```
 
-With SCSS, use `vue-scss` then `uniapp`:
+With SCSS, use `vue-scss` and then `uniapp`:
 
 ```js
 export default {
@@ -105,17 +133,21 @@ export default {
 }
 ```
 
-### Ignore min-pixel (1Px / 1PX)
+### pxtorem
 
-When you use [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem/), you may need `1Px` or `1PX` to survive conversion. These rules relax linting for those spellings. [More](https://github.com/cuth/postcss-pxtorem/#a-message-about-ignoring-properties)
+> pxtorem addon preset for projects using [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem).
 
 ```js
 export default {
-  extends: ['@tofrankie/stylelint/standard', '@tofrankie/stylelint/min-pixel'],
+  extends: ['@tofrankie/stylelint/base', '@tofrankie/stylelint/pxtorem'],
 }
 ```
 
+Use this addon preset when you need to allow `1Px` or `1PX` to survive conversion.
+
 ### WeChat SVG
+
+> WeChat SVG preset.
 
 ```js
 export default {
@@ -123,28 +155,24 @@ export default {
 }
 ```
 
-## Combining configs
-
-Combine presets as needed; later entries in `extends` override earlier ones. Do not use both `vue` and `vue-scss`; `vue-scss` already includes the Vue preset.
-
 ## Merging `languageOptions`
 
-When you extend multiple presets, later entries usually **replace** earlier `languageOptions` instead of deep-merging them, so some syntax settings can be dropped.
+When you extend multiple presets, later entries usually replace earlier `languageOptions` instead of deep-merging them, so some syntax settings can be dropped.
 
 This package ships preset `languageOptions` for common cases, and exports `mergeLanguageOptions` plus preset objects so you can combine or override them safely.
 
 Provided preset language options:
 
-- [STANDARD_LANGUAGE_OPTIONS](./src/language-options/standard.ts)
+- [BASE_LANGUAGE_OPTIONS](./src/language-options/base.ts)
 - [MINIPROGRAM_LANGUAGE_OPTIONS](./src/language-options/miniprogram.ts)
 
 Example:
 
 ```js
-import { mergeLanguageOptions, STANDARD_LANGUAGE_OPTIONS } from '@tofrankie/stylelint'
+import { BASE_LANGUAGE_OPTIONS, mergeLanguageOptions } from '@tofrankie/stylelint'
 
 const languageOptions = mergeLanguageOptions(
-  STANDARD_LANGUAGE_OPTIONS,
+  BASE_LANGUAGE_OPTIONS,
   // your overrides...
   {
     syntax: {

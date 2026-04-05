@@ -1,9 +1,9 @@
 import type { Config } from 'stylelint'
-import { MINIPROGRAM_LANGUAGE_OPTIONS, STANDARD_LANGUAGE_OPTIONS } from './language-options'
+import { BASE_LANGUAGE_OPTIONS, MINIPROGRAM_LANGUAGE_OPTIONS } from './language-options'
 import { MINIPROGRAM_SHARED_RULES } from './shared-rules/miniprogram'
 import { mergeLanguageOptions } from './utils/merge-language-options'
 
-const miniprogramLanguageOptions = mergeLanguageOptions(STANDARD_LANGUAGE_OPTIONS, MINIPROGRAM_LANGUAGE_OPTIONS)
+const miniprogramLanguageOptions = mergeLanguageOptions(BASE_LANGUAGE_OPTIONS, MINIPROGRAM_LANGUAGE_OPTIONS)
 
 export default {
   overrides: [

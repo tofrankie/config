@@ -1,3 +1,3 @@
 export default {
-  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/wechat-svg'],
+  extends: ['../../../dist/index.mjs', '../../../dist/wechat-svg.mjs'],
 }

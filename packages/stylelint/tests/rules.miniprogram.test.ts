@@ -1,8 +1,9 @@
 import type { RuleAllowCase } from './helpers/lint'
 import { describe, it } from 'vitest'
+import { base, miniprogram } from '../src'
 import { expectRuleNotTriggered, expectRuleTriggered } from './helpers/lint'
 
-const MINIPROGRAM_EXTENDS = ['@tofrankie/stylelint', '@tofrankie/stylelint/miniprogram']
+const MINIPROGRAM_EXTENDS = [base, miniprogram]
 
 interface MiniprogramRuleGroup {
   title: string

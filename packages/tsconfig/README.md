@@ -2,7 +2,7 @@
 
 ![npm version](https://img.shields.io/npm/v/@tofrankie/tsconfig) ![node version](https://img.shields.io/node/v/@tofrankie/tsconfig) ![npm package license](https://img.shields.io/npm/l/@tofrankie/tsconfig) ![npm last update](https://img.shields.io/npm/last-update/@tofrankie/tsconfig)
 
-Shared [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) `tsconfig.json` presets.
+Shared [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) configuration.
 
 > [!IMPORTANT]
 > Before 1.0.0, releases may include breaking changes. Read the [CHANGELOG](CHANGELOG.md) before upgrading.

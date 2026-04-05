@@ -1,3 +1,3 @@
 export default {
-  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/vue-scss'],
+  extends: ['../../../dist/index.mjs', '../../../dist/vue-scss.mjs'],
 }

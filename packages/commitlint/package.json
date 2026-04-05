@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.5",
   "packageManager": "pnpm@10.32.0",
-  "description": "Shared commitlint configuration",
+  "description": "Shared Commitlint configuration",
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
   "homepage": "https://github.com/tofrankie/config/tree/main/packages/commitlint",
@@ -49,7 +49,8 @@
     "dev": "tsdown --watch",
     "build": "tsdown",
     "prepublishOnly": "pnpm build",
-    "publint": "publint"
+    "publint": "publint",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@commitlint/cli": ">=20.0.0"

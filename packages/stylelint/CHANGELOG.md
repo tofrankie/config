@@ -1,5 +1,12 @@
 # Changelog
 
+## stylelint@0.0.19 (2026-04-05)
+
+- Rename the default preset from `standard` to `base`
+- Rename `min-pixel` to `pxtorem`
+- Redesign package exports around the `base` preset and named preset exports
+- Update preset naming and examples in the README
+
 ## stylelint@0.0.18 (2026-04-04)
 
 - Update `@tofrankie/postcss-wxml` to `v0.0.5`

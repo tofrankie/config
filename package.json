@@ -21,10 +21,11 @@
   "scripts": {
     "prepare": "husky",
     "build": "pnpm -r --filter=@tofrankie/* build",
-    "lint": "run-s lint:*",
+    "lint": "run-s lint:* typecheck",
     "lint:eslint": "eslint . --cache --fix",
     "lint:prettier": "prettier . --cache --write --log-level silent",
     "publint": "pnpm -r --filter=@tofrankie/* publint",
+    "typecheck": "pnpm -r --filter=@tofrankie/* --if-present typecheck",
     "test": "pnpm -r --if-present test",
     "test:watch": "pnpm -r --parallel --if-present test:watch",
     "eslint:inspect": "eslint --inspect-config",

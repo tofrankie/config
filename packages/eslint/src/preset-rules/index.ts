@@ -12,7 +12,7 @@ import { TEST_PRESET_RULES } from './test'
 import { UNICORN_PRESET_RULES } from './unicorn'
 import { VUE_PRESET_RULES } from './vue'
 
-export const ALL_PRESET_RULES = {
+export const ALL_PRESET_RULES: Linter.RulesRecord = {
   ...ANTFU_PRESET_RULES,
   ...BASE_PRESET_RULES,
   ...E8E_PRESET_RULES,

@@ -1,3 +1,3 @@
 export default {
-  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/scss'],
+  extends: ['../../../dist/index.mjs', '../../../dist/scss.mjs'],
 }
