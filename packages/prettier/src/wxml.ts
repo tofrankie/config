@@ -1,9 +1,8 @@
 import type { Options } from 'prettier'
-import wxmlOptions from './wxml'
+import wxmlBase from './wxml-base'
 
-// https://prettier.io/docs/options
 export default {
-  ...wxmlOptions,
+  ...wxmlBase,
 
   // https://github.com/tofrankie/prettier-plugin-wxml
   wxmlStrict: true,

@@ -1,5 +1,12 @@
 # Changelog
 
+## prettier@0.0.17 (2026-04-05)
+
+- Redesign package exports around `base`, `html`, `vue`, `wxml`, `wxml-base`, `wechat-svg` and `organize-attributes`
+- Support both root named exports and short subpath exports
+- Clarify CommonJS usage with `.default` and named destructuring
+- Update documentation to use the new preset naming and examples
+
 ## prettier@0.0.16 (2026-04-04)
 
 - Update documentation

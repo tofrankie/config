@@ -1,27 +1,23 @@
-import baseOptions from '@tofrankie/prettier'
-import htmlOptions from '@tofrankie/prettier/options/sort-html'
-import miniprogramOptions from '@tofrankie/prettier/options/sort-miniprogram'
-import vueOptions from '@tofrankie/prettier/options/sort-vue'
-import wxmlOptions from '@tofrankie/prettier/options/wxml'
+import { base, html, vue, wxml } from '@tofrankie/prettier'
 
 export default {
-  ...baseOptions,
+  ...base,
   overrides: [
     {
       files: ['*.html'],
-      options: htmlOptions,
+      options: html,
     },
     {
       files: ['*.vue'],
-      options: vueOptions,
+      options: vue,
     },
     {
       files: ['*.wxml'],
-      options: miniprogramOptions,
+      options: wxml,
     },
     {
       files: ['*.wxml'],
-      options: wxmlOptions,
+      options: wxml,
     },
   ],
 }

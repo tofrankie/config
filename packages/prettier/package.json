@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/prettier",
   "type": "module",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "packageManager": "pnpm@10.32.0",
   "description": "Shared Prettier configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -36,64 +36,74 @@
         "default": "./dist/index.cjs"
       }
     },
-    "./options/base": {
+    "./base": {
       "import": {
-        "types": "./dist/options/base.d.mts",
-        "default": "./dist/options/base.mjs"
+        "types": "./dist/base.d.mts",
+        "default": "./dist/base.mjs"
       },
       "require": {
-        "types": "./dist/options/base.d.cts",
-        "default": "./dist/options/base.cjs"
+        "types": "./dist/base.d.cts",
+        "default": "./dist/base.cjs"
       }
     },
-    "./options/sort-html": {
+    "./html": {
       "import": {
-        "types": "./dist/options/sort-html.d.mts",
-        "default": "./dist/options/sort-html.mjs"
+        "types": "./dist/html.d.mts",
+        "default": "./dist/html.mjs"
       },
       "require": {
-        "types": "./dist/options/sort-html.d.cts",
-        "default": "./dist/options/sort-html.cjs"
+        "types": "./dist/html.d.cts",
+        "default": "./dist/html.cjs"
       }
     },
-    "./options/sort-vue": {
+    "./vue": {
       "import": {
-        "types": "./dist/options/sort-vue.d.mts",
-        "default": "./dist/options/sort-vue.mjs"
+        "types": "./dist/vue.d.mts",
+        "default": "./dist/vue.mjs"
       },
       "require": {
-        "types": "./dist/options/sort-vue.d.cts",
-        "default": "./dist/options/sort-vue.cjs"
+        "types": "./dist/vue.d.cts",
+        "default": "./dist/vue.cjs"
       }
     },
-    "./options/sort-miniprogram": {
+    "./wxml": {
       "import": {
-        "types": "./dist/options/sort-miniprogram.d.mts",
-        "default": "./dist/options/sort-miniprogram.mjs"
+        "types": "./dist/wxml.d.mts",
+        "default": "./dist/wxml.mjs"
       },
       "require": {
-        "types": "./dist/options/sort-miniprogram.d.cts",
-        "default": "./dist/options/sort-miniprogram.cjs"
+        "types": "./dist/wxml.d.cts",
+        "default": "./dist/wxml.cjs"
       }
     },
-    "./options/sort-wechat-svg": {
+    "./wxml-base": {
       "import": {
-        "types": "./dist/options/sort-wechat-svg.d.mts",
-        "default": "./dist/options/sort-wechat-svg.mjs"
+        "types": "./dist/wxml-base.d.mts",
+        "default": "./dist/wxml-base.mjs"
       },
       "require": {
-        "types": "./dist/options/sort-wechat-svg.d.cts",
-        "default": "./dist/options/sort-wechat-svg.cjs"
+        "types": "./dist/wxml-base.d.cts",
+        "default": "./dist/wxml-base.cjs"
       }
     },
-    "./options/wxml": {
+    "./wechat-svg": {
       "import": {
-        "types": "./dist/options/wxml.d.mts",
-        "default": "./dist/options/wxml.mjs"
+        "types": "./dist/wechat-svg.d.mts",
+        "default": "./dist/wechat-svg.mjs"
       },
       "require": {
-        "types": "./dist/options/wxml.d.cts",
-        "default": "./dist/options/wxml.cjs"
+        "types": "./dist/wechat-svg.d.cts",
+        "default": "./dist/wechat-svg.cjs"
+      }
+    },
+    "./organize-attributes": {
+      "import": {
+        "types": "./dist/organize-attributes.d.mts",
+        "default": "./dist/organize-attributes.mjs"
+      },
+      "require": {
+        "types": "./dist/organize-attributes.d.cts",
+        "default": "./dist/organize-attributes.cjs"
       }
     }
   },

@@ -15,10 +15,16 @@ Install dependencies:
 $ pnpm add prettier @tofrankie/prettier -D
 ```
 
-Create a `prettier.config.js` in your project root:
+ESM (`prettier.config.mjs`):
 
 ```js
 export default '@tofrankie/prettier'
+```
+
+CJS (`prettier.config.cjs`):
+
+```js
+module.exports = require('@tofrankie/prettier').default
 ```
 
 Base options:
@@ -34,26 +40,25 @@ Base options:
 }
 ```
 
-## Attribute order
+## Attribute Order
 
-Sorting is handled by [`prettier-plugin-organize-attributes`](https://www.npmjs.com/package/prettier-plugin-organize-attributes).
+Attribute ordering is handled by [`prettier-plugin-organize-attributes`](https://www.npmjs.com/package/prettier-plugin-organize-attributes).
 
-Use overrides for HTML, Vue, or WeChat Miniprogram (WXML) files:
+Use overrides for HTML, Vue, WXML, or WeChat SVG files:
 
 ### HTML
 
-> Attribute order follows the [Code Guide by @mdo](https://codeguide.co/#attribute-order). [Details](./src/options/sort-html.ts)
+> HTML preset with attribute ordering. [Details](./src/html.ts)
 
 ```js
-import baseOptions from '@tofrankie/prettier'
-import htmlOptions from '@tofrankie/prettier/options/sort-html'
+import { base, html } from '@tofrankie/prettier'
 
 export default {
-  ...baseOptions,
+  ...base,
   overrides: [
     {
       files: ['*.html'],
-      options: htmlOptions,
+      options: html,
     },
   ],
 }
@@ -61,39 +66,53 @@ export default {
 
 ### Vue
 
-> Attribute order follows the [Vue.js Style Guide](https://vuejs.org/style-guide/rules-recommended.html#element-attribute-order). [Details](./src/options/sort-vue.ts)
+> Vue preset with attribute ordering. [Details](./src/vue.ts)
 
 ```js
-import baseOptions from '@tofrankie/prettier'
-import vueOptions from '@tofrankie/prettier/options/sort-vue'
+import { base, vue } from '@tofrankie/prettier'
 
 export default {
-  ...baseOptions,
+  ...base,
   overrides: [
     {
       files: ['*.vue'],
-      options: vueOptions,
+      options: vue,
     },
   ],
 }
 ```
 
-### Native Miniprogram
+### WXML
 
-> Attribute order is customized (inspired by Vue.js). [Details](./src/options/sort-miniprogram.ts)
+> WXML preset with attribute ordering. [Details](./src/wxml.ts)
 
-> `.wxml` parsing uses [@tofrankie/prettier-plugin-wxml](https://github.com/tofrankie/prettier-plugin-wxml) internally.
+> WXML parsing is powered by [@tofrankie/prettier-plugin-wxml](https://github.com/tofrankie/prettier-plugin-wxml).
 
 ```js
-import baseOptions from '@tofrankie/prettier'
-import miniprogramOptions from '@tofrankie/prettier/options/sort-miniprogram'
+import { base, wxml } from '@tofrankie/prettier'
 
 export default {
-  ...baseOptions,
+  ...base,
   overrides: [
     {
       files: ['*.wxml'],
-      options: miniprogramOptions, // Formatting and organized attributes
+      options: wxml,
+    },
+  ],
+}
+```
+
+If you don't need attribute ordering, import `wxml-base`:
+
+```js
+import { base, wxmlBase } from '@tofrankie/prettier'
+
+export default {
+  ...base,
+  overrides: [
+    {
+      files: ['*.wxml'],
+      options: wxmlBase,
     },
   ],
 }
@@ -101,18 +120,17 @@ export default {
 
 ### WeChat SVG
 
-> Attribute order is customized. [Details](./src/options/sort-wechat-svg.ts)
+> WeChat SVG preset with attribute ordering. [Details](./src/wechat-svg.ts)
 
 ```js
-import baseOptions from '@tofrankie/prettier'
-import wechatSvgOptions from '@tofrankie/prettier/options/sort-wechat-svg'
+import { base, wechatSvg } from '@tofrankie/prettier'
 
 export default {
-  ...baseOptions,
+  ...base,
   overrides: [
     {
-      files: ['path/to/your/wechat-svg/*.html'], // adjust path as needed
-      options: wechatSvgOptions,
+      files: ['path/to/your/wechat-svg/*.html'],
+      options: wechatSvg,
     },
   ],
 }
