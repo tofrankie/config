@@ -1,5 +1,11 @@
 # Changelog
 
+## stylelint@0.1.0 (2026-04-08)
+
+- No code changes, just a version bump
+
+---
+
 ## stylelint@0.0.19 (2026-04-05)
 
 - Rename the default preset from `standard` to `base`
