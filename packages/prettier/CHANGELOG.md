@@ -1,5 +1,11 @@
 # Changelog
 
+## prettier@0.1.0 (2026-04-08)
+
+- No code changes, just a version bump
+
+---
+
 ## prettier@0.0.17 (2026-04-05)
 
 - Redesign package exports around `base`, `html`, `vue`, `wxml`, `wxml-base`, `wechat-svg` and `organize-attributes`
