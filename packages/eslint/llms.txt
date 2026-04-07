@@ -6,7 +6,7 @@ Use this package when you want antfu’s stack with **batteries-included depende
 
 For exhaustive antfu option keys, composer methods, `combine()`, glob exports, and plugin-prefix renaming, treat [@antfu/eslint-config](https://github.com/antfu/eslint-config) and its [llms.txt on Context7](https://context7.com/antfu/eslint-config/llms.txt) as the upstream reference. `@tofrankie/eslint` **re-exports the full public API** of `@antfu/eslint-config` plus `defineConfig` and `MINIPROGRAM_LANGUAGE_OPTIONS`.
 
-**Requirements:** Node.js 20+; ESLint peer `^9.10.0 || ^10`; flat config only (`eslint.config.mjs` / `.cjs`).
+**Requirements:** Node.js 22+; ESLint peer `^10`; flat config only (`eslint.config.mjs` / `.cjs`).
 
 **Stability:** Semver pre-1.0; check `CHANGELOG.md` before upgrading.
 

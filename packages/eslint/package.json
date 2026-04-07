@@ -47,7 +47,7 @@
     "access": "public"
   },
   "engines": {
-    "node": "^20.0.0 || ^22.0.0 || ^24.0.0"
+    "node": "^22.0.0 || ^24.0.0"
   },
   "scripts": {
     "dev": "tsdown --watch",
@@ -59,7 +59,7 @@
     "publint": "publint"
   },
   "peerDependencies": {
-    "eslint": "^9.10.0 || ^10.0.0"
+    "eslint": "^10.0.0"
   },
   "dependencies": {
     "@angular-eslint/eslint-plugin": "catalog:prod",

@@ -1,10 +1,11 @@
 import type { ConfigItemRules } from '../types'
 
 /**
- * - rule: `react/*`、`react-hooks-extra/*`
- * - plugin: `eslint-plugin-react-hooks-extra`
- * @see https://www.npmjs.com/package/eslint-plugin-react-hooks-extra
+ * - rule: `react/*`
+ * - original rule: `react-x/*`
+ * - plugin: `@eslint-react/eslint-plugin`
+ * @see https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin
  */
 export const REACT_RULES = {
-  'react-hooks-extra/no-direct-set-state-in-use-effect': 'off',
+  'react/set-state-in-effect': 'off',
 } satisfies ConfigItemRules

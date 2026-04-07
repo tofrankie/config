@@ -7,13 +7,13 @@ Shared [ESLint](https://eslint.org/) configuration built on [@antfu/eslint-confi
 > [!IMPORTANT]
 > Before 1.0.0, releases may include breaking changes. Read the [CHANGELOG](CHANGELOG.md) before upgrading.
 
-## Requirements
-
-- Node.js >= 20
-- ESLint >= 9.10.0
-- Flat config only
-
 ## Quick Start
+
+> [!NOTE]
+>
+> - Node.js: 22.0.0
+> - ESLint: 10.0.0
+> - TypeScript: 5.0.0
 
 Install dependencies:
 
