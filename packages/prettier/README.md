@@ -44,7 +44,7 @@ Base options:
 
 Attribute ordering is handled by [`prettier-plugin-organize-attributes`](https://www.npmjs.com/package/prettier-plugin-organize-attributes).
 
-Use overrides for HTML, Vue, WXML, or WeChat SVG files:
+Use overrides for HTML, Vue, or WXML files:
 
 ### HTML
 
