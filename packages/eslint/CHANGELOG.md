@@ -1,5 +1,18 @@
 # Changelog
 
+## eslint@0.0.20 (2026-04-07)
+
+- Refactor `defineConfig()` (layered options, presets, and post-antfu patches)
+- Temporarily default JSDoc to antfu-managed mode
+- Disable built-in formatter integrations by default
+- Remove the `OptionsConfig` type export from this package
+- Re-export the full public API of `@antfu/eslint-config`
+- Declare antfu optional integration plugins as direct `dependencies`
+- Export `MINIPROGRAM_LANGUAGE_OPTIONS` for WeChat miniprogram globals
+- Set `style/operator-linebreak` to `['error', 'after', { overrides: { '?': 'before', ':': 'before' } }]`
+- Expand documentation and the Vitest-based test suite
+- Miscellaneous bug fixes
+
 ## eslint@0.0.19 (2026-04-04)
 
 - Update `@antfu/eslint-config` to `v8.0.0`

@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/eslint",
   "type": "module",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "packageManager": "pnpm@10.32.0",
   "description": "Shared ESLint configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -52,7 +52,9 @@
   "scripts": {
     "dev": "tsdown --watch",
     "build": "tsdown",
-    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json",
     "prepublishOnly": "pnpm typecheck && pnpm build",
     "publint": "publint"
   },
@@ -60,16 +62,28 @@
     "eslint": "^9.10.0 || ^10.0.0"
   },
   "dependencies": {
+    "@angular-eslint/eslint-plugin": "catalog:prod",
+    "@angular-eslint/eslint-plugin-template": "catalog:prod",
+    "@angular-eslint/template-parser": "catalog:prod",
     "@antfu/eslint-config": "catalog:prod",
     "@eslint-react/eslint-plugin": "catalog:prod",
+    "@next/eslint-plugin-next": "catalog:prod",
+    "@prettier/plugin-xml": "catalog:prod",
+    "@unocss/eslint-plugin": "catalog:prod",
+    "defu": "catalog:prod",
+    "eslint-plugin-astro": "catalog:prod",
     "eslint-plugin-format": "catalog:prod",
     "eslint-plugin-jsdoc": "catalog:prod",
+    "eslint-plugin-jsx-a11y": "catalog:prod",
     "eslint-plugin-react-refresh": "catalog:prod",
-    "lodash.merge": "catalog:prod"
+    "eslint-plugin-solid": "catalog:prod",
+    "eslint-plugin-svelte": "catalog:prod",
+    "local-pkg": "catalog:prod",
+    "prettier-plugin-astro": "catalog:prod"
   },
   "devDependencies": {
     "@tofrankie/tsconfig": "workspace:*",
-    "@types/lodash.merge": "catalog:types",
-    "eslint": "catalog:peer"
+    "eslint": "catalog:peer",
+    "vitest": "catalog:dev"
   }
 }

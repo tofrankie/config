@@ -1,0 +1,157 @@
+# @tofrankie/eslint
+
+Opinionated ESLint **flat config** preset for the tofrankie toolchain. It wraps [@antfu/eslint-config](https://github.com/antfu/eslint-config): `defineConfig()` forwards antfu-compatible options to `antfu()`, merges package defaults (via `defu`), applies internal presets and **post-generation patches** on the returned composer, then returns that composer.
+
+Use this package when you want antfu’s stack with **batteries-included dependencies** (optional integration plugins are already declared here), **formatter integrations off by default** (to pair with Prettier / Stylelint instead of double-formatting), and small **project-specific** layers (JSDoc rule/settings overrides, stylistic tweaks, WeChat miniprogram `languageOptions`).
+
+For exhaustive antfu option keys, composer methods, `combine()`, glob exports, and plugin-prefix renaming, treat [@antfu/eslint-config](https://github.com/antfu/eslint-config) and its [llms.txt on Context7](https://context7.com/antfu/eslint-config/llms.txt) as the upstream reference. `@tofrankie/eslint` **re-exports the full public API** of `@antfu/eslint-config` plus `defineConfig` and `MINIPROGRAM_LANGUAGE_OPTIONS`.
+
+**Requirements:** Node.js 20+; ESLint peer `^9.10.0 || ^10`; flat config only (`eslint.config.mjs` / `.cjs`).
+
+**Stability:** Semver pre-1.0; check `CHANGELOG.md` before upgrading.
+
+---
+
+## Install
+
+```bash
+pnpm add eslint @tofrankie/eslint -D
+```
+
+Minimal ESM:
+
+```js
+// eslint.config.mjs
+import { defineConfig } from '@tofrankie/eslint'
+
+export default defineConfig()
+```
+
+Minimal CJS:
+
+```js
+// eslint.config.cjs
+const { defineConfig } = require('@tofrankie/eslint')
+
+module.exports = defineConfig()
+```
+
+---
+
+## `defineConfig` signature
+
+```ts
+defineConfig(antfuOptions?: AntfuOptions, ...userFlatConfigs: UserFlatConfig[]): Composer
+```
+
+- **First argument:** same shape as antfu’s factory options (`typescript`, `vue`, `react`, `rules`, `ignores`, `formatters`, integration `overrides`, etc.). Top-level `rules` use antfu’s fused-config semantics and sit **before** extra flat items.
+- **Rest arguments:** additional ESLint flat config objects appended after antfu’s generated stack.
+- **Return value:** antfu’s config composer (`FlatConfigComposer`); call `.toConfigs()` when you need the raw array.
+
+```js
+import { defineConfig } from '@tofrankie/eslint'
+
+export default defineConfig(
+  {
+    typescript: true,
+    vue: true,
+    rules: { 'no-console': 'off' },
+  },
+  {
+    files: ['**/*.custom.ts'],
+    rules: { 'no-debugger': 'error' },
+  },
+)
+```
+
+---
+
+## Differences vs calling `antfu()` directly
+
+1. **Dependencies:** Renamed-rule plugins and many optional integration packages are **direct dependencies** of `@tofrankie/eslint`. Enable the matching antfu flags (`react`, `vue`, `astro`, `svelte`, …) instead of reinstalling those packages in the app unless you have a special layout.
+2. **Formatters:** Default formatter toggles are **off** (`css`, `html`, `markdown`, `graphql`, `astro`, `xml`, `slidev`, `svg`, …). Built-in `formatters.prettierOptions` still defaults to align with `@tofrankie/prettier` (e.g. `printWidth: 120`) and applies when you opt back in.
+3. **Formatters merge behavior:**
+   - `formatters: false` → disable all formatter integrations.
+   - `formatters: true` → same subset as antfu’s boolean shortcut: `css`, `html`, `markdown`, `graphql`, merged onto the preset defaults (including `prettierOptions`).
+   - `formatters: { ... }` → deep-merge with preset defaults; unspecified formatter flags stay **off** until set.
+4. **JSDoc:** Internal mode defaults to **`antfu`** (see `docs/jsdoc-strategy.md`): keep antfu’s built-in `jsdoc` integration, then layer rule/settings overrides **after** the `antfu/jsdoc/rules` named block so the `jsdoc` plugin is not registered twice.
+5. **Unused variables (default):** `.js` → `unused-imports/no-unused-vars`; `.ts` and Vue SFCs with TS script → `ts/no-unused-vars`.
+6. **TypeScript activation:** Same auto-detect idea as antfu: if `typescript` is not `false`, having the `typescript` package installed enables TS rules. Set `typescript: false` for JS-first repos that still install TypeScript for tooling.
+7. **Type-aware rules:** Set `typescript: { tsconfigPath: 'tsconfig.json' }` (and satisfy a valid tsconfig). React type-aware rules follow the same gate when React is enabled.
+
+---
+
+## Integration `overrides` vs top-level `rules`
+
+Prefer **`vue.overrides`**, **`typescript.overrides`**, etc., when a rule must respect integration file globs and plugin context. Use **top-level `rules`** only for global overrides; that layer does not inherit per-integration file scopes.
+
+```js
+export default defineConfig({
+  vue: {
+    overrides: {
+      'vue/operator-linebreak': ['error', 'before'],
+    },
+  },
+  typescript: {
+    overrides: {
+      'ts/consistent-type-definitions': ['error', 'interface'],
+    },
+  },
+})
+```
+
+---
+
+## Formatters (opt-in)
+
+```js
+export default defineConfig({
+  formatters: {
+    html: true,
+    markdown: true,
+    prettierOptions: { printWidth: 100 },
+  },
+})
+```
+
+---
+
+## Re-exports from `@antfu/eslint-config`
+
+Named exports from `@antfu/eslint-config` are re-exported (`export *`): e.g. `combine`, glob constants (`GLOB_SRC`, …), `renameRules`, and other utilities. **Prefer `defineConfig` as the package entrypoint** for the merged defaults and patches. Antfu’s **default** factory is not re-exported as `default` in ESM (because `export *` omits default); import that default directly from `@antfu/eslint-config` if you need it.
+
+```js
+import { defineConfig, combine, GLOB_SRC } from '@tofrankie/eslint'
+```
+
+---
+
+## WeChat miniprogram globals
+
+```js
+import { defineConfig, MINIPROGRAM_LANGUAGE_OPTIONS } from '@tofrankie/eslint'
+
+export default defineConfig(
+  { ignores: ['project.config.json', 'project.private.config.json'] },
+  { languageOptions: MINIPROGRAM_LANGUAGE_OPTIONS },
+)
+```
+
+---
+
+## Source documentation (monorepo)
+
+Extended design notes live under `packages/eslint/docs/` in the repo:
+
+- [Config merge strategy](https://github.com/tofrankie/config/blob/main/packages/eslint/docs/config-merge-strategy.md)
+- [Config layering](https://github.com/tofrankie/config/blob/main/packages/eslint/docs/config-layering.md)
+- [Flat config items](https://github.com/tofrankie/config/blob/main/packages/eslint/docs/flat-config-items.md)
+- [JSDoc strategy](https://github.com/tofrankie/config/blob/main/packages/eslint/docs/jsdoc-strategy.md)
+
+Human-oriented README: [README.md](https://github.com/tofrankie/config/blob/main/packages/eslint/README.md).
+
+---
+
+## Summary
+
+`@tofrankie/eslint` is a **thin orchestration layer** on `@antfu/eslint-config`: merge defaults, resolve formatter policy, compose internal presets, run **post-antfu** composer patches, and ship **dependency-complete** optional integrations. Customize through the same antfu options object, add flat slices as extra arguments, or use the re-exported antfu utilities for advanced composition. For behavior not listed here, assume parity with upstream antfu unless `CHANGELOG.md` or the docs above say otherwise.
