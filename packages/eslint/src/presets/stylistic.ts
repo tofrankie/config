@@ -44,5 +44,5 @@ export const STYLISTIC_RULES = {
   'style/jsx-one-expression-per-line': 'off',
   'style/jsx-wrap-multilines': 'off',
   'style/multiline-ternary': 'off',
-  'object-curly-spacing': 'off',
+  'style/object-curly-spacing': 'off',
 } satisfies ConfigItemRules

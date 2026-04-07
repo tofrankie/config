@@ -1,8 +1,13 @@
 # Changelog
 
+## eslint@0.0.23 (2026-04-07)
+
+- Fix `style/object-curly-spacing` rule name
+
 ## eslint@0.0.22 (2026-04-07)
 
 - Fix lessOpinionated preset detection logic
+- Disable `unused-imports/no-unused-vars` rule, use `no-unused-vars` / `ts/no-unused-vars` instead
 - Update dependencies
 
 ## eslint@0.0.21 (2026-04-07)
