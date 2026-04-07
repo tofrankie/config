@@ -1,5 +1,20 @@
 # Changelog
 
+## eslint@0.1.0 (2026-04-08)
+
+### 📢
+
+- Require Node.js 22 (previously `^20.19.0`)
+- Require ESLint 10 (previously `^9.10.0 || ^10.0.0`)
+- Require TypeScript 5.0
+
+### 🔧
+
+- Remove `eslint-plugin-react-hooks` in favor of `@eslint-react/eslint-plugin` integration. Migrate rule overrides from `react-hooks/*` to `react/*` (`@antfu/eslint-config` renames the former `react-x/*` prefix to `react/*`). [Details](https://www.eslint-react.xyz/docs/migrating-from-eslint-plugin-react-hooks)
+- Disable `e18e/prefer-array-at` rule
+
+---
+
 ## eslint@0.0.23 (2026-04-07)
 
 - Fix `style/object-curly-spacing` rule name
