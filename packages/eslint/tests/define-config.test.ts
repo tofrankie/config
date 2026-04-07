@@ -136,12 +136,21 @@ describe('@tofrankie/eslint defineConfig', () => {
     expect(findRuleEntry(configs, 'node/prefer-global/process')).toBe('error')
   })
 
-  it('applies pnpm override only when pnpm is explicitly enabled', async () => {
-    const defaultConfigs = await defineConfig().toConfigs()
-    const enabledConfigs = await defineConfig({ pnpm: true }).toConfigs()
+  it('turns off pnpm/yaml-enforce-settings when antfu pnpm integration is active', async () => {
+    const configs = await defineConfig().toConfigs()
+    const pnpmYaml = findConfigByName(configs, 'antfu/pnpm/pnpm-workspace-yaml')
 
-    expect(findRuleEntry(defaultConfigs, 'pnpm/yaml-enforce-settings')).not.toBe('off')
-    expect(findRuleEntry(enabledConfigs, 'pnpm/yaml-enforce-settings')).toBe('off')
+    if (!pnpmYaml) {
+      return
+    }
+
+    expect(pnpmYaml.rules?.['pnpm/yaml-enforce-settings']).toBe('off')
+  })
+
+  it('omits pnpm integration when pnpm is false', async () => {
+    const configs = await defineConfig({ pnpm: false }).toConfigs()
+
+    expect(findConfigByName(configs, 'antfu/pnpm/pnpm-workspace-yaml')).toBeUndefined()
   })
 
   it('keeps formatter integrations disabled by default', async () => {

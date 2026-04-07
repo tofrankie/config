@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/eslint",
   "type": "module",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "packageManager": "pnpm@10.32.0",
   "description": "Shared ESLint configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -78,6 +78,7 @@
     "eslint-plugin-react-refresh": "catalog:prod",
     "eslint-plugin-solid": "catalog:prod",
     "eslint-plugin-svelte": "catalog:prod",
+    "find-up-simple": "catalog:prod",
     "local-pkg": "catalog:prod",
     "prettier-plugin-astro": "catalog:prod"
   },

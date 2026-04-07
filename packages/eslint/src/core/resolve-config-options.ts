@@ -1,5 +1,5 @@
 import type { AntfuOptions, ResolvedConfigOptions } from '../types'
-import { detectPackage } from './detect-packages'
+import { detectPackage, detectPnpmWorkspaceYaml } from './detect-packages'
 import { INTERNAL_JSDOC_MODE } from './jsdoc-mode'
 
 export function resolveConfigOptions(options: AntfuOptions): ResolvedConfigOptions {
@@ -16,7 +16,7 @@ export function resolveConfigOptions(options: AntfuOptions): ResolvedConfigOptio
     jsdocMode: INTERNAL_JSDOC_MODE,
     lessOpinionated: options.lessOpinionated === true,
     node: isEnabledByDefault(options.node),
-    pnpm: isExplicitlyEnabled(options.pnpm),
+    pnpm: isPnpmEnabled(options.pnpm),
     react: isExplicitlyEnabled(options.react),
     stylistic: isEnabledByDefault(options.stylistic),
     test: isEnabledByDefault(options.test),
@@ -33,6 +33,18 @@ function isEnabledByDefault(value: unknown): boolean {
 
 function isExplicitlyEnabled(value: unknown): boolean {
   return value === true || isOptionObject(value)
+}
+
+function isPnpmEnabled(pnpmOption: unknown): boolean {
+  if (pnpmOption === false) {
+    return false
+  }
+  if (isExplicitlyEnabled(pnpmOption)) {
+    return true
+  }
+
+  // `pnpm` defaults on when `pnpm-workspace.yaml` is found
+  return detectPnpmWorkspaceYaml()
 }
 
 function isAutoDetectedEnabled(value: unknown, packageName: string): boolean {

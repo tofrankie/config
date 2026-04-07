@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.0.21 (2026-04-07)
+
+- Fix `pnpm` detection logic
+
 ## eslint@0.0.20 (2026-04-07)
 
 - Refactor `defineConfig()` (layered options, presets, and post-antfu patches)
