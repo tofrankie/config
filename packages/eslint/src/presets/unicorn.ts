@@ -1,5 +1,10 @@
-import type { TypedFlatConfigItem } from '../types'
+import type { ConfigItemRules } from '../types'
 
-export const unicornRules = {
+/**
+ * - rule: `unicorn/*`
+ * - plugin: `eslint-plugin-unicorn`
+ * @see https://github.com/sindresorhus/eslint-plugin-unicorn
+ */
+export const UNICORN_RULES = {
   'unicorn/number-literal-case': ['error', { hexadecimalValue: 'lowercase' }],
-} satisfies NonNullable<TypedFlatConfigItem['rules']>
+} satisfies ConfigItemRules

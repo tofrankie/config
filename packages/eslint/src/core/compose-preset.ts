@@ -1,5 +1,5 @@
 import type { AntfuOptions, ResolvedConfigOptions } from '../types'
-import { integrationRulePresets } from '../presets'
+import { INTEGRATION_RULE_PRESETS } from '../presets'
 
 export function composePreset(options: ResolvedConfigOptions): Partial<AntfuOptions> {
   const preset: Partial<AntfuOptions> = {}
@@ -10,8 +10,8 @@ export function composePreset(options: ResolvedConfigOptions): Partial<AntfuOpti
   // top-level `overrides` option. Package presets intentionally stop here:
   // config-item-specific defaults (for example `node/*` or `pnpm/*`) are
   // applied later as post-antfu patches instead of top-level fused rules.
-  for (const integrationRulePreset of integrationRulePresets) {
-    if (!isPresetEnabled(integrationRulePreset.option, options)) {
+  for (const integrationRulePreset of INTEGRATION_RULE_PRESETS) {
+    if (!isPresetEnabled(integrationRulePreset.option, integrationRulePreset.expected, options)) {
       continue
     }
 
@@ -46,6 +46,14 @@ function isObjectLike(value: unknown): value is Record<string, any> {
   return typeof value === 'object' && value !== null
 }
 
-function isPresetEnabled(option: keyof ResolvedConfigOptions | undefined, options: ResolvedConfigOptions): boolean {
-  return option == null ? true : options[option] === true
+function isPresetEnabled(
+  option: keyof ResolvedConfigOptions | undefined,
+  expected: boolean | undefined,
+  options: ResolvedConfigOptions
+): boolean {
+  if (option == null) {
+    return true
+  }
+
+  return options[option] === (expected ?? true)
 }

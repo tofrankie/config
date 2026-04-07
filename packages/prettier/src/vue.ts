@@ -8,6 +8,7 @@ export default {
   attributeIgnoreCase: true,
   attributeGroups: [
     // https://github.com/NiklasPor/prettier-plugin-organize-attributes/issues/3#issuecomment-1796376738
+    // https://vuejs.org/style-guide/rules-recommended.html#element-attribute-order
     '^((v-bind)?:?|v-)is$',
     '^v-for$',
     '^v-(if|else-if|else|show|cloak)$',

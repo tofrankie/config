@@ -15,9 +15,5 @@ export default {
       files: ['*.wxml'],
       options: wxml,
     },
-    {
-      files: ['*.wxml'],
-      options: wxml,
-    },
   ],
 }

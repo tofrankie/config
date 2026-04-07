@@ -1,5 +1,12 @@
-import type { TypedFlatConfigItem } from '../types'
+import type { ConfigItemRules } from '../types'
 
-export const nodeRules = {
+/**
+ * - rule: `node/*`
+ * - original rule: `n/*`
+ * - plugin: `eslint-plugin-n`
+ * @see https://github.com/antfu/eslint-config#node
+ * @see https://github.com/eslint-community/eslint-plugin-n
+ */
+export const NODE_RULES = {
   'node/prefer-global/process': 'off',
-} satisfies NonNullable<TypedFlatConfigItem['rules']>
+} satisfies ConfigItemRules

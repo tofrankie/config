@@ -1,6 +1,6 @@
 import type { PatchApplier, TypedFlatConfigItem } from '../types'
 import { jsdoc } from 'eslint-plugin-jsdoc'
-import { jsdocJavaScriptRules, jsdocTypeScriptRules } from '../presets'
+import { JSDOC_JAVASCRIPT_RULES, JSDOC_TYPESCRIPT_RULES } from '../presets'
 
 const SHARED_SETTINGS = {
   tagNamePreference: {
@@ -32,16 +32,16 @@ function buildManagedJsdocItems(): TypedFlatConfigItem[] {
     ...toConfigItems(
       jsdoc({
         config: 'flat/recommended-typescript-flavor-error',
-        files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
-        rules: jsdocJavaScriptRules,
+        files: ['**/*.?([cm])js?(x)'],
+        rules: JSDOC_JAVASCRIPT_RULES,
         settings: SHARED_SETTINGS,
       })
     ),
     ...toConfigItems(
       jsdoc({
         config: 'flat/recommended-typescript-error',
-        files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
-        rules: jsdocTypeScriptRules,
+        files: ['**/*.?([cm])ts?(x)'],
+        rules: JSDOC_TYPESCRIPT_RULES,
         settings: SHARED_SETTINGS,
       })
     ),
@@ -53,13 +53,13 @@ function buildAntfuJsdocItems(): TypedFlatConfigItem[] {
     {
       name: 'tofrankie/jsdoc/javascript',
       files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
-      rules: jsdocJavaScriptRules,
+      rules: JSDOC_JAVASCRIPT_RULES,
       settings: SHARED_SETTINGS,
     },
     {
       name: 'tofrankie/jsdoc/typescript',
       files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
-      rules: jsdocTypeScriptRules,
+      rules: JSDOC_TYPESCRIPT_RULES,
       settings: SHARED_SETTINGS,
     },
   ]

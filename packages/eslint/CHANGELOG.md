@@ -1,5 +1,10 @@
 # Changelog
 
+## eslint@0.0.22 (2026-04-07)
+
+- Fix lessOpinionated preset detection logic
+- Update dependencies
+
 ## eslint@0.0.21 (2026-04-07)
 
 - Fix `pnpm` detection logic

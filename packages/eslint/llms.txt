@@ -75,9 +75,8 @@ export default defineConfig(
    - `formatters: true` → same subset as antfu’s boolean shortcut: `css`, `html`, `markdown`, `graphql`, merged onto the preset defaults (including `prettierOptions`).
    - `formatters: { ... }` → deep-merge with preset defaults; unspecified formatter flags stay **off** until set.
 4. **JSDoc:** Internal mode defaults to **`antfu`** (see `docs/jsdoc-strategy.md`): keep antfu’s built-in `jsdoc` integration, then layer rule/settings overrides **after** the `antfu/jsdoc/rules` named block so the `jsdoc` plugin is not registered twice.
-5. **Unused variables (default):** `.js` → `unused-imports/no-unused-vars`; `.ts` and Vue SFCs with TS script → `ts/no-unused-vars`.
-6. **TypeScript activation:** Same auto-detect idea as antfu: if `typescript` is not `false`, having the `typescript` package installed enables TS rules. Set `typescript: false` for JS-first repos that still install TypeScript for tooling.
-7. **Type-aware rules:** Set `typescript: { tsconfigPath: 'tsconfig.json' }` (and satisfy a valid tsconfig). React type-aware rules follow the same gate when React is enabled.
+5. **TypeScript activation:** Same auto-detect idea as antfu: if `typescript` is not `false`, having the `typescript` package installed enables TS rules. Set `typescript: false` for JS-first repos that still install TypeScript for tooling.
+6. **Type-aware rules:** Set `typescript: { tsconfigPath: 'tsconfig.json' }` (and satisfy a valid tsconfig). React type-aware rules follow the same gate when React is enabled.
 
 ---
 

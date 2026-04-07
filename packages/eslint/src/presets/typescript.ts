@@ -1,6 +1,13 @@
-import type { TypedFlatConfigItem } from '../types'
+import type { ConfigItemRules } from '../types'
 
-export const typescriptRules = {
+/**
+ * - rule: `ts/*`
+ * - original rule: `@typescript-eslint/*`
+ * - plugin: `@typescript-eslint/eslint-plugin`
+ * @see https://github.com/antfu/eslint-config#typescript
+ * @see https://typescript-eslint.io/rules/
+ */
+export const TYPESCRIPT_RULES = {
   'no-unused-vars': 'off',
   'unused-imports/no-unused-vars': 'off',
   'ts/no-unused-vars': [
@@ -15,4 +22,4 @@ export const typescriptRules = {
       ignoreRestSiblings: true,
     },
   ],
-} satisfies NonNullable<TypedFlatConfigItem['rules']>
+} satisfies ConfigItemRules

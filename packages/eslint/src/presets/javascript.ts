@@ -1,7 +1,23 @@
-import type { TypedFlatConfigItem } from '../types'
+import type { ConfigItemRules } from '../types'
 
-export const javascriptRules = {
+/**
+ * - rule: `*`
+ * - plugin: `none`
+ * @see https://eslint.org/docs/latest/rules/
+ */
+export const JAVASCRIPT_RULES = {
   'no-console': 'off',
   'no-debugger': 'warn',
-  'no-unused-vars': 'off',
-} satisfies NonNullable<TypedFlatConfigItem['rules']>
+  'unused-imports/no-unused-vars': 'off',
+  'no-unused-vars': [
+    'error',
+    {
+      vars: 'all',
+      args: 'all',
+      argsIgnorePattern: '^_',
+      destructuredArrayIgnorePattern: '^_',
+      varsIgnorePattern: '^_',
+      ignoreRestSiblings: true,
+    },
+  ],
+} satisfies ConfigItemRules

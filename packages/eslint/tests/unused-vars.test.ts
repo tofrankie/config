@@ -17,7 +17,7 @@ describe('@tofrankie/eslint unused-vars strategy', () => {
       overrideConfigFile: true,
     })
 
-    const results = await eslint.lintFiles(['src/index.js', 'src/index.ts', 'src/App.vue'])
+    const results = await eslint.lintFiles(['src/index.js', 'src/index.ts', 'src/App.vue', 'src/app-js.vue'])
     const byFile = Object.fromEntries(
       results.map(result => [
         path.relative(FIXTURE_ROOT, result.filePath),
@@ -25,8 +25,9 @@ describe('@tofrankie/eslint unused-vars strategy', () => {
       ])
     )
 
-    expect(byFile['src/index.js']).toEqual(['unused-imports/no-unused-vars'])
+    expect(byFile['src/index.js']).toEqual(['no-unused-vars'])
     expect(byFile['src/index.ts']).toEqual(['ts/no-unused-vars'])
     expect(byFile['src/App.vue']).toEqual(['ts/no-unused-vars'])
+    expect(byFile['src/app-js.vue']).toEqual(['ts/no-unused-vars'])
   })
 })

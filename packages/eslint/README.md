@@ -125,14 +125,6 @@ export default defineConfig({
 JSDoc stays on antfu's built-in integration; this package layers rule and settings overrides without registering the `jsdoc` plugin twice. Details: [JSDoc strategy](./docs/jsdoc-strategy.md).
 -->
 
-## Unused variables
-
-With default options:
-
-- `.js` — `unused-imports/no-unused-vars`
-- `.ts` — `ts/no-unused-vars`
-- Vue SFCs with TypeScript `<script>` — `ts/no-unused-vars`
-
 ## WeChat miniprogram
 
 `MINIPROGRAM_LANGUAGE_OPTIONS` exposes common miniprogram globals for an extra flat item:

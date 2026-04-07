@@ -1,6 +1,6 @@
 import type { ConfigItemRulePreset } from '../presets'
 import type { PatchApplier } from '../types'
-import { configItemRulePresets } from '../presets'
+import { CONFIG_ITEM_RULE_PRESETS } from '../presets'
 
 /**
  * These rule families do not have an equivalent antfu integration-overrides
@@ -15,7 +15,7 @@ const CONFIG_ITEM_RULE_TARGETS = {
 } as const satisfies Record<string, string>
 
 export const applyConfigItemRulePatches: PatchApplier = (composer, options) => {
-  for (const preset of configItemRulePresets) {
+  for (const preset of CONFIG_ITEM_RULE_PRESETS) {
     if (preset.option != null && !options[preset.option]) {
       continue
     }

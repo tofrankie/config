@@ -1,29 +1,29 @@
-import type { TypedFlatConfigItem } from '../types'
+import type { ConfigItemRules } from '../types'
 
-export const jsdocJavaScriptRules = {
+/**
+ * - rule: `jsodc/*`
+ * - plugin: `eslint-plugin-jsdoc`
+ * @see https://github.com/gajus/eslint-plugin-jsdoc
+ */
+const COMMON_RULES = {
   'jsdoc/check-syntax': 'error',
-  'jsdoc/newline-after-description': 'off',
   'jsdoc/no-defaults': 'off',
-  'jsdoc/reject-any-type': 'off',
   'jsdoc/require-jsdoc': 'off',
   'jsdoc/require-param-description': 'off',
+  'jsdoc/require-property-description': 'off',
+  'jsdoc/require-returns': 'off',
+  'jsdoc/require-returns-type': 'off',
+  'jsdoc/require-returns-description': 'off',
+  'jsdoc/newline-after-description': 'off',
+  'jsdoc/reject-any-type': 'off',
+} satisfies ConfigItemRules
+
+export const JSDOC_JAVASCRIPT_RULES = {
+  ...COMMON_RULES,
   'jsdoc/require-param-type': 'warn',
-  'jsdoc/require-property-description': 'off',
-  'jsdoc/require-returns': 'off',
-  'jsdoc/require-returns-description': 'off',
-  'jsdoc/require-returns-type': 'off',
-} satisfies NonNullable<TypedFlatConfigItem['rules']>
+} satisfies ConfigItemRules
 
-export const jsdocTypeScriptRules = {
-  'jsdoc/check-syntax': 'error',
-  'jsdoc/newline-after-description': 'off',
-  'jsdoc/no-defaults': 'off',
-  'jsdoc/reject-any-type': 'off',
-  'jsdoc/require-jsdoc': 'off',
-  'jsdoc/require-param-description': 'off',
+export const JSDOC_TYPESCRIPT_RULES = {
+  ...COMMON_RULES,
   'jsdoc/require-param-type': 'off',
-  'jsdoc/require-property-description': 'off',
-  'jsdoc/require-returns': 'off',
-  'jsdoc/require-returns-description': 'off',
-  'jsdoc/require-returns-type': 'off',
-} satisfies NonNullable<TypedFlatConfigItem['rules']>
+} satisfies ConfigItemRules

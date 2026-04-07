@@ -1,6 +1,13 @@
-import type { TypedFlatConfigItem } from '../types'
+import type { ConfigItemRules } from '../types'
 
-export const stylisticRules = {
+/**
+ * - rule: `style/*`
+ * - original rule: `@stylistic/*`
+ * - plugin: `@stylistic/eslint-plugin`
+ * @see https://github.com/antfu/eslint-config#stylistic
+ * @see https://eslint.style/rules
+ */
+export const STYLISTIC_RULES = {
   'style/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: 'avoidEscape' }],
   'style/quote-props': ['error', 'as-needed'],
   'style/arrow-parens': ['error', 'as-needed'],
@@ -14,7 +21,7 @@ export const stylisticRules = {
         requireLast: false,
       },
       singleline: {
-        delimiter: 'semi',
+        delimiter: 'semi', // Keep consistent with Prettier
         requireLast: false,
       },
       multilineDetection: 'brackets',
@@ -28,6 +35,8 @@ export const stylisticRules = {
       },
     },
   ],
+
+  // Delegated to Prettier
   'style/comma-dangle': 'off',
   'style/indent': 'off',
   'style/indent-binary-ops': 'off',
@@ -35,9 +44,5 @@ export const stylisticRules = {
   'style/jsx-one-expression-per-line': 'off',
   'style/jsx-wrap-multilines': 'off',
   'style/multiline-ternary': 'off',
-} satisfies NonNullable<TypedFlatConfigItem['rules']>
-
-export const stylisticLessOpinionatedRules = {
-  'antfu/consistent-list-newline': 'off',
-  'antfu/if-newline': 'off',
-} satisfies NonNullable<TypedFlatConfigItem['rules']>
+  'object-curly-spacing': 'off',
+} satisfies ConfigItemRules
