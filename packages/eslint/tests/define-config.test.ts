@@ -195,7 +195,7 @@ describe('@tofrankie/eslint defineConfig', () => {
     expect(formatterRule).toEqual([
       'error',
       expect.objectContaining({
-        printWidth: 120,
+        printWidth: 100,
         semi: false,
         singleQuote: true,
         arrowParens: 'avoid',
@@ -271,7 +271,7 @@ describe('@tofrankie/eslint defineConfig', () => {
   it('keeps default react overrides when react is explicitly true', async () => {
     const configs = await defineConfig({ react: true }).toConfigs()
 
-    expect(findRuleEntry(configs, 'react-hooks-extra/no-direct-set-state-in-use-effect')).toBe(
+    expect(findRuleEntry(configs, 'react/set-state-in-effect')).toBe(
       'off'
     )
   })
@@ -285,7 +285,7 @@ describe('@tofrankie/eslint defineConfig', () => {
       },
     }).toConfigs()
 
-    expect(findRuleEntry(configs, 'react-hooks-extra/no-direct-set-state-in-use-effect')).toBe(
+    expect(findRuleEntry(configs, 'react/set-state-in-effect')).toBe(
       'off'
     )
   })
