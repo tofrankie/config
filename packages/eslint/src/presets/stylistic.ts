@@ -12,7 +12,11 @@ export const STYLISTIC_RULES = {
   'style/quote-props': ['error', 'as-needed'],
   'style/arrow-parens': ['error', 'as-needed'],
   'style/brace-style': ['error', '1tbs', { allowSingleLine: false }],
-  'style/operator-linebreak': ['error', 'after', { overrides: { '?': 'before', ':': 'before' } }],
+  'style/operator-linebreak': [
+    'error',
+    'after',
+    { overrides: { '?': 'before', ':': 'before', '|': 'before' } },
+  ],
   'style/member-delimiter-style': [
     'error',
     {

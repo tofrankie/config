@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.2.1 (2026-04-09)
+
+- Update `style/operator-linebreak` rule
+
 ## eslint@0.2.0 (2026-04-09)
 
 - Update `@antfu/eslint-config` to `v8.1.1`
