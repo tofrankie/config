@@ -69,7 +69,7 @@ export default defineConfig(
 ## Differences vs calling `antfu()` directly
 
 1. **Dependencies:** Renamed-rule plugins and many optional integration packages are **direct dependencies** of `@tofrankie/eslint`. Enable the matching antfu flags (`react`, `vue`, `astro`, `svelte`, …) instead of reinstalling those packages in the app unless you have a special layout.
-2. **Formatters:** Default formatter toggles are **off** (`css`, `html`, `markdown`, `graphql`, `astro`, `xml`, `slidev`, `svg`, …). Built-in `formatters.prettierOptions` still defaults to align with `@tofrankie/prettier` (e.g. `printWidth: 120`) and applies when you opt back in.
+2. **Formatters:** Default formatter toggles are **off** (`css`, `html`, `markdown`, `graphql`, `astro`, `xml`, `slidev`, `svg`, …). Built-in `formatters.prettierOptions` still defaults to align with `@tofrankie/prettier` (e.g. `printWidth: 100`) and applies when you opt back in.
 3. **Formatters merge behavior:**
    - `formatters: false` → disable all formatter integrations.
    - `formatters: true` → same subset as antfu’s boolean shortcut: `css`, `html`, `markdown`, `graphql`, merged onto the preset defaults (including `prettierOptions`).

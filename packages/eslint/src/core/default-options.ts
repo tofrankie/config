@@ -12,7 +12,7 @@ export const DEFAULT_OPTIONS = {
     xml: false,
     // Same configuration as @tofrankie/prettier.
     prettierOptions: {
-      printWidth: 120,
+      printWidth: 100,
       semi: false,
       singleQuote: true,
       arrowParens: 'avoid',

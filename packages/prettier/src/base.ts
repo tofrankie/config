@@ -2,7 +2,7 @@ import type { Config } from 'prettier'
 
 // https://prettier.io/docs/options
 export default {
-  printWidth: 120,
+  printWidth: 100,
   semi: false,
   singleQuote: true,
   arrowParens: 'avoid',

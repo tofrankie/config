@@ -31,7 +31,7 @@ Base options:
 
 ```json
 {
-  "printWidth": 120,
+  "printWidth": 100,
   "semi": false,
   "singleQuote": true,
   "arrowParens": "avoid",
