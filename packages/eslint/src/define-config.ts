@@ -7,7 +7,10 @@ import { mergePreset } from './core/merge-preset'
 import { resolveAntfuOptions } from './core/resolve-antfu-options'
 import { resolveConfigOptions } from './core/resolve-config-options'
 
-export function defineConfig(antfuOptions?: AntfuOptions, ...userFlatConfigs: UserFlatConfig[]): Composer {
+export function defineConfig(
+  antfuOptions?: AntfuOptions,
+  ...userFlatConfigs: UserFlatConfig[]
+): Composer {
   const userOptions = antfuOptions ?? {}
   const resolvedConfigOptions = resolveConfigOptions(userOptions)
   const preset = composePreset(resolvedConfigOptions)

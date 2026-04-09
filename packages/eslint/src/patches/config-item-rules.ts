@@ -61,7 +61,10 @@ function resolveConfigItemTarget(preset: ConfigItemRulePreset): string | null {
   }
 
   if (targetNames.size !== 1) {
-    warnIgnoredPreset(preset.name, `its rules map to multiple config items (${Array.from(targetNames).join(', ')})`)
+    warnIgnoredPreset(
+      preset.name,
+      `its rules map to multiple config items (${Array.from(targetNames).join(', ')})`
+    )
     return null
   }
 
@@ -81,7 +84,11 @@ function findConfigItemTarget(ruleId: string): string | undefined {
 function warnIgnoredPreset(name: string, reason: string): void {
   const processLike = Reflect.get(globalThis, 'process')
 
-  if (isObjectLike(processLike) && 'emitWarning' in processLike && typeof processLike.emitWarning === 'function') {
+  if (
+    isObjectLike(processLike) &&
+    'emitWarning' in processLike &&
+    typeof processLike.emitWarning === 'function'
+  ) {
     processLike.emitWarning(`[@tofrankie/eslint] Ignore config-item preset "${name}": ${reason}.`)
   }
 }

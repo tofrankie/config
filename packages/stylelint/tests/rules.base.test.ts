@@ -1,7 +1,11 @@
 import type { RuleAllowCase, RuleFixCase } from './helpers/lint'
 import { describe, it } from 'vitest'
 import { base } from '../src'
-import { expectRuleNotTriggered, expectRuleTriggered, expectRuleTriggeredAndFixed } from './helpers/lint'
+import {
+  expectRuleNotTriggered,
+  expectRuleTriggered,
+  expectRuleTriggeredAndFixed,
+} from './helpers/lint'
 
 const BASE_EXTENDS = [base]
 

@@ -19,6 +19,9 @@ export function mergeLanguageOptions(...options: LanguageOptions[]): LanguageOpt
   }
 
   return merge.all(filteredOptions, {
-    arrayMerge: (destinationArray: unknown[], sourceArray: unknown[]) => [...destinationArray, ...sourceArray],
+    arrayMerge: (destinationArray: unknown[], sourceArray: unknown[]) => [
+      ...destinationArray,
+      ...sourceArray,
+    ],
   }) as LanguageOptions
 }

@@ -56,7 +56,9 @@ describe('@tofrankie/eslint fixture projects', () => {
         })
       )
 
-      expect(messages, `fixture "${testCase.name}" lint failed:\n${messages.join('\n')}`).toEqual([])
+      expect(messages, `fixture "${testCase.name}" lint failed:\n${messages.join('\n')}`).toEqual(
+        []
+      )
     })
   }
 })

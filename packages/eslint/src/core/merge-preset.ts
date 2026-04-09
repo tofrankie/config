@@ -1,7 +1,10 @@
 import type { AntfuOptions } from '../types'
 import { mergeOptions } from './merge-options'
 
-export function mergePreset(userOptions: AntfuOptions, preset: Partial<AntfuOptions>): AntfuOptions {
+export function mergePreset(
+  userOptions: AntfuOptions,
+  preset: Partial<AntfuOptions>
+): AntfuOptions {
   const mergedOptions = mergeOptions(userOptions, preset) as AntfuOptions
 
   restoreBooleanObjectPreset(mergedOptions, userOptions, preset, 'e18e')

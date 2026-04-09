@@ -58,7 +58,10 @@ describe('@tofrankie/eslint defineConfig', () => {
     expect(findConfigByName(configs, 'tofrankie/user-rules')).toBeUndefined()
     expect(findConfigByName(configs, 'antfu/javascript/rules')?.rules?.['no-console']).toBe('warn')
     expect(findFusedConfig(configs)?.rules?.['no-console']).toBe('error')
-    expect(findFusedConfig(configs)?.rules?.['style/operator-linebreak']).toEqual(['error', 'after'])
+    expect(findFusedConfig(configs)?.rules?.['style/operator-linebreak']).toEqual([
+      'error',
+      'after',
+    ])
   })
 
   it('allows later flat configs to override first-argument rules', async () => {
@@ -84,7 +87,9 @@ describe('@tofrankie/eslint defineConfig', () => {
   it('keeps package e18e defaults when user enables e18e with boolean true', async () => {
     const configs = await defineConfig({ e18e: true }).toConfigs()
 
-    expect(findConfigByName(configs, 'antfu/e18e/rules')?.rules?.['e18e/prefer-array-to-sorted']).toBe('off')
+    expect(
+      findConfigByName(configs, 'antfu/e18e/rules')?.rules?.['e18e/prefer-array-to-sorted']
+    ).toBe('off')
   })
 
   it('lets user e18e overrides win over package defaults', async () => {
@@ -96,7 +101,9 @@ describe('@tofrankie/eslint defineConfig', () => {
       },
     }).toConfigs()
 
-    expect(findConfigByName(configs, 'antfu/e18e/rules')?.rules?.['e18e/prefer-array-to-sorted']).toBe('warn')
+    expect(
+      findConfigByName(configs, 'antfu/e18e/rules')?.rules?.['e18e/prefer-array-to-sorted']
+    ).toBe('warn')
   })
 
   it('does not inject package e18e defaults when e18e is false', async () => {
@@ -114,14 +121,18 @@ describe('@tofrankie/eslint defineConfig', () => {
   it('applies node defaults on antfu node config items', async () => {
     const configs = await defineConfig().toConfigs()
 
-    expect(findConfigByName(configs, 'antfu/node/rules')?.rules?.['node/prefer-global/process']).toBe('off')
+    expect(
+      findConfigByName(configs, 'antfu/node/rules')?.rules?.['node/prefer-global/process']
+    ).toBe('off')
   })
 
   it('applies eslint-comments defaults on antfu comments config items', async () => {
     const configs = await defineConfig().toConfigs()
 
     expect(
-      findConfigByName(configs, 'antfu/eslint-comments/rules')?.rules?.['eslint-comments/no-unlimited-disable']
+      findConfigByName(configs, 'antfu/eslint-comments/rules')?.rules?.[
+        'eslint-comments/no-unlimited-disable'
+      ]
     ).toBe('off')
   })
 
@@ -132,7 +143,9 @@ describe('@tofrankie/eslint defineConfig', () => {
       },
     }).toConfigs()
 
-    expect(findConfigByName(configs, 'antfu/node/rules')?.rules?.['node/prefer-global/process']).toBe('off')
+    expect(
+      findConfigByName(configs, 'antfu/node/rules')?.rules?.['node/prefer-global/process']
+    ).toBe('off')
     expect(findRuleEntry(configs, 'node/prefer-global/process')).toBe('error')
   })
 
@@ -163,7 +176,9 @@ describe('@tofrankie/eslint defineConfig', () => {
 
   it('keeps the built-in prettier base when formatters is true', async () => {
     const configs = await defineConfig({ formatters: true }).toConfigs()
-    const formatterRule = findConfigByName(configs, 'antfu/formatter/html')?.rules?.['format/prettier']
+    const formatterRule = findConfigByName(configs, 'antfu/formatter/html')?.rules?.[
+      'format/prettier'
+    ]
 
     expect(configs.map((item: TypedFlatConfigItem) => item.name)).toEqual(
       expect.arrayContaining([
@@ -200,7 +215,9 @@ describe('@tofrankie/eslint defineConfig', () => {
         },
       },
     }).toConfigs()
-    const formatterRule = findConfigByName(configs, 'antfu/formatter/html')?.rules?.['format/prettier']
+    const formatterRule = findConfigByName(configs, 'antfu/formatter/html')?.rules?.[
+      'format/prettier'
+    ]
 
     expect(formatterRule).toEqual([
       'error',
@@ -243,14 +260,20 @@ describe('@tofrankie/eslint defineConfig', () => {
       typescript: { tsconfigPath: 'tsconfig.json' },
     }).toConfigs()
 
-    expect(reactConfigs.map((item: TypedFlatConfigItem) => item.name)).not.toContain('antfu/react/type-aware-rules')
-    expect(typedReactConfigs.map((item: TypedFlatConfigItem) => item.name)).toContain('antfu/react/type-aware-rules')
+    expect(reactConfigs.map((item: TypedFlatConfigItem) => item.name)).not.toContain(
+      'antfu/react/type-aware-rules'
+    )
+    expect(typedReactConfigs.map((item: TypedFlatConfigItem) => item.name)).toContain(
+      'antfu/react/type-aware-rules'
+    )
   })
 
   it('keeps default react overrides when react is explicitly true', async () => {
     const configs = await defineConfig({ react: true }).toConfigs()
 
-    expect(findRuleEntry(configs, 'react-hooks-extra/no-direct-set-state-in-use-effect')).toBe('off')
+    expect(findRuleEntry(configs, 'react-hooks-extra/no-direct-set-state-in-use-effect')).toBe(
+      'off'
+    )
   })
 
   it('treats object react options as enabled', async () => {
@@ -262,12 +285,16 @@ describe('@tofrankie/eslint defineConfig', () => {
       },
     }).toConfigs()
 
-    expect(findRuleEntry(configs, 'react-hooks-extra/no-direct-set-state-in-use-effect')).toBe('off')
+    expect(findRuleEntry(configs, 'react-hooks-extra/no-direct-set-state-in-use-effect')).toBe(
+      'off'
+    )
   })
 
   it('keeps antfu react plugins as concrete objects', async () => {
     const configs = await defineConfig({ react: true }).toConfigs()
-    const reactSetup = configs.find((item: TypedFlatConfigItem) => item.name === 'antfu/react/setup')
+    const reactSetup = configs.find(
+      (item: TypedFlatConfigItem) => item.name === 'antfu/react/setup'
+    )
     const pluginTypes = Object.fromEntries(
       Object.entries(reactSetup?.plugins ?? {}).map(([name, plugin]) => [name, typeof plugin])
     )
@@ -283,7 +310,10 @@ describe('@tofrankie/eslint defineConfig', () => {
   })
 })
 
-function findRuleEntry(configs: TypedFlatConfigItem[], ruleName: string): Linter.RuleEntry | undefined {
+function findRuleEntry(
+  configs: TypedFlatConfigItem[],
+  ruleName: string
+): Linter.RuleEntry | undefined {
   let matched: Linter.RuleEntry | undefined
 
   for (const config of configs) {
@@ -295,7 +325,10 @@ function findRuleEntry(configs: TypedFlatConfigItem[], ruleName: string): Linter
   return matched
 }
 
-function findConfigByName(configs: TypedFlatConfigItem[], name: string): TypedFlatConfigItem | undefined {
+function findConfigByName(
+  configs: TypedFlatConfigItem[],
+  name: string
+): TypedFlatConfigItem | undefined {
   return configs.find(config => config.name === name)
 }
 

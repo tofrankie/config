@@ -49,7 +49,12 @@ export const INTEGRATION_RULE_PRESETS = [
   { key: 'unicorn', option: 'unicorn', rules: UNICORN_RULES },
   { key: 'react', option: 'react', rules: REACT_RULES },
   { key: 'stylistic', option: 'stylistic', rules: STYLISTIC_RULES },
-  { key: 'stylistic', option: 'lessOpinionated', expected: false, rules: ANTFU_LESS_OPINIONATED_RULES },
+  {
+    key: 'stylistic',
+    option: 'lessOpinionated',
+    expected: false,
+    rules: ANTFU_LESS_OPINIONATED_RULES,
+  },
   { key: 'test', option: 'test', rules: TEST_RULES },
   { key: 'typescript', option: 'typescript', rules: TYPESCRIPT_RULES },
   { key: 'vue', option: 'vue', rules: VUE_RULES },

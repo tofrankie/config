@@ -17,7 +17,12 @@ describe('@tofrankie/eslint unused-vars strategy', () => {
       overrideConfigFile: true,
     })
 
-    const results = await eslint.lintFiles(['src/index.js', 'src/index.ts', 'src/App.vue', 'src/app-js.vue'])
+    const results = await eslint.lintFiles([
+      'src/index.js',
+      'src/index.ts',
+      'src/App.vue',
+      'src/app-js.vue',
+    ])
     const byFile = Object.fromEntries(
       results.map(result => [
         path.relative(FIXTURE_ROOT, result.filePath),

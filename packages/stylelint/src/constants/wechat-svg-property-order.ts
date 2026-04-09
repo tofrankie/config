@@ -494,7 +494,13 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_table#reference
    */
   {
-    properties: ['table-layout', 'empty-cells', 'caption-side', 'border-spacing', 'border-collapse'],
+    properties: [
+      'table-layout',
+      'empty-cells',
+      'caption-side',
+      'border-spacing',
+      'border-collapse',
+    ],
   },
 
   /**
@@ -759,7 +765,13 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_writing_modes#reference
    */
   {
-    properties: ['direction', 'unicode-bidi', 'writing-mode', 'text-orientation', 'text-combine-upright'],
+    properties: [
+      'direction',
+      'unicode-bidi',
+      'writing-mode',
+      'text-orientation',
+      'text-combine-upright',
+    ],
   },
 
   /**
@@ -874,7 +886,14 @@ export const WECHAT_SVG_PROPERTY_ORDER = [
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_motion_path#reference
    */
   {
-    properties: ['offset', 'offset-position', 'offset-path', 'offset-distance', 'offset-rotate', 'offset-anchor'],
+    properties: [
+      'offset',
+      'offset-position',
+      'offset-path',
+      'offset-distance',
+      'offset-rotate',
+      'offset-anchor',
+    ],
   },
 
   /**

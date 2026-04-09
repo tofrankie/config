@@ -7,12 +7,32 @@ import { toRuntimeExtends } from './helpers/lint'
 const FIXTURE_ROOT = path.resolve(import.meta.dirname, 'fixtures')
 
 const cases = [
-  { name: 'base', fixture: 'base', files: ['index.css', 'index.html', 'other.css'], extends: [base] },
-  { name: 'miniprogram', fixture: 'miniprogram', files: ['index.wxss', 'index.wxml'], extends: [base, miniprogram] },
+  {
+    name: 'base',
+    fixture: 'base',
+    files: ['index.css', 'index.html', 'other.css'],
+    extends: [base],
+  },
+  {
+    name: 'miniprogram',
+    fixture: 'miniprogram',
+    files: ['index.wxss', 'index.wxml'],
+    extends: [base, miniprogram],
+  },
   { name: 'pxtorem', fixture: 'pxtorem', files: ['index.css'], extends: [base, pxtorem] },
   { name: 'scss', fixture: 'scss', files: ['index.scss'], extends: [base, scss] },
-  { name: 'uniapp-scss', fixture: 'uniapp-scss', files: ['index.vue'], extends: [base, vueScss, uniapp] },
-  { name: 'uniapp', fixture: 'uniapp', files: ['vue3.vue', 'global.vue'], extends: [base, vue, uniapp] },
+  {
+    name: 'uniapp-scss',
+    fixture: 'uniapp-scss',
+    files: ['index.vue'],
+    extends: [base, vueScss, uniapp],
+  },
+  {
+    name: 'uniapp',
+    fixture: 'uniapp',
+    files: ['vue3.vue', 'global.vue'],
+    extends: [base, vue, uniapp],
+  },
   { name: 'vue-scss', fixture: 'vue-scss', files: ['index.vue'], extends: [base, vueScss] },
   { name: 'vue', fixture: 'vue', files: ['index.vue'], extends: [base, vue] },
   { name: 'wechat-svg', fixture: 'wechat-svg', files: ['index.html'], extends: [base, wechatSvg] },
@@ -40,7 +60,10 @@ describe('@tofrankie/stylelint fixture projects', () => {
         })
       )
 
-      expect(warningMessages, `fixture "${testCase.name}" lint failed:\n${warningMessages.join('\n')}`).toEqual([])
+      expect(
+        warningMessages,
+        `fixture "${testCase.name}" lint failed:\n${warningMessages.join('\n')}`
+      ).toEqual([])
     })
   }
 

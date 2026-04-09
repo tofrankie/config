@@ -29,7 +29,9 @@ function mergeRulesIntoIntegrationOptions(
   const currentValue = preset[key]
   const currentOptions = isObjectLike(currentValue) ? currentValue : {}
   const currentOverrides =
-    isObjectLike(currentOptions) && 'overrides' in currentOptions && isObjectLike(currentOptions.overrides)
+    isObjectLike(currentOptions) &&
+    'overrides' in currentOptions &&
+    isObjectLike(currentOptions.overrides)
       ? currentOptions.overrides
       : {}
 

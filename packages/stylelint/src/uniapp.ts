@@ -3,7 +3,10 @@ import { BASE_LANGUAGE_OPTIONS, MINIPROGRAM_LANGUAGE_OPTIONS } from './language-
 import { MINIPROGRAM_SHARED_RULES } from './shared-rules/miniprogram'
 import { mergeLanguageOptions } from './utils/merge-language-options'
 
-const miniprogramLanguageOptions = mergeLanguageOptions(BASE_LANGUAGE_OPTIONS, MINIPROGRAM_LANGUAGE_OPTIONS)
+const miniprogramLanguageOptions = mergeLanguageOptions(
+  BASE_LANGUAGE_OPTIONS,
+  MINIPROGRAM_LANGUAGE_OPTIONS
+)
 
 export default {
   overrides: [

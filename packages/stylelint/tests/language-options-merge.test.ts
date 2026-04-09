@@ -1,6 +1,11 @@
 import stylelint from 'stylelint'
 import { describe, expect, it } from 'vitest'
-import { BASE_LANGUAGE_OPTIONS, mergeLanguageOptions, miniprogram, MINIPROGRAM_LANGUAGE_OPTIONS } from '../src'
+import {
+  BASE_LANGUAGE_OPTIONS,
+  mergeLanguageOptions,
+  miniprogram,
+  MINIPROGRAM_LANGUAGE_OPTIONS,
+} from '../src'
 import { toRuntimeExtends } from './helpers/lint'
 
 function warningRules(result: Awaited<ReturnType<typeof stylelint.lint>>) {
