@@ -271,9 +271,7 @@ describe('@tofrankie/eslint defineConfig', () => {
   it('keeps default react overrides when react is explicitly true', async () => {
     const configs = await defineConfig({ react: true }).toConfigs()
 
-    expect(findRuleEntry(configs, 'react/set-state-in-effect')).toBe(
-      'off'
-    )
+    expect(findRuleEntry(configs, 'react/set-state-in-effect')).toBe('off')
   })
 
   it('treats object react options as enabled', async () => {
@@ -285,9 +283,7 @@ describe('@tofrankie/eslint defineConfig', () => {
       },
     }).toConfigs()
 
-    expect(findRuleEntry(configs, 'react/set-state-in-effect')).toBe(
-      'off'
-    )
+    expect(findRuleEntry(configs, 'react/set-state-in-effect')).toBe('off')
   })
 
   it('keeps antfu react plugins as concrete objects', async () => {

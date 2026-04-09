@@ -72,7 +72,6 @@
     "jsonc-parser": "catalog:dev",
     "publint": "catalog:dev",
     "tsx": "catalog:dev",
-    "typescript": "catalog:dev",
-    "vitest": "catalog:dev"
+    "typescript": "catalog:dev"
   }
 }

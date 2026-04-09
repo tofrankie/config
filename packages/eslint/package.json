@@ -84,7 +84,6 @@
   },
   "devDependencies": {
     "@tofrankie/tsconfig": "workspace:*",
-    "eslint": "catalog:peer",
-    "vitest": "catalog:dev"
+    "eslint": "catalog:peer"
   }
 }

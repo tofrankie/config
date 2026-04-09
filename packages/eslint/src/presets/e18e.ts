@@ -8,7 +8,5 @@ import type { ConfigItemRules } from '../types'
 export const E18E_RULES = {
   // https://github.com/es-tooling/eslint-plugin-depend/blob/main/docs/rules/ban-dependencies.md
   'e18e/ban-dependencies': 'off',
-  'e18e/prefer-array-to-sorted': 'off',
   'e18e/prefer-static-regex': 'off',
-  'e18e/prefer-array-at': 'off',
 } satisfies ConfigItemRules
