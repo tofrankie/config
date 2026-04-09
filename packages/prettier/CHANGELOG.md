@@ -1,5 +1,9 @@
 # Changelog
 
+## prettier@0.2.0 (2026-04-09)
+
+- Update `printWidth` to `100`
+
 ## prettier@0.1.0 (2026-04-08)
 
 - No code changes, just a version bump
