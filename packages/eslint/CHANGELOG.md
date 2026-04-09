@@ -1,5 +1,10 @@
 # Changelog
 
+## eslint@0.2.0 (2026-04-09)
+
+- Update `@antfu/eslint-config` to `v8.1.1`
+- Update `prettierOptions.printWidth` to `100`
+
 ## eslint@0.1.0 (2026-04-08)
 
 ### 📢
