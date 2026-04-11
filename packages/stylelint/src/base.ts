@@ -21,6 +21,7 @@ export default {
   // https://github.com/stylelint-stylistic/stylelint-config/blob/main/stylelint.config.js
   plugins: ['@stylistic/stylelint-plugin'],
   rules: {
+    'comment-empty-line-before': null,
     'function-url-quotes': 'always',
     'function-no-unknown': [true, { ignoreFunctions: ['constant'] }], // Requires `languageOptions` to be combined
     // TODO: Does not work for inline styles. To automatically add spaces between two properties, use Prettier after Stylelint. The temporary solution is to run Stylelint first, then Prettier.
