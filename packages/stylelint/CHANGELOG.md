@@ -1,5 +1,9 @@
 # Changelog
 
+## stylelint@0.1.1 (2026-04-12)
+
+- Disable `comment-empty-line-before` rule in `base` preset
+
 ## stylelint@0.1.0 (2026-04-08)
 
 - No code changes, just a version bump
