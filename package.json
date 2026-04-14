@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "catalog:dev",
+    "@commitlint/cli": "catalog:peer",
     "@tofrankie/action": "catalog:dev",
     "@tofrankie/commitlint": "workspace:*",
     "@tofrankie/eslint": "workspace:*",
