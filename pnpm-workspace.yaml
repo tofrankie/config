@@ -10,7 +10,7 @@ catalogs:
     lint-staged: ^16.4.0
     npm-run-all2: ^8.0.4
     publint: ^0.3.18
-    tsdown: ^0.21.7
+    tsdown: ^0.21.8
     tsx: ^4.21.0
     typescript: ^5.9.3
     vitest: ^4.1.4

@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/commitlint",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "packageManager": "pnpm@10.32.0",
   "description": "Shared Commitlint configuration",
   "author": "Frankie <1426203851@qq.com>",

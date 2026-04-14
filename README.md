@@ -22,7 +22,7 @@ Shared configuration for Commitlint, ESLint, Prettier, Stylelint, and TypeScript
 [Documentation](packages/commitlint/README.md)
 
 ```bash
-$ pnpm add commitlint @tofrankie/commitlint -D
+$ pnpm add @commitlint/cli @tofrankie/commitlint -D
 ```
 
 Create a `commitlint.config.js` in your project root:

@@ -1,5 +1,9 @@
 # Changelog
 
+## commitlint@0.0.6 (2026-04-15)
+
+- Update documentation
+
 ## commitlint@0.0.5 (2026-04-04)
 
 - Update documentation
