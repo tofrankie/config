@@ -31,13 +31,4 @@ export default {
     // https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md#options
     '@stylistic/string-quotes': ['single', { avoidEscape: true }],
   },
-  overrides: [
-    {
-      files: ['**/*.html'],
-      rules: {
-        // HTML files default to unquoted url()
-        'function-url-quotes': 'never',
-      },
-    },
-  ],
 } satisfies Config
