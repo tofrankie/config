@@ -1,5 +1,10 @@
 # Changelog
 
+## stylelint@0.2.0 (2026-04-17)
+
+- Change `function-url-quotes` rule to `'always'` in base preset for HTML files
+- wechat-svg preset keeps `'never'` as default
+
 ## stylelint@0.1.1 (2026-04-12)
 
 - Disable `comment-empty-line-before` rule in `base` preset
