@@ -10,14 +10,14 @@ catalogs:
     lint-staged: ^16.4.0
     npm-run-all2: ^8.0.4
     publint: ^0.3.18
-    tsdown: ^0.21.8
+    tsdown: ^0.21.9
     tsx: ^4.21.0
     typescript: ^5.9.3
     vitest: ^4.1.4
   peer:
     '@commitlint/cli': ^20.4.1
     eslint: ^10.2.0
-    prettier: ^3.8.2
+    prettier: ^3.8.3
     stylelint: ^17.6.0
   prod:
     '@angular-eslint/eslint-plugin': ^21.3.1
