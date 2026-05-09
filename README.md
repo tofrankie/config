@@ -1,5 +1,7 @@
 # @tofrankie/config
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/tofrankie/config)
+
 Shared configuration for Commitlint, ESLint, Prettier, Stylelint, and TypeScript.
 
 ## Packages
