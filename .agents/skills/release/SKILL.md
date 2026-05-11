@@ -1,5 +1,5 @@
 ---
-name: tofrankie-config-release
+name: release
 description: >-
   Runs the formal single-package release tail for this repo: git push, tag, push tag, then
   pnpm github:release --package --tag --yes. Use only when the user explicitly says 正式发布 followed by a package
