@@ -1,5 +1,21 @@
 # Changelog
 
+## eslint@0.3.0 (2026-05-12)
+
+### Breaking changes
+
+- Update `@antfu/eslint-config` to `v9.0.0`
+- Update `@eslint-react/eslint-plugin` to `v5.7.6` ([Release](https://github.com/Rel1cx/eslint-react/releases/tag/v5.6.0))
+
+### Rules changes 🚨
+
+> Details: [antfu/eslint-config#839](https://github.com/antfu/eslint-config/pull/839/changes#diff-399d91c5730fe8c956a45beb380a60404c1fcea16640f3a5f58b82e052aebfda)
+
+- Rename `react-dom/*` to `react/dom-*`
+- Rename `react-rsc/*` to `react/rsc-*`
+- Rename `react-web-api/*` to `react/web-api-*`
+- Rename `react-naming-convention/*` to `react/naming-convention-*`
+
 ## eslint@0.2.2 (2026-05-12)
 
 - Update `@antfu/eslint-config` to `v8.3.0`
