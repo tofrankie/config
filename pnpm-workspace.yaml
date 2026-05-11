@@ -3,30 +3,30 @@ packages:
 
 catalogs:
   dev:
-    '@changesets/cli': ^2.30.0
+    '@changesets/cli': ^2.31.0
     '@tofrankie/action': ^0.0.7
     husky: ^9.1.7
     jsonc-parser: ^3.3.1
     lint-staged: ^16.4.0
     npm-run-all2: ^8.0.4
-    publint: ^0.3.18
-    tsdown: ^0.21.9
+    publint: ^0.3.20
+    tsdown: ^0.21.10
     tsx: ^4.21.0
     typescript: ^5.9.3
-    vitest: ^4.1.4
+    vitest: ^4.1.6
   peer:
-    '@commitlint/cli': ^20.4.1
-    eslint: ^10.2.0
+    '@commitlint/cli': ^20.5.3
+    eslint: ^10.3.0
     prettier: ^3.8.3
     stylelint: ^17.6.0
   prod:
     '@angular-eslint/eslint-plugin': ^21.3.1
     '@angular-eslint/eslint-plugin-template': ^21.3.1
     '@angular-eslint/template-parser': ^21.3.1
-    '@antfu/eslint-config': ^8.1.1
+    '@antfu/eslint-config': ^8.3.0
     '@commitlint/config-conventional': ^20.4.1
     '@eslint-react/eslint-plugin': ^3.0.0
-    '@next/eslint-plugin-next': ^16.2.3
+    '@next/eslint-plugin-next': ^16.2.6
     '@prettier/plugin-xml': ^3.4.2
     '@stylistic/stylelint-plugin': ^5.1.0
     '@tofrankie/postcss-wxml': ^0.0.6
@@ -44,7 +44,7 @@ catalogs:
     eslint-plugin-jsx-a11y: ^6.10.2
     eslint-plugin-react-refresh: ^0.5.2
     eslint-plugin-solid: ^0.14.5
-    eslint-plugin-svelte: ^3.17.0
+    eslint-plugin-svelte: ^3.17.1
     find-up-simple: ^1.0.1
     local-pkg: ^1.1.2
     postcss: ^8.5.9
@@ -60,4 +60,4 @@ catalogs:
     stylelint-order: ^8.1.1
   types:
     '@commitlint/types': ^20.4.0
-    '@types/node': ^25.6.0
+    '@types/node': ^25.6.2
