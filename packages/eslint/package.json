@@ -59,7 +59,7 @@
     "publint": "publint"
   },
   "peerDependencies": {
-    "eslint": "^10.0.0"
+    "eslint": "^10.2.1"
   },
   "dependencies": {
     "@angular-eslint/eslint-plugin": "catalog:prod",
