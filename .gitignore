@@ -1,17 +1,39 @@
+# OS
 .DS_Store
+desktop.ini
 
+# Dependency
 node_modules/
 dist/
+.husky/_/
+.pnpm-store
 
-.env
-**local.*
+# Logs
+logs
+*.log
 
+# Cache
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+
+# Test
+coverage/
+
+# Agents
+.codex/
+.claude/
+.cursor/
 .agents/*
 !.agents/skills/
 .agents/skills/*
-!.agents/skills/tofrankie-config-release/
-!.agents/skills/tofrankie-config-release/**
+!.agents/skills/release/
+!.agents/skills/release/**
 
-.husky/_/
-.eslintcache
-.stylelintcache
+# Local
+.env
+.env.*
+!.env.example
+*.tgz
+*.vsix
+**local.*
