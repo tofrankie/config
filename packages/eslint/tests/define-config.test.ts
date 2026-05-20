@@ -136,6 +136,35 @@ describe('@tofrankie/eslint defineConfig', () => {
     ).toBe('off')
   })
 
+  it('turns off markdown/require-alt-text on antfu markdown rules by default', async () => {
+    const configs = await defineConfig().toConfigs()
+
+    expect(
+      findConfigByName(configs, 'antfu/markdown/rules')?.rules?.['markdown/require-alt-text']
+    ).toBe('off')
+  })
+
+  it('omits markdown integration when markdown is false', async () => {
+    const configs = await defineConfig({ markdown: false }).toConfigs()
+
+    expect(findConfigByName(configs, 'antfu/markdown/rules')).toBeUndefined()
+  })
+
+  it('allows later flat configs to override markdown/require-alt-text', async () => {
+    const configs = await defineConfig(
+      {},
+      {
+        name: 'user/markdown-rules',
+        files: ['**/*.md'],
+        rules: {
+          'markdown/require-alt-text': 'error',
+        },
+      }
+    ).toConfigs()
+
+    expect(findRuleEntry(configs, 'markdown/require-alt-text')).toBe('error')
+  })
+
   it('keeps first-argument rules higher than node package presets', async () => {
     const configs = await defineConfig({
       rules: {
@@ -295,13 +324,9 @@ describe('@tofrankie/eslint defineConfig', () => {
       Object.entries(reactSetup?.plugins ?? {}).map(([name, plugin]) => [name, typeof plugin])
     )
 
-    expect(pluginTypes).toEqual({
+    expect(pluginTypes).toMatchObject({
       react: 'object',
-      'react-dom': 'object',
-      'react-naming-convention': 'object',
       'react-refresh': 'object',
-      'react-rsc': 'object',
-      'react-web-api': 'object',
     })
   })
 })

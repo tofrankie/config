@@ -10,6 +10,7 @@ import { CONFIG_ITEM_RULE_PRESETS } from '../presets'
 const CONFIG_ITEM_RULE_TARGETS = {
   'eslint-comments/': 'antfu/eslint-comments/rules',
   'jsdoc/': 'antfu/jsdoc/rules',
+  'markdown/': 'antfu/markdown/rules', // TODO: markdown.overrides or markdown.overridesMarkdown is not working as expected
   'node/': 'antfu/node/rules',
   'pnpm/': 'antfu/pnpm/pnpm-workspace-yaml',
 } as const satisfies Record<string, string>

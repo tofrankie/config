@@ -7,6 +7,7 @@ export interface ResolvedConfigOptions {
   jsdoc: boolean
   jsdocMode: JsdocMode
   lessOpinionated: boolean
+  markdown: boolean
   node: boolean
   pnpm: boolean
   react: boolean

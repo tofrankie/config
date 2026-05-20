@@ -4,6 +4,7 @@ import { E18E_RULES } from './e18e'
 import { ESLINT_COMMENTS_RULES } from './eslint-comments'
 import { JAVASCRIPT_RULES } from './javascript'
 import { JSDOC_JAVASCRIPT_RULES, JSDOC_TYPESCRIPT_RULES } from './jsdoc'
+import { MARKDOWN_RULES } from './markdown'
 import { NODE_RULES } from './node'
 import { PNPM_RULES } from './pnpm'
 import { REACT_RULES } from './react'
@@ -20,6 +21,7 @@ export {
   JAVASCRIPT_RULES,
   JSDOC_JAVASCRIPT_RULES,
   JSDOC_TYPESCRIPT_RULES,
+  MARKDOWN_RULES,
   NODE_RULES,
   PNPM_RULES,
   REACT_RULES,
@@ -62,6 +64,7 @@ export const INTEGRATION_RULE_PRESETS = [
 
 export const CONFIG_ITEM_RULE_PRESETS = [
   { name: 'eslint-comments', rules: ESLINT_COMMENTS_RULES },
+  { name: 'markdown', option: 'markdown', rules: MARKDOWN_RULES },
   { name: 'node', option: 'node', rules: NODE_RULES },
   { name: 'pnpm', option: 'pnpm', rules: PNPM_RULES },
 ] satisfies ConfigItemRulePreset[]

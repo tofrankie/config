@@ -15,6 +15,7 @@ export function resolveConfigOptions(options: AntfuOptions): ResolvedConfigOptio
     jsdoc: isEnabledByDefault(options.jsdoc),
     jsdocMode: INTERNAL_JSDOC_MODE,
     lessOpinionated: options.lessOpinionated === true,
+    markdown: isEnabledByDefault(options.markdown),
     node: isEnabledByDefault(options.node),
     pnpm: isPnpmEnabled(options.pnpm),
     react: isExplicitlyEnabled(options.react),
