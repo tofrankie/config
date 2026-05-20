@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.3.1 (2026-05-21)
+
+- Disable `markdown/require-alt-text` rule
+
 ## eslint@0.3.0 (2026-05-12)
 
 ### Breaking changes
