@@ -100,3 +100,7 @@ Create a `tsconfig.json` in your project root:
 ## See also
 
 Use [@antfu/nip](https://github.com/antfu/nip) to manage dependencies and keep [pnpm catalogs](https://antfu.me/posts/categorize-deps) in sync.
+
+## License
+
+MIT License © [Frankie](https://github.com/tofrankie)

@@ -1,0 +1,7 @@
+{
+  "extends": "./node.app.json",
+  "compilerOptions": {
+    "types": ["vitest/globals", "node"],
+    "noEmit": true
+  }
+}

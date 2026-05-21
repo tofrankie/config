@@ -12,7 +12,7 @@ const cases = [
     antfuOptions: {
       jsdoc: true,
     },
-    files: ['eslint.config.mjs', 'src/index.js'],
+    files: ['eslint.config.js', 'src/index.js'],
   },
   {
     name: 'react-basic',
@@ -21,7 +21,7 @@ const cases = [
       jsdoc: false,
       react: true,
     },
-    files: ['eslint.config.mjs', 'src/App.jsx'],
+    files: ['eslint.config.js', 'src/App.jsx'],
   },
   {
     name: 'react-typed',
@@ -33,7 +33,7 @@ const cases = [
         tsconfigPath: 'tsconfig.json',
       },
     },
-    files: ['eslint.config.mjs', 'src/App.tsx'],
+    files: ['eslint.config.js', 'src/App.tsx'],
   },
 ] as const
 

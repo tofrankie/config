@@ -1,5 +1,17 @@
 # Changelog
 
+## tsconfig@0.1.0 (2026-05-22)
+
+### Breaking Changes 🚨
+
+- Redesign preset and naming system
+- Added exports: `web.app.json`, `react.app.json`, `vue.app.json`, `node.app.json`, `node.lib.json`, `react.lib.json`, `vue.lib.json`, `vitest.web.json`, `vitest.node.json`, `strict.json`
+- Removed exports: `dom.json`, `node.json`, `lib.json`, `strictest.json`, `vitest.json`, `react.vite.json`, `vue.vite.json`, `react.lib.vite.json`, `vue.lib.vite.json`, `node.lib.tsdown.json`
+
+### Features
+
+- Added interactive CLI (`npx @tofrankie/tsconfig`) to scaffold `tsconfig` files
+
 ## tsconfig@0.0.5 (2026-04-04)
 
 - Update documentation

@@ -7,92 +7,53 @@ Shared [TypeScript](https://www.typescriptlang.org/docs/handbook/tsconfig-json.h
 > [!IMPORTANT]
 > Before 1.0.0, releases may include breaking changes. Read the [CHANGELOG](CHANGELOG.md) before upgrading.
 
-## Quick Start
+## Install
 
 ```bash
 $ pnpm add typescript @tofrankie/tsconfig -D
 ```
 
-Create a `tsconfig.json` in your project root:
+Install additional dependencies based on your scenario:
+
+- Node projects usually need: `@types/node`
+- Vitest projects usually need: `vitest`, `@types/node`
+- Vite projects usually need: `vite`
+
+## Quick Start
+
+Choose one preset based on your project:
+
+- `@tofrankie/tsconfig/web.app.json` - Web App (framework-agnostic)
+- `@tofrankie/tsconfig/react.app.json` - React Web App
+- `@tofrankie/tsconfig/react.lib.json` - React Library (npm package)
+- `@tofrankie/tsconfig/vue.app.json` - Vue Web App
+- `@tofrankie/tsconfig/vue.lib.json` - Vue Library (npm package)
+- `@tofrankie/tsconfig/node.app.json` - Node Application/Script
+- `@tofrankie/tsconfig/node.lib.json` - Node Library (npm package)
+- `@tofrankie/tsconfig/vitest.web.json` - Vitest (Web)
+- `@tofrankie/tsconfig/vitest.node.json` - Vitest (Node)
+- `@tofrankie/tsconfig/strict.json` - Strict
+
+Then extend it from your `tsconfig.json`. For example, for a React web app:
 
 ```jsonc
 {
-  "extends": "@tofrankie/tsconfig/react.vite.json",
-  // add compilerOptions, include, etc. as needed
-}
-```
-
-## Presets
-
-Use `@tofrankie/tsconfig/<filename>` in `extends`. When the **Extra dependencies** column is not `-`, add the listed packages to your project's `devDependencies`.
-
-| Preset                 | Purpose (how to choose)                                  | Extra dependencies      |
-| ---------------------- | -------------------------------------------------------- | ----------------------- |
-| `strictest.json`       | Strictest rules                                          | -                       |
-| `strict.json`          | Strict rules                                             | -                       |
-| `dom.json`             | Web App / DOM API                                        | -                       |
-| `node.json`            | Node scripts / services / CLI (`@tsconfig/node20`)       | -                       |
-| `lib.json`             | npm packages to publish (independent of runtime)         | -                       |
-| `node.lib.json`        | Node packages to publish                                 | -                       |
-| `node.lib.tsdown.json` | Node libraries for tsdown (bundler resolution, `noEmit`) | -                       |
-| `react.json`           | React App (bundler-agnostic)                             | -                       |
-| `react.vite.json`      | React + Vite                                             | `vite`                  |
-| `react.lib.json`       | React component libraries to publish                     | -                       |
-| `react.lib.vite.json`  | React component libraries developed with Vite            | `vite`                  |
-| `vue.json`             | Vue 3 App (bundler-agnostic)                             | -                       |
-| `vue.vite.json`        | Vue 3 + Vite                                             | `vite`                  |
-| `vue.lib.json`         | Vue 3 component libraries to publish                     | -                       |
-| `vue.lib.vite.json`    | Vue 3 component libraries developed with Vite            | `vite`                  |
-| `vitest.json`          | Testing with Vitest                                      | `@types/node`, `vitest` |
-
-Dependency relationships between them: **[DEPENDENCY_GRAPH](./DEPENDENCY_GRAPH.md)**.
-
-## Examples
-
-### React + Vite
-
-`tsconfig.json`
-
-```json
-{
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
-  "files": []
-}
-```
-
-`tsconfig.app.json`
-
-```json
-{
-  "extends": "@tofrankie/tsconfig/react.vite.json",
+  "extends": "@tofrankie/tsconfig/react.app.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo"
+    // your custom compiler options
+    // ...
   },
-  "include": ["src"]
 }
 ```
 
-`tsconfig.node.json`
+## CLI
 
-```json
-{
-  "extends": "@tofrankie/tsconfig/node.json",
-  "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
-  },
-  "include": ["vite.config.ts"]
-}
+An interactive CLI is included to scaffold your `tsconfig` files quickly. After generation, adjust the output files to match your project needs.
+
+```bash
+$ npx @tofrankie/tsconfig
 ```
-
-## Acknowledgements
-
-Thanks to these referenced packages:
-
-- `@tsconfig/node20`
-- `@tsconfig/strictest`
-- `@tsconfig/vite-react`
-- `@vue/tsconfig`
 
 ## License
 
-MIT
+MIT License © [Frankie](https://github.com/tofrankie)

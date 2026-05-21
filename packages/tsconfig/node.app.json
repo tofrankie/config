@@ -15,10 +15,6 @@
     "noUncheckedIndexedAccess": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "noEmit": false,
     "esModuleInterop": true,
     "isolatedModules": true,
     "skipLibCheck": true

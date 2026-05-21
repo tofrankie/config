@@ -1,3 +1,0 @@
-{
-  "extends": ["./dom.json", "@vue/tsconfig/tsconfig.dom.json"]
-}

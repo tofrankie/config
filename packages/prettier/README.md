@@ -142,3 +142,7 @@ Thanks to these referenced packages:
 
 - [`@tofrankie/prettier-plugin-wxml`](https://github.com/tofrankie/prettier-plugin-wxml)
 - [`prettier-plugin-organize-attributes`](https://github.com/NiklasPor/prettier-plugin-organize-attributes)
+
+## License
+
+MIT License © [Frankie](https://github.com/tofrankie)

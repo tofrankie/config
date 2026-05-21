@@ -1,7 +1,7 @@
 {
   "name": "@tofrankie/tsconfig",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "packageManager": "pnpm@10.32.0",
   "description": "Shared TypeScript configuration",
   "author": "Frankie <1426203851@qq.com>",
@@ -25,32 +25,36 @@
     "vue",
     "tofrankie"
   ],
+  "bin": {
+    "tsconfig": "./dist/index.mjs"
+  },
   "files": [
     "CHANGELOG.md",
-    "base",
-    "dom.json",
-    "lib.json",
-    "node.json",
+    "dist",
+    "node.app.json",
     "node.lib.json",
-    "node.lib.tsdown.json",
-    "react.json",
+    "react.app.json",
     "react.lib.json",
-    "react.lib.vite.json",
-    "react.vite.json",
     "strict.json",
-    "vitest.json",
-    "vue.json",
+    "vitest.node.json",
+    "vitest.web.json",
+    "vue.app.json",
     "vue.lib.json",
-    "vue.lib.vite.json",
-    "vue.vite.json"
+    "web.app.json"
   ],
   "engines": {
     "node": "^20.0.0 || ^22.0.0 || ^24.0.0"
   },
   "scripts": {
-    "build": "tsx ./scripts/build.ts",
+    "build": "run-s build:tsconfig build:cli json:lint",
+    "build:tsconfig": "node ./scripts/build-tsconfig.ts",
+    "build:cli": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "json:lint": "run-s json:sort json:sort json:sort json:format",
+    "json:sort": "eslint --fix --config ./eslint.json.js >/dev/null 2>&1 || true",
+    "json:format": "prettier ./**/*.json --write --log-level silent",
     "prepublishOnly": "pnpm build",
-    "test": "pnpm build && vitest run",
+    "test": "vitest run",
     "publint": "publint"
   },
   "peerDependencies": {
@@ -64,11 +68,19 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {
+    "@clack/prompts": "catalog:prod",
+    "ansis": "catalog:prod",
+    "commander": "catalog:prod",
+    "execa": "catalog:prod",
+    "tsconfck": "catalog:prod"
+  },
   "devDependencies": {
     "@tsconfig/node20": "catalog:prod",
     "@tsconfig/strictest": "catalog:prod",
     "@tsconfig/vite-react": "catalog:prod",
     "@vue/tsconfig": "catalog:prod",
+    "eslint-plugin-jsonc": "catalog:dev",
     "jsonc-parser": "catalog:dev",
     "publint": "catalog:dev",
     "tsx": "catalog:dev",

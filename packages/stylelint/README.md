@@ -186,3 +186,7 @@ export default {
   languageOptions,
 }
 ```
+
+## License
+
+MIT License © [Frankie](https://github.com/tofrankie)

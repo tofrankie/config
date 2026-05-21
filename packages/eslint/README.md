@@ -143,3 +143,7 @@ export default defineConfig(
 Thanks to these referenced packages:
 
 - [`@antfu/eslint-config`](https://github.com/antfu/eslint-config)
+
+## License
+
+MIT License © [Frankie](https://github.com/tofrankie)

@@ -1,0 +1,9 @@
+{
+  "extends": ["./strict.json", "@tsconfig/node20/tsconfig.json"],
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  }
+}

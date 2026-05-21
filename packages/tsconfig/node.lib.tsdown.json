@@ -1,9 +1,0 @@
-{
-  "extends": ["./node.json", "./lib.json"],
-  "compilerOptions": {
-    "noEmit": true,
-    "declarationMap": false,
-    "module": "ESNext",
-    "moduleResolution": "bundler"
-  }
-}

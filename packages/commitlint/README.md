@@ -148,3 +148,7 @@ $ git commit -m "third commit"
 ### Troubleshooting: migrating from Husky to simple-git-hooks
 
 See: [When migrating from husky git hooks are not running](https://github.com/toplenboren/simple-git-hooks?tab=readme-ov-file#when-migrating-from-husky-git-hooks-are-not-running)
+
+## License
+
+MIT License © [Frankie](https://github.com/tofrankie)

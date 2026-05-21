@@ -1,6 +1,0 @@
-{
-  "extends": "./react.lib.json",
-  "compilerOptions": {
-    "types": ["vite/client"]
-  }
-}
