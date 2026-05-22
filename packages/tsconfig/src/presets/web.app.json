@@ -1,9 +1,9 @@
 {
   "extends": "./strict.json",
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "target": "es2022",
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "module": "esnext",
     "moduleResolution": "bundler",
     "noEmit": true
   }

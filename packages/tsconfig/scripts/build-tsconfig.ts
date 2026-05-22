@@ -25,7 +25,7 @@ function main(): void {
     .sort()
   for (const file of presetFiles) {
     const abs = join(srcDir, file)
-    const flattened = flattenConfig(abs, new Set<string>())
+    const flattened = normalizeCompilerOptionCase(flattenConfig(abs, new Set<string>()))
     delete flattened.extends
     delete flattened.$schema
     delete flattened._version
@@ -111,4 +111,30 @@ function isObject(v: unknown): v is TsconfigLike {
 
 function ensureDir(dir: string): void {
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
+}
+
+function normalizeCompilerOptionCase(config: TsconfigLike): TsconfigLike {
+  const out = structuredClone(config)
+  const compilerOptions = isObject(out.compilerOptions) ? out.compilerOptions : undefined
+  if (!compilerOptions) return out
+
+  if (typeof compilerOptions.target === 'string') {
+    compilerOptions.target = compilerOptions.target.toLowerCase()
+  }
+
+  if (typeof compilerOptions.module === 'string') {
+    compilerOptions.module = compilerOptions.module.toLowerCase()
+  }
+
+  if (typeof compilerOptions.moduleResolution === 'string') {
+    compilerOptions.moduleResolution = compilerOptions.moduleResolution.toLowerCase()
+  }
+
+  if (Array.isArray(compilerOptions.lib)) {
+    compilerOptions.lib = compilerOptions.lib.map(item =>
+      typeof item === 'string' ? item.toLowerCase() : item
+    )
+  }
+
+  return out
 }
