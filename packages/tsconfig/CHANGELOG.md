@@ -1,5 +1,9 @@
 # Changelog
 
+## tsconfig@0.1.1 (2026-05-22)
+
+- Update `@tofrankie/tsconfig` CLI
+
 ## tsconfig@0.1.0 (2026-05-22)
 
 ### Breaking Changes 🚨
@@ -11,6 +15,8 @@
 ### Features
 
 - Added interactive CLI (`npx @tofrankie/tsconfig`) to scaffold `tsconfig` files
+
+---
 
 ## tsconfig@0.0.5 (2026-04-04)
 
