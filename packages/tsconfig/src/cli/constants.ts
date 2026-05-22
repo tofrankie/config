@@ -1,6 +1,8 @@
-export const STACKS = ['react', 'vue', 'node', 'web'] as const
+export const RUNTIMES = ['node', 'browser'] as const
 
-export const SHAPES = ['app', 'lib'] as const
+export const TECH_STACKS = ['react', 'vue', 'other', 'none'] as const
+
+export const PROJECT_TYPES = ['app', 'lib'] as const
 
 export const TEST_RUNNERS = ['vitest', 'none', 'other'] as const
 

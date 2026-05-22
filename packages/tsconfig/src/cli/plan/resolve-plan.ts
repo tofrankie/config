@@ -1,17 +1,17 @@
-import type { PromptResult, ResolvePlanResult, Shape, Stack } from '../types'
+import type { ProjectType, PromptResult, ResolvePlanResult, Runtime, TechStack } from '../types'
 
 export function resolvePlan(input: PromptResult): ResolvePlanResult {
-  const preset = resolvePreset(input.stack, input.shape)
+  const preset = resolvePreset(input.runtime, input.techStack, input.projectType)
   const testPreset =
     input.test === 'vitest'
-      ? input.stack === 'node'
+      ? input.runtime === 'node'
         ? 'vitest.node.json'
         : 'vitest.web.json'
       : undefined
 
   const files: import('../types').PlanFile[] = []
 
-  if (input.stack === 'node') {
+  if (input.runtime === 'node') {
     files.push({ path: 'tsconfig.json', extends: `@tofrankie/tsconfig/${preset}` })
   } else {
     const rootShape: import('../types').TsconfigShape = {
@@ -32,23 +32,25 @@ export function resolvePlan(input: PromptResult): ResolvePlanResult {
   if (testPreset)
     files.push({ path: 'tsconfig.test.json', extends: `@tofrankie/tsconfig/${testPreset}` })
 
-  const deps = ['typescript', '@tofrankie/tsconfig']
+  const deps = ['typescript']
   if (input.test === 'vitest') deps.push('vitest', '@types/node')
   if (input.bundler === 'vite') deps.push('vite')
+  const selectedDeps =
+    Array.isArray(input.selectedDeps) && input.selectedDeps.length > 0 ? input.selectedDeps : deps
 
   return {
     preset,
     testPreset,
     bundler: input.bundler,
     files,
-    deps: Array.from(new Set(deps)),
+    deps: Array.from(new Set(selectedDeps)),
     force: input.force,
   }
 }
 
-function resolvePreset(stack: Stack, shape: Shape): string {
-  if (stack === 'react') return shape === 'lib' ? 'react.lib.json' : 'react.app.json'
-  if (stack === 'vue') return shape === 'lib' ? 'vue.lib.json' : 'vue.app.json'
-  if (stack === 'node') return shape === 'lib' ? 'node.lib.json' : 'node.app.json'
+function resolvePreset(runtime: Runtime, techStack: TechStack, projectType: ProjectType): string {
+  if (runtime === 'node') return projectType === 'lib' ? 'node.lib.json' : 'node.app.json'
+  if (techStack === 'react') return projectType === 'lib' ? 'react.lib.json' : 'react.app.json'
+  if (techStack === 'vue') return projectType === 'lib' ? 'vue.lib.json' : 'vue.app.json'
   return 'web.app.json'
 }

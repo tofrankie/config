@@ -1,23 +1,34 @@
 import type { CliArgs } from '../types'
 import { Command } from 'commander'
-import { BUNDLERS, SHAPES, STACKS, TEST_RUNNERS } from '../constants'
+import { BUNDLERS, PROJECT_TYPES, RUNTIMES, TECH_STACKS, TEST_RUNNERS } from '../constants'
 
 export function parseArgs(argv: string[]): CliArgs {
+  const normalizedArgv =
+    argv.length >= 3 && argv[2] === 'help'
+      ? [argv[0] ?? 'node', argv[1] ?? 'tsconfig', '--help']
+      : argv
+
   const program = new Command('tsconfig')
 
-  const stackSet = new Set<string>(STACKS)
-  const shapeSet = new Set<string>(SHAPES)
+  const runtimeSet = new Set<string>(RUNTIMES)
+  const techStackSet = new Set<string>(TECH_STACKS)
+  const projectTypeSet = new Set<string>(PROJECT_TYPES)
   const testSet = new Set<string>(TEST_RUNNERS)
   const bundlerSet = new Set<string>(BUNDLERS)
 
-  function parseStack(value: string): CliArgs['stack'] {
-    if (!stackSet.has(value)) throw new Error(`Invalid --stack: ${value}`)
-    return value as CliArgs['stack']
+  function parseRuntime(value: string): CliArgs['runtime'] {
+    if (!runtimeSet.has(value)) throw new Error(`Invalid --runtime: ${value}`)
+    return value as CliArgs['runtime']
   }
 
-  function parseShape(value: string): CliArgs['shape'] {
-    if (!shapeSet.has(value)) throw new Error(`Invalid --shape: ${value}`)
-    return value as CliArgs['shape']
+  function parseTechStack(value: string): CliArgs['techStack'] {
+    if (!techStackSet.has(value)) throw new Error(`Invalid --tech-stack: ${value}`)
+    return value as CliArgs['techStack']
+  }
+
+  function parseProjectType(value: string): CliArgs['projectType'] {
+    if (!projectTypeSet.has(value)) throw new Error(`Invalid --project-type: ${value}`)
+    return value as CliArgs['projectType']
   }
 
   function parseTest(value: string): CliArgs['test'] {
@@ -31,14 +42,16 @@ export function parseArgs(argv: string[]): CliArgs {
   }
 
   program
-    .option('--stack <stack>', 'react|vue|node|web', parseStack)
-    .option('--shape <shape>', 'app|lib', parseShape)
+    .option('-v, --version', 'print version')
+    .option('--runtime <runtime>', 'node|browser', parseRuntime)
+    .option('--tech-stack <techStack>', 'react|vue|other|none', parseTechStack)
+    .option('--project-type <projectType>', 'app|lib', parseProjectType)
     .option('--test <test>', 'vitest|none|other', parseTest)
     .option('--bundler <bundler>', 'vite|rollup|tsdown|tsup|none|other', parseBundler)
     .option('--yes', 'non-interactive mode')
     .option('--install', 'install dependencies')
     .option('--force', 'overwrite all existing files')
 
-  program.parse(argv)
+  program.parse(normalizedArgv)
   return program.opts<CliArgs>()
 }

@@ -1,13 +1,26 @@
-import type { Bundler, CliArgs, PromptResult, Shape, Stack, TestRunner } from '../types'
-import { confirm, isCancel, select } from '@clack/prompts'
+import type {
+  Bundler,
+  CliArgs,
+  ProjectType,
+  PromptResult,
+  Runtime,
+  TechStack,
+  TestRunner,
+} from '../types'
+import { cancel, isCancel, multiselect, select } from '@clack/prompts'
+import ansis from 'ansis'
 import { detectProject } from '../detect/detect-project'
+import { resolvePlan } from '../plan/resolve-plan'
 
-function asStack(value: unknown): Stack {
-  return value as Stack
+export const CLI_CANCELLED = '__TSCONFIG_CLI_CANCELLED__'
+
+function abortPrompt(): never {
+  cancel('Operation canceled.')
+  throw new Error(CLI_CANCELLED)
 }
 
-function asShape(value: unknown): Shape {
-  return value as Shape
+function asProjectType(value: unknown): ProjectType {
+  return value as ProjectType
 }
 
 function asTestRunner(value: unknown): TestRunner {
@@ -18,11 +31,23 @@ function asBundler(value: unknown): Bundler {
   return value as Bundler
 }
 
+function asRuntime(value: unknown): Runtime {
+  return value as Runtime
+}
+
+function asTechStack(value: unknown): TechStack {
+  return value as TechStack
+}
+
 export async function runPrompts(args: CliArgs): Promise<PromptResult> {
   const detected = detectProject()
 
-  const detectedStack: Stack =
-    args.stack ?? (detected.hasReact ? 'react' : detected.hasVue ? 'vue' : 'node')
+  const detectedRuntime: Runtime = detected.hasReact || detected.hasVue ? 'browser' : 'node'
+  const detectedTechStack: TechStack = detected.hasReact
+    ? 'react'
+    : detected.hasVue
+      ? 'vue'
+      : 'other'
   const detectedBundler: Bundler =
     args.bundler ??
     (detected.hasVite
@@ -36,85 +61,125 @@ export async function runPrompts(args: CliArgs): Promise<PromptResult> {
             : 'none')
 
   if (args.yes) {
-    return {
-      stack: detectedStack,
-      shape: args.shape ?? 'app',
+    const runtime = args.runtime ?? detectedRuntime
+    const techStack = runtime === 'node' ? 'none' : (args.techStack ?? detectedTechStack)
+    const draft: PromptResult = {
+      runtime,
+      techStack,
+      projectType: args.projectType ?? 'app',
       test: args.test ?? 'none',
       bundler: detectedBundler,
-      yes: !!args.yes,
+      yes: true,
       install: !!args.install,
+      selectedDeps: [],
       force: !!args.force,
+    }
+    const deps = resolvePlan(draft).deps
+    const selectedDeps = args.install ? deps : []
+    return {
+      ...draft,
+      install: selectedDeps.length > 0,
+      selectedDeps,
     }
   }
 
-  const stack =
-    args.stack ??
+  const runtime =
+    args.runtime ??
     (await select({
-      message: 'Select stack',
+      message: `Select project runtime ${ansis.dim('(↑/↓ to navigate, <enter> to confirm)')}`,
       options: [
-        { value: 'react', label: 'React' },
-        { value: 'vue', label: 'Vue' },
-        { value: 'node', label: 'Node' },
-        { value: 'web', label: 'Web' },
+        { value: 'browser', label: 'Browser' },
+        { value: 'node', label: 'Node.js' },
       ],
-      initialValue: detectedStack,
+      initialValue: detectedRuntime,
     }))
-  if (isCancel(stack)) process.exit(1)
+  if (isCancel(runtime)) abortPrompt()
+  const runtimeValue = asRuntime(runtime)
 
-  const shape =
-    args.shape ??
+  const techStack =
+    runtimeValue === 'node'
+      ? 'none'
+      : (args.techStack ??
+        (await select({
+          message: `Select tech stack ${ansis.dim('(↑/↓ to navigate, <enter> to confirm)')}`,
+          options: [
+            { value: 'react', label: 'React' },
+            { value: 'vue', label: 'Vue' },
+            { value: 'other', label: 'Other' },
+            { value: 'none', label: 'None' },
+          ],
+          initialValue: detectedTechStack,
+        })))
+  if (isCancel(techStack)) abortPrompt()
+
+  const projectType =
+    args.projectType ??
     (await select({
-      message: 'Select shape',
+      message: `Select project type ${ansis.dim('(↑/↓ to navigate, <enter> to confirm)')}`,
       options: [
-        { value: 'app', label: 'App' },
-        { value: 'lib', label: 'Lib' },
+        { value: 'app', label: 'Application' },
+        { value: 'lib', label: 'Library package' },
       ],
     }))
-  if (isCancel(shape)) process.exit(1)
+  if (isCancel(projectType)) abortPrompt()
 
   const test =
     args.test ??
     (await select({
-      message: 'Select test',
+      message: `Select test library ${ansis.dim('(↑/↓ to navigate, <enter> to confirm)')}`,
       options: [
         { value: 'vitest', label: 'Vitest' },
+        { value: 'other', label: 'Other' },
         { value: 'none', label: 'None' },
-        { value: 'other', label: 'Other (same as none)' },
       ],
     }))
-  if (isCancel(test)) process.exit(1)
+  if (isCancel(test)) abortPrompt()
 
   const bundler =
     args.bundler ??
     (await select({
-      message: 'Select bundler',
+      message: `Select bundler tool ${ansis.dim('(↑/↓ to navigate, <enter> to confirm)')}`,
       options: [
         { value: 'vite', label: 'Vite' },
-        { value: 'rollup', label: 'Rollup' },
         { value: 'tsdown', label: 'Tsdown' },
+        { value: 'rollup', label: 'Rollup' },
         { value: 'tsup', label: 'Tsup' },
-        { value: 'none', label: 'None' },
         { value: 'other', label: 'Other' },
+        { value: 'none', label: 'None' },
       ],
       initialValue: detectedBundler,
     }))
-  if (isCancel(bundler)) process.exit(1)
+  if (isCancel(bundler)) abortPrompt()
 
-  const install =
-    args.install ??
-    (await confirm({
-      message: 'Install required dependencies now?',
-      initialValue: true,
-    }))
-  if (isCancel(install)) process.exit(1)
-
-  return {
-    stack: asStack(stack),
-    shape: asShape(shape),
+  const draft: PromptResult = {
+    runtime: runtimeValue,
+    techStack: asTechStack(techStack),
+    projectType: asProjectType(projectType),
     test: asTestRunner(test),
     bundler: asBundler(bundler),
     yes: !!args.yes,
-    install: !!install,
+    install: !!args.install,
+    selectedDeps: [],
     force: !!args.force,
+  }
+
+  const deps = resolvePlan(draft).deps
+  const selectedDeps =
+    args.install === true
+      ? deps
+      : args.install === false
+        ? []
+        : ((await multiselect({
+            message: `Select dependencies to install ${ansis.dim('(↑/↓ to navigate, <space> to toggle, <enter> to confirm)')}`,
+            options: deps.map(dep => ({ value: dep, label: dep })),
+            initialValues: [],
+            required: false,
+          })) as string[])
+  if (isCancel(selectedDeps)) abortPrompt()
+
+  return {
+    ...draft,
+    install: selectedDeps.length > 0,
+    selectedDeps,
   }
 }

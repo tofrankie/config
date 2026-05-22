@@ -1,14 +1,24 @@
-import type { BUNDLERS, PACKAGE_MANAGERS, SHAPES, STACKS, TEST_RUNNERS } from './constants'
+import type {
+  BUNDLERS,
+  PACKAGE_MANAGERS,
+  PROJECT_TYPES,
+  RUNTIMES,
+  TECH_STACKS,
+  TEST_RUNNERS,
+} from './constants'
 
-export type Stack = (typeof STACKS)[number]
-export type Shape = (typeof SHAPES)[number]
+export type Runtime = (typeof RUNTIMES)[number]
+export type TechStack = (typeof TECH_STACKS)[number]
+export type ProjectType = (typeof PROJECT_TYPES)[number]
 export type TestRunner = (typeof TEST_RUNNERS)[number]
 export type Bundler = (typeof BUNDLERS)[number]
 export type PackageManager = (typeof PACKAGE_MANAGERS)[number]
 
 export interface CliArgs {
-  stack?: Stack
-  shape?: Shape
+  version?: boolean
+  runtime?: Runtime
+  techStack?: TechStack
+  projectType?: ProjectType
   test?: TestRunner
   bundler?: Bundler
   yes?: boolean
@@ -17,12 +27,14 @@ export interface CliArgs {
 }
 
 export interface PromptResult {
-  stack: Stack
-  shape: Shape
+  runtime: Runtime
+  techStack: TechStack
+  projectType: ProjectType
   test: TestRunner
   bundler: Bundler
   yes: boolean
   install: boolean
+  selectedDeps: string[]
   force: boolean
 }
 

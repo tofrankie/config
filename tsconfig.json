@@ -1,3 +1,10 @@
 {
-  "extends": "@tofrankie/tsconfig/node.app.json"
+  "references": [
+    { "path": "./packages/commitlint/tsconfig.json" },
+    { "path": "./packages/eslint/tsconfig.json" },
+    { "path": "./packages/prettier/tsconfig.json" },
+    { "path": "./packages/stylelint/tsconfig.json" },
+    { "path": "./packages/tsconfig/tsconfig.json" }
+  ],
+  "files": []
 }

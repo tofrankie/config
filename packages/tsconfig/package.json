@@ -46,6 +46,7 @@
     "node": "^20.0.0 || ^22.0.0 || ^24.0.0"
   },
   "scripts": {
+    "dev:cli": "tsdown --watch",
     "build": "run-s build:tsconfig build:cli json:lint",
     "build:tsconfig": "node ./scripts/build-tsconfig.ts",
     "build:cli": "tsdown",
