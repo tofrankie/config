@@ -1,5 +1,9 @@
 # Changelog
 
+## stylelint@0.3.0 (2026-05-23)
+
+- Support Less
+
 ## stylelint@0.2.0 (2026-04-17)
 
 - Change `function-url-quotes` rule to `'always'` in base preset for HTML files
