@@ -1,5 +1,9 @@
 # Changelog
 
+## tsconfig@0.1.2 (2026-05-23)
+
+- Disable `declarationMap` in `node.lib.json`, `react.lib.json`, `vue.lib.json`
+
 ## tsconfig@0.1.1 (2026-05-22)
 
 - Update `@tofrankie/tsconfig` CLI
