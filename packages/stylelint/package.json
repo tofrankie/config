@@ -47,6 +47,16 @@
         "default": "./dist/base.cjs"
       }
     },
+    "./less": {
+      "import": {
+        "types": "./dist/less.d.mts",
+        "default": "./dist/less.mjs"
+      },
+      "require": {
+        "types": "./dist/less.d.cts",
+        "default": "./dist/less.cjs"
+      }
+    },
     "./miniprogram": {
       "import": {
         "types": "./dist/miniprogram.d.mts",
@@ -153,6 +163,7 @@
     "stylelint-config-html": "catalog:prod",
     "stylelint-config-recess-order": "catalog:prod",
     "stylelint-config-standard": "catalog:prod",
+    "stylelint-config-standard-less": "catalog:prod",
     "stylelint-config-standard-scss": "catalog:prod",
     "stylelint-config-standard-vue": "catalog:prod",
     "stylelint-order": "catalog:prod"

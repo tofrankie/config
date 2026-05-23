@@ -1,0 +1,39 @@
+@primary: #1677ff;
+@gap: 8px;
+@double-gap: (@gap * 2);
+@prop: margin;
+
+.ellipsis(@width: 100px) {
+  width: @width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.theme(@mode) when (@mode = dark) {
+  color: #fff;
+}
+
+.theme(@mode) when (@mode = light) {
+  color: #000;
+}
+
+.base {
+  width: @double-gap;
+}
+
+.card:extend(.base) {
+  color: @primary;
+  @{prop}: @gap;
+
+  &:hover {
+    color: #4096ff;
+  }
+
+  .ellipsis(120px);
+  .theme(dark);
+}
+
+.box {
+  width: ~'calc(100% - 16px)';
+}

@@ -65,6 +65,16 @@ export default {
 }
 ```
 
+### Less
+
+> Less preset.
+
+```js
+export default {
+  extends: ['@tofrankie/stylelint', '@tofrankie/stylelint/less'],
+}
+```
+
 ### Vue
 
 > Vue preset.

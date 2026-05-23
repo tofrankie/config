@@ -1,7 +1,7 @@
 import path from 'node:path'
 import stylelint from 'stylelint'
 import { describe, expect, it } from 'vitest'
-import { base, miniprogram, pxtorem, scss, uniapp, vue, vueScss, wechatSvg } from '../src'
+import { base, less, miniprogram, pxtorem, scss, uniapp, vue, vueScss, wechatSvg } from '../src'
 import { toRuntimeExtends } from './helpers/lint'
 
 const FIXTURE_ROOT = path.resolve(import.meta.dirname, 'fixtures')
@@ -19,6 +19,7 @@ const cases = [
     files: ['index.wxss', 'index.wxml'],
     extends: [base, miniprogram],
   },
+  { name: 'less', fixture: 'less', files: ['index.less'], extends: [base, less] },
   { name: 'pxtorem', fixture: 'pxtorem', files: ['index.css'], extends: [base, pxtorem] },
   { name: 'scss', fixture: 'scss', files: ['index.scss'], extends: [base, scss] },
   {

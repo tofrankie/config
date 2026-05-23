@@ -4,6 +4,7 @@ export default defineConfig({
   entry: {
     index: 'src/index.ts',
     base: 'src/base.ts',
+    less: 'src/less.ts',
     miniprogram: 'src/miniprogram.ts',
     pxtorem: 'src/pxtorem.ts',
     scss: 'src/scss.ts',

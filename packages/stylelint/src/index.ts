@@ -1,5 +1,6 @@
 import base from './base'
 import { BASE_LANGUAGE_OPTIONS, MINIPROGRAM_LANGUAGE_OPTIONS } from './language-options'
+import less from './less'
 import miniprogram from './miniprogram'
 import pxtorem from './pxtorem'
 import scss from './scss'
@@ -14,6 +15,7 @@ export default base
 export {
   base,
   BASE_LANGUAGE_OPTIONS,
+  less,
   mergeLanguageOptions,
   miniprogram,
   MINIPROGRAM_LANGUAGE_OPTIONS,
