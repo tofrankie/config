@@ -1,6 +1,7 @@
 {
   "extends": "./node.app.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.lib.tsbuildinfo",
     "declaration": true,
     "declarationMap": false,
     "emitDeclarationOnly": true,

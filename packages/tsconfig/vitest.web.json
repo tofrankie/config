@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.vitest.web.tsbuildinfo",
     "target": "es2022",
     "jsx": "react-jsx",
     "lib": ["es2022", "dom", "dom.iterable"],

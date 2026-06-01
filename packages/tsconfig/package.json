@@ -52,7 +52,7 @@
     "build:cli": "tsdown",
     "typecheck": "tsc --noEmit",
     "json:lint": "run-s json:sort json:sort json:sort json:format",
-    "json:sort": "eslint --fix --config ./eslint.json.js >/dev/null 2>&1 || true",
+    "json:sort": "eslint --fix --config ./eslint.config.js >/dev/null 2>&1 || true",
     "json:format": "prettier ./**/*.json --write --log-level silent",
     "prepublishOnly": "pnpm build",
     "test": "vitest run",

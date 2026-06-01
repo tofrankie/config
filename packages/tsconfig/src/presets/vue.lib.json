@@ -1,6 +1,7 @@
 {
   "extends": ["./vue.app.json", "@vue/tsconfig/tsconfig.lib.json"],
   "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.vue.lib.tsbuildinfo",
     "declaration": true,
     "declarationMap": false,
     "emitDeclarationOnly": true,

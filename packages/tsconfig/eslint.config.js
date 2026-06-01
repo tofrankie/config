@@ -11,6 +11,7 @@ export default defineConfig([
       'web.*.json',
       'vitest.*.json',
       'strict*.json',
+      'src/presets/*.json',
     ],
     plugins: {
       jsonc: eslintPluginJsonc,

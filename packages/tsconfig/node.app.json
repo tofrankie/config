@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.app.tsbuildinfo",
     "target": "es2022",
     "lib": ["es2023"],
     "module": "esnext",

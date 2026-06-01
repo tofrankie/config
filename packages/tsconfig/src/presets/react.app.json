@@ -1,6 +1,7 @@
 {
   "extends": "./web.app.json",
   "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.react.app.tsbuildinfo",
     "jsx": "react-jsx"
   }
 }
