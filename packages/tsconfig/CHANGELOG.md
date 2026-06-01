@@ -1,5 +1,9 @@
 # Changelog
 
+## tsconfig@0.1.3 (2026-06-01)
+
+- Add `tsBuildInfoFile` option to all presets (except `strict.json`)
+
 ## tsconfig@0.1.2 (2026-05-23)
 
 - Disable `declarationMap` in `node.lib.json`, `react.lib.json`, `vue.lib.json`
