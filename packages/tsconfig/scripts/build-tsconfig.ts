@@ -118,23 +118,42 @@ function normalizeCompilerOptionCase(config: TsconfigLike): TsconfigLike {
   const compilerOptions = isObject(out.compilerOptions) ? out.compilerOptions : undefined
   if (!compilerOptions) return out
 
+  // https://www.typescriptlang.org/tsconfig/#target
   if (typeof compilerOptions.target === 'string') {
     compilerOptions.target = compilerOptions.target.toLowerCase()
   }
 
+  // https://www.typescriptlang.org/tsconfig/#module
   if (typeof compilerOptions.module === 'string') {
     compilerOptions.module = compilerOptions.module.toLowerCase()
   }
 
+  // https://www.typescriptlang.org/tsconfig/#moduleResolution
   if (typeof compilerOptions.moduleResolution === 'string') {
     compilerOptions.moduleResolution = compilerOptions.moduleResolution.toLowerCase()
   }
 
+  // https://www.typescriptlang.org/tsconfig/#lib
   if (Array.isArray(compilerOptions.lib)) {
     compilerOptions.lib = compilerOptions.lib.map(item =>
-      typeof item === 'string' ? item.toLowerCase() : item
+      typeof item === 'string' ? normalizeLibEntry(item) : item
     )
   }
 
   return out
+}
+
+function normalizeLibEntry(value: string): string {
+  const lower = value.toLowerCase()
+  const esMatch = lower.match(/^es(next|\d+)$/)
+  if (esMatch) {
+    return esMatch[1] === 'next' ? 'ESNext' : `ES${esMatch[1]}`
+  }
+
+  const parts = lower.split('.')
+  return parts
+    .map((segment, index) =>
+      index === 0 ? segment.toUpperCase() : segment.charAt(0).toUpperCase() + segment.slice(1)
+    )
+    .join('.')
 }
