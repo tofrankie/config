@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.vue.lib.tsbuildinfo",
+    "tsBuildInfoFile": "${configDir}/node_modules/.tmp/tsconfig.vue.lib.tsbuildinfo",
     "target": "esnext",
     "jsx": "preserve",
     "jsxImportSource": "vue",
