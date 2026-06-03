@@ -1,5 +1,9 @@
 # Changelog
 
+## tsconfig@0.2.1 (2026-06-03)
+
+- Fix `lib` option in `node.app.json`, `vue.app.json`
+
 ## tsconfig@0.2.0 (2026-06-03)
 
 - Update peer dependencies to `typescript@>=5.5.0`
