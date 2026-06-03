@@ -1,5 +1,11 @@
 # Changelog
 
+## tsconfig@0.2.0 (2026-06-03)
+
+- Update peer dependencies to `typescript@>=5.5.0`
+- Update `target` option to `ES2023`
+- Fix `tsBuildInfoFile` option using `${configDir}` placeholder
+
 ## tsconfig@0.1.3 (2026-06-01)
 
 - Add `tsBuildInfoFile` option to all presets (except `strict.json`)
