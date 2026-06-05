@@ -1,5 +1,10 @@
 # Changelog
 
+## eslint@0.4.0 (2026-06-06)
+
+- Add `@tofrankie/eslint/raycast` config export for Raycast extension project
+- Update dependencies and documentation
+
 ## eslint@0.3.1 (2026-05-21)
 
 - Disable `markdown/require-alt-text` rule
