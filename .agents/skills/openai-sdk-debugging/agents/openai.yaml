@@ -1,0 +1,6 @@
+interface:
+  display_name: "OpenAI SDK Debugging"
+  short_description: "排查 OpenAI SDK 与兼容网关问题"
+  default_prompt: "Use $openai-sdk-debugging to diagnose this OpenAI SDK failure and make the error actionable."
+policy:
+  allow_implicit_invocation: true

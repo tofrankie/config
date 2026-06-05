@@ -81,7 +81,7 @@
     "@tsconfig/strictest": "catalog:prod",
     "@tsconfig/vite-react": "catalog:prod",
     "@vue/tsconfig": "catalog:prod",
-    "eslint-plugin-jsonc": "catalog:dev",
+    "eslint-plugin-jsonc": "catalog:prod",
     "jsonc-parser": "catalog:dev",
     "publint": "catalog:dev",
     "tsx": "catalog:dev",

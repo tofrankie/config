@@ -1,0 +1,142 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "atlassian-data-center",
+  "title": "Example",
+  "version": "1.0.1",
+  "description": "Search and manage Confluence contents and Jira issues",
+  "icon": "icon.png",
+  "author": "tofrankie",
+  "license": "MIT",
+  "homepage": "https://github.com/tofrankie/raycast-atlassian-data-center",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tofrankie/raycast-atlassian-data-center.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tofrankie/raycast-atlassian-data-center/issues"
+  },
+  "categories": [
+    "Developer Tools",
+    "Productivity"
+  ],
+  "keywords": [
+    "atlassian",
+    "atlassian data center",
+    "confluence",
+    "confluence data center",
+    "jira",
+    "jira data center"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "preferences": [
+    {
+      "name": "confluenceBaseUrl",
+      "type": "textfield",
+      "required": true,
+      "title": "Confluence Base URL",
+      "description": "Base URL of your Confluence site (e.g. https://confluence.example.com)",
+      "placeholder": "e.g. https://confluence.example.com"
+    },
+    {
+      "name": "confluencePAT",
+      "type": "password",
+      "required": true,
+      "title": "Confluence PAT",
+      "description": "Personal Access Token for Confluence API authentication.",
+      "placeholder": "Your Confluence Personal Access Token"
+    },
+    {
+      "name": "debugEnable",
+      "type": "checkbox",
+      "required": true,
+      "title": "Enable Debug",
+      "label": "Enable debug mode for troubleshooting",
+      "description": "Enable debug mode for troubleshooting",
+      "default": false
+    }
+  ],
+  "commands": [
+    {
+      "name": "confluence-search-content",
+      "mode": "view",
+      "title": "Search Contents",
+      "subtitle": "Confluence",
+      "icon": "icon.png",
+      "description": "Search Confluence contents, including pages, blog posts, comments, and attachments",
+      "arguments": [
+        {
+          "name": "query",
+          "type": "textfield",
+          "required": true,
+          "placeholder": "Search keyword",
+          "data": [
+            {
+              "title": "Recent pages",
+              "value": "recent"
+            },
+            {
+              "title": "Assigned to me",
+              "value": "assignee:me"
+            }
+          ]
+        }
+      ],
+      "preferences": [
+        {
+          "name": "contentType",
+          "type": "dropdown",
+          "required": false,
+          "title": "Content Type",
+          "label": "Choose content type",
+          "description": "Limit the search scope for this command",
+          "placeholder": "All content",
+          "default": "all",
+          "data": [
+            {
+              "title": "All",
+              "value": "all"
+            },
+            {
+              "title": "Pages",
+              "value": "pages"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jira-search-issue",
+      "mode": "view",
+      "title": "Search Issues",
+      "subtitle": "Jira",
+      "icon": "icon.png",
+      "description": "Search Jira issues"
+    }
+  ],
+  "tools": [
+    {
+      "name": "open-confluence-site",
+      "title": "Open Confluence Site",
+      "icon": "tool-icon.png",
+      "description": "Open the configured Confluence site in the browser"
+    }
+  ],
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  },
+  "dependencies": {
+    "@raycast/api": "^1.104.1",
+    "@raycast/utils": "^1.19.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "2.1.1",
+    "eslint": "^10"
+  }
+}

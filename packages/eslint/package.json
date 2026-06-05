@@ -22,6 +22,7 @@
     "react",
     "typescript",
     "vue",
+    "raycast",
     "tofrankie"
   ],
   "exports": {
@@ -33,6 +34,16 @@
       "require": {
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
+      }
+    },
+    "./raycast": {
+      "import": {
+        "types": "./dist/raycast.d.mts",
+        "default": "./dist/raycast.mjs"
+      },
+      "require": {
+        "types": "./dist/raycast.d.cts",
+        "default": "./dist/raycast.cjs"
       }
     }
   },
@@ -74,6 +85,7 @@
     "eslint-plugin-astro": "catalog:prod",
     "eslint-plugin-format": "catalog:prod",
     "eslint-plugin-jsdoc": "catalog:prod",
+    "eslint-plugin-jsonc": "catalog:prod",
     "eslint-plugin-jsx-a11y": "catalog:prod",
     "eslint-plugin-react-refresh": "catalog:prod",
     "eslint-plugin-solid": "catalog:prod",

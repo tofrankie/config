@@ -5,7 +5,6 @@ catalogs:
   dev:
     '@changesets/cli': ^2.31.0
     '@tofrankie/action': ^0.0.8
-    eslint-plugin-jsonc: ^3.2.0
     husky: ^9.1.7
     jsonc-parser: ^3.3.1
     lint-staged: ^17.0.7
@@ -13,6 +12,7 @@ catalogs:
     publint: ^0.3.21
     tsdown: ^0.22.1
     tsx: ^4.22.4
+    turbo: ^2.9.16
     typescript: ^5.9.3
     vitest: ^4.1.8
   peer:
@@ -45,6 +45,7 @@ catalogs:
     eslint-plugin-astro: ^1.7.0
     eslint-plugin-format: ^2.0.1
     eslint-plugin-jsdoc: ^62.9.0
+    eslint-plugin-jsonc: ^3.2.0
     eslint-plugin-jsx-a11y: ^6.10.2
     eslint-plugin-react-refresh: ^0.5.2
     eslint-plugin-solid: ^0.14.5

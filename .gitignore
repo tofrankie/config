@@ -1,16 +1,20 @@
-# OS
-.DS_Store
-desktop.ini
-
 # Dependency
 node_modules/
 dist/
 .husky/_/
-.pnpm-store
+.pnpm-store/
 
 # Logs
 logs
 *.log
+
+# OS
+.DS_Store
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
 
 # Cache
 *.tsbuildinfo
@@ -21,14 +25,10 @@ logs
 coverage/
 
 # Agents
+.agents/
 .codex/
 .claude/
 .cursor/
-.agents/*
-!.agents/skills/
-.agents/skills/*
-!.agents/skills/release/
-!.agents/skills/release/**
 
 # Local
 .env
@@ -36,4 +36,3 @@ coverage/
 !.env.example
 *.tgz
 *.vsix
-**local.*

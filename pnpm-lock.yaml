@@ -12,9 +12,6 @@ catalogs:
     '@tofrankie/action':
       specifier: ^0.0.8
       version: 0.0.8
-    eslint-plugin-jsonc:
-      specifier: ^3.2.0
-      version: 3.2.0
     husky:
       specifier: ^9.1.7
       version: 9.1.7
@@ -36,6 +33,9 @@ catalogs:
     tsx:
       specifier: ^4.22.4
       version: 4.22.4
+    turbo:
+      specifier: ^2.9.16
+      version: 2.9.16
     typescript:
       specifier: ^5.9.3
       version: 5.9.3
@@ -45,13 +45,13 @@ catalogs:
   peer:
     '@commitlint/cli':
       specifier: ^20.5.3
-      version: 20.5.0
+      version: 20.5.3
     eslint:
       specifier: ^10.4.1
-      version: 10.3.0
+      version: 10.4.1
     prettier:
       specifier: ^3.8.3
-      version: 3.8.1
+      version: 3.8.3
     stylelint:
       specifier: ^17.6.0
       version: 17.6.0
@@ -128,6 +128,9 @@ catalogs:
     eslint-plugin-jsdoc:
       specifier: ^62.9.0
       version: 62.9.0
+    eslint-plugin-jsonc:
+      specifier: ^3.2.0
+      version: 3.2.0
     eslint-plugin-jsx-a11y:
       specifier: ^6.10.2
       version: 6.10.2
@@ -245,6 +248,9 @@ importers:
       tsdown:
         specifier: catalog:dev
         version: 0.22.1(publint@0.3.21)(tsx@4.22.4)(typescript@5.9.3)(unrun@0.2.38(synckit@0.11.13))
+      turbo:
+        specifier: catalog:dev
+        version: 2.9.16
       typescript:
         specifier: catalog:dev
         version: 5.9.3
@@ -306,6 +312,9 @@ importers:
       eslint-plugin-jsdoc:
         specifier: catalog:prod
         version: 62.9.0(eslint@10.3.0(jiti@2.6.1))
+      eslint-plugin-jsonc:
+        specifier: catalog:prod
+        version: 3.2.0(eslint@10.3.0(jiti@2.6.1))
       eslint-plugin-jsx-a11y:
         specifier: catalog:prod
         version: 6.10.2(eslint@10.3.0(jiti@2.6.1))
@@ -431,7 +440,7 @@ importers:
         specifier: catalog:prod
         version: 0.9.1(typescript@5.9.3)
       eslint-plugin-jsonc:
-        specifier: catalog:dev
+        specifier: catalog:prod
         version: 3.2.0(eslint@10.4.1(jiti@2.6.1))
       jsonc-parser:
         specifier: catalog:dev
@@ -1979,6 +1988,36 @@ packages:
 
   '@tsconfig/vite-react@8.0.6':
     resolution: {integrity: sha512-O+Eg45m/oNBY9r0EsI/N3VnXvrT4SZbcjTYW5M50eoBVnIUXL+W+ha0uDkK1WqezflsBrHkBSEyn+WdewFJJmw==}
+
+  '@turbo/darwin-64@2.9.16':
+    resolution: {integrity: sha512-jLjApWTSNd7JZ5JaLYfelW1ytnGQOvB7ivl+2RD1xQvJTbi8I9gBjzcga7tDZVPyaxpl10YTfJt3BrYXR18KDw==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@turbo/darwin-arm64@2.9.16':
+    resolution: {integrity: sha512-YPgrn+5HIGzrx0O2a631SV4MBQUe4W/DafMFUuBVgaU32PW9/OTT0ehviF0QSxTXuRJlHvW2eUTemddF5/spmw==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@turbo/linux-64@2.9.16':
+    resolution: {integrity: sha512-vAEf1H6l26lTpl9FJ/peQo1NUB8RC0sbEJJz5mPcUhHA2bPDup2x3CZPgo/bH8S4cUcBLm4FN3UHd5iUO2RAew==}
+    cpu: [x64]
+    os: [linux]
+
+  '@turbo/linux-arm64@2.9.16':
+    resolution: {integrity: sha512-xDBLR2PZg4BrQOchfG6svgpv5FCNJ2TOtT2psLdEJcdKo1BH+pnPs9Xj6pvUjgfkHbuvBOfeE4R6tvxMoQKDHQ==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@turbo/windows-64@2.9.16':
+    resolution: {integrity: sha512-NBAJnaUiGdgkSzQwUIdOvkCkcpTSu58G/sBGa0mvBtzfvFOOgrQwepKOOQ8cp6sWM6OcKDNFj2p1dsZA1OWjPg==}
+    cpu: [x64]
+    os: [win32]
+
+  '@turbo/windows-arm64@2.9.16':
+    resolution: {integrity: sha512-Y7SJppD0Z8wjO3Ec0ZGd9KQ4Yv0BMnA8CIowj5Vp+OEVsosXDG2weK6/t1RRLfJmc2Ozrnd6y4DOgQys+mn3WQ==}
+    cpu: [arm64]
+    os: [win32]
 
   '@tybys/wasm-util@0.10.2':
     resolution: {integrity: sha512-RoBvJ2X0wuKlWFIjrwffGw1IqZHKQqzIchKaadZZfnNpsAYp2mM0h36JtPCjNDAHGgYez/15uMBpfGwchhiMgg==}
@@ -5070,6 +5109,10 @@ packages:
     resolution: {integrity: sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==}
     engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
 
+  turbo@2.9.16:
+    resolution: {integrity: sha512-NqgRQy6j6dPYcdSdv0q1g9QsZg7SWg87RERM8otw/1AtKU2yTFVClOM7cbwKzOonZr/Ek1blTBucw64L9H0Bwg==}
+    hasBin: true
+
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -6820,6 +6863,24 @@ snapshots:
 
   '@tsconfig/vite-react@8.0.6': {}
 
+  '@turbo/darwin-64@2.9.16':
+    optional: true
+
+  '@turbo/darwin-arm64@2.9.16':
+    optional: true
+
+  '@turbo/linux-64@2.9.16':
+    optional: true
+
+  '@turbo/linux-arm64@2.9.16':
+    optional: true
+
+  '@turbo/windows-64@2.9.16':
+    optional: true
+
+  '@turbo/windows-arm64@2.9.16':
+    optional: true
+
   '@tybys/wasm-util@0.10.2':
     dependencies:
       tslib: 2.8.1
@@ -6910,7 +6971,7 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@6.0.2)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@6.0.2)
+      '@typescript-eslint/tsconfig-utils': 8.59.3(typescript@6.0.2)
       '@typescript-eslint/types': 8.59.3
       debug: 4.4.3
       typescript: 6.0.2
@@ -10480,6 +10541,15 @@ snapshots:
       fsevents: 2.3.3
 
   tunnel@0.0.6: {}
+
+  turbo@2.9.16:
+    optionalDependencies:
+      '@turbo/darwin-64': 2.9.16
+      '@turbo/darwin-arm64': 2.9.16
+      '@turbo/linux-64': 2.9.16
+      '@turbo/linux-arm64': 2.9.16
+      '@turbo/windows-64': 2.9.16
+      '@turbo/windows-arm64': 2.9.16
 
   type-check@0.4.0:
     dependencies:

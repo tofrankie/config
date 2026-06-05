@@ -39,7 +39,10 @@ module.exports = defineConfig()
 
 ## Configuration
 
-`defineConfig(antfuOptions?, ...flatConfigItems)` mirrors [@antfu/eslint-config usage](https://github.com/antfu/eslint-config#customization): the first argument is antfu-style options (integrations, `rules`, etc.); rest arguments are extra flat config items appended after the generated stack.
+`defineConfig(antfuOptions?, ...configs)` follows the same shape as [@antfu/eslint-config](https://github.com/antfu/eslint-config#customization).
+
+- The first argument is for options such as `typescript`, `vue`, `react`, `formatters`, `rules`, etc.
+- Extra flat config objects can be passed as the remaining arguments.
 
 ```js
 import { defineConfig } from '@tofrankie/eslint'
@@ -50,19 +53,19 @@ export default defineConfig(
     react: true,
   },
   {
-    // additional flat config item
+    // extra flat config object
   }
 )
 ```
 
-- The first argument uses antfu-compatible options.
-- User `rules` in the first argument follow antfu's fused-config semantics and stay ahead of any extra flat configs passed in the rest arguments.
+> [!NOTE]
+> In most cases, you only need to install `eslint` and `@tofrankie/eslint`.
+> Unlike using `@antfu/eslint-config` directly, you usually do not need to install extra ESLint plugins yourself when enabling built-in options in this package.
 
-> `@tofrankie/eslint` already ships the plugin dependencies behind antfu's renamed rule prefixes. In normal usage you do not need to install those ESLint plugins again in your project. Enable the corresponding antfu options as needed, such as `typescript`, `vue`, `react`, `test`, or `formatters`.
+If you want to override some built-in rules, you can usually do it in two ways:
 
-### Integration `overrides` vs global `rules`
-
-Prefer per-integration `overrides` when a rule belongs to a specific stack (correct file globs and plugin context). Use top-level `rules` only for truly global tweaks; that layer is not scoped to integration file patterns.
+- Use the corresponding option's `overrides` [Rules Overrides](https://github.com/antfu/eslint-config#rules-overrides)
+- Add an extra flat config object and specify the file scope you want
 
 ```js
 import { defineConfig } from '@tofrankie/eslint'
@@ -82,26 +85,69 @@ export default defineConfig({
 ```
 
 ```js
-export default defineConfig({
-  rules: { 'no-console': 'off' },
-})
+import { defineConfig } from '@tofrankie/eslint'
+
+export default defineConfig(
+  {
+    typescript: true,
+  },
+  {
+    files: ['scripts/**/*.js'],
+    rules: {
+      'no-console': 'off',
+    },
+  }
+)
 ```
 
 ## TypeScript
 
-Activation follows antfu: when `typescript` is left unset, support turns on if a `typescript` package is present. Set `typescript: false` for JS-only repos that still install TypeScript for tooling.
-
-Type-aware rules need `typescript.tsconfigPath` (stricter, slower, requires a valid `tsconfig.json`). With React enabled, React type-aware rules follow the same gate.
+1. Enable TypeScript linting without type-aware rules
 
 ```js
 export default defineConfig({
-  typescript: { tsconfigPath: 'tsconfig.json' },
+  typescript: true,
 })
 ```
 
+2. Enable type-aware rules with `tsconfigPath` [Type Aware Rules](https://github.com/antfu/eslint-config#type-aware-rules)
+
+```js
+export default defineConfig({
+  typescript: {
+    tsconfigPath: 'tsconfig.json',
+  },
+})
+```
+
+3. Override rules with `overrides` or `overridesTypeAware`
+
+```js
+export default defineConfig({
+  typescript: {
+    overrides: {
+      'ts/consistent-type-definitions': ['error', 'interface'],
+    },
+    overridesTypeAware: {
+      'ts/no-floating-promises': 'error',
+    },
+  },
+})
+```
+
+4. Disable TypeScript linting explicitly
+
+```js
+export default defineConfig({
+  typescript: false,
+})
+```
+
+When `typescript` option is not set, behavior follows antfu's default detection.
+
 ## Formatters
 
-@antfu/eslint-config can wire formatters (CSS, HTML, Markdown, GraphQL, Astro, etc.). **This preset disables those integrations by default** so ESLint does not duplicate work when you already use Prettier (and optionally Stylelint). Defaults still include a `formatters.prettierOptions` base aligned with `@tofrankie/prettier`; it applies once you turn formatters on.
+`@antfu/eslint-config` can wire formatters (CSS, HTML, Markdown, GraphQL, Astro, etc.). **This preset disables those integrations by default** so ESLint does not duplicate work when you already use Prettier (and optionally Stylelint). Defaults still include a `formatters.prettierOptions` base aligned with [`@tofrankie/prettier`](https://github.com/tofrankie/config/tree/main/packages/prettier); it applies once you turn formatters on.
 
 Behavior:
 
@@ -114,7 +160,7 @@ export default defineConfig({
   formatters: {
     html: true,
     markdown: true,
-    prettierOptions: { printWidth: 100 },
+    prettierOptions: { printWidth: 120 },
   },
 })
 ```
@@ -127,7 +173,7 @@ JSDoc stays on antfu's built-in integration; this package layers rule and settin
 
 ## WeChat miniprogram
 
-`MINIPROGRAM_LANGUAGE_OPTIONS` exposes common miniprogram globals for an extra flat item:
+`MINIPROGRAM_LANGUAGE_OPTIONS` exposes common miniprogram globals for an extra flat config object:
 
 ```js
 import { defineConfig, MINIPROGRAM_LANGUAGE_OPTIONS } from '@tofrankie/eslint'
@@ -138,11 +184,25 @@ export default defineConfig(
 )
 ```
 
+## Raycast
+
+If you are developing a Raycast extension, you can use `@tofrankie/eslint/raycast` to sort `package.json`.
+
+```js
+import { defineConfig } from 'eslint/config'
+import raycastConfig from '@raycast/eslint-config'
+import packageJsonSortConfig from '@tofrankie/eslint/raycast'
+
+export default defineConfig([...raycastConfig, packageJsonSortConfig])
+```
+
+This config already includes `files: ['**/package.json']`, so it only applies to `package.json`.
+
 ## Acknowledgements
 
 Thanks to these referenced packages:
 
-- [`@antfu/eslint-config`](https://github.com/antfu/eslint-config)
+- [@antfu/eslint-config](https://github.com/antfu/eslint-config)
 
 ## License
 
