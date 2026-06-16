@@ -93,7 +93,7 @@ Create a `tsconfig.json` in your project root:
 
 ```json
 {
-  "extends": "@tofrankie/tsconfig/react.vite.json"
+  "extends": "@tofrankie/tsconfig/web.app.json"
 }
 ```
 
