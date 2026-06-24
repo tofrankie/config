@@ -1,5 +1,9 @@
 # Changelog
 
+## eslint@0.4.1 (2026-06-25)
+
+- Update sorting of raycast package.json
+
 ## eslint@0.4.0 (2026-06-06)
 
 - Add `@tofrankie/eslint/raycast` config export for Raycast extension project
