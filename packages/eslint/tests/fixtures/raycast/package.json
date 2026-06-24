@@ -31,6 +31,21 @@
     "macOS",
     "Windows"
   ],
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  },
+  "dependencies": {
+    "@raycast/api": "^1.104.1",
+    "@raycast/utils": "^1.19.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "2.1.1",
+    "eslint": "^10"
+  },
   "preferences": [
     {
       "name": "confluenceBaseUrl",
@@ -123,20 +138,5 @@
       "icon": "tool-icon.png",
       "description": "Open the configured Confluence site in the browser"
     }
-  ],
-  "scripts": {
-    "dev": "ray develop",
-    "build": "ray build",
-    "fix-lint": "ray lint --fix",
-    "lint": "ray lint",
-    "publish": "ray publish"
-  },
-  "dependencies": {
-    "@raycast/api": "^1.104.1",
-    "@raycast/utils": "^1.19.1"
-  },
-  "devDependencies": {
-    "@raycast/eslint-config": "2.1.1",
-    "eslint": "^10"
-  }
+  ]
 }

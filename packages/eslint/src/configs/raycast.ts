@@ -56,11 +56,6 @@ const packageJsonOrder = [
   'keywords',
   'platforms',
 
-  'preferences',
-  'commands',
-  'tools',
-  'ai',
-
   'external',
   'sideEffects',
   'imports',
@@ -97,6 +92,11 @@ const packageJsonOrder = [
   'pnpm',
   'overrides',
   'resolutions',
+
+  'preferences',
+  'commands',
+  'tools',
+  'ai',
 
   'husky',
   'simple-git-hooks',
